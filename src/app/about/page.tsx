@@ -8,8 +8,43 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is DesiRig?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "DesiRig is the trusted directory for South Asian trucking and community businesses across Canada. We list 38,000+ businesses across 244 cities with real Google ratings and live carrier safety data.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is DesiRig free?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, DesiRig is completely free for drivers and users. We will always be free to search and browse.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I add or claim my business on DesiRig?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Email rig@desirig.com with your business name and details. We'll help you claim and update your listing.",
+        },
+      },
+    ],
+  };
+
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <h1 className="text-3xl font-bold tracking-tight">About DesiRig</h1>
 
       <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">

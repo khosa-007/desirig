@@ -77,8 +77,51 @@ export default async function SafetyPage({ searchParams }: PageProps) {
     }
   }
 
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I check a trucking company's safety record?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Enter the company's DOT number or name in the search box above. We pull live data from government records to show you their safety rating, fleet size, and driver count.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What does a 'Satisfactory' safety rating mean?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A 'Satisfactory' rating is the best safety rating a carrier can receive. It means the company has passed federal safety audits and meets all required standards.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is this safety data accurate?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We pull data in real-time from public government records. For carriers in our database (15,688 active Canadian carriers), we also store backup data in case the live source is temporarily unavailable.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I look up US trucking companies?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Enter any US DOT number and we'll fetch the carrier's information directly from government records in real-time.",
+        },
+      },
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
       <div className="mx-auto max-w-3xl">
         <div className="text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
