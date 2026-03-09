@@ -7,8 +7,23 @@ export function SiteFooter() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-2.5">
-              <svg width="24" height="16" viewBox="0 0 36 24" fill="currentColor" className="text-[#FF6E40]">
-                <path d="M0 10h20V6h6l4 4v6h-2.1a3 3 0 0 1-5.8 0H9.9a3 3 0 0 1-5.8 0H0V10zm7 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm18 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM20 8H2v6h2.1a3 3 0 0 1 5.8 0h8.2a3 3 0 0 1 1.9-2.8V8zm2 0v4h5.2l-2.5-4H22z" />
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" className="text-[#FF6E40]">
+                <rect x="5" y="4" width="22" height="18" rx="3" />
+                <rect x="8" y="6" width="16" height="8" rx="1.5" fill="white" opacity="0.85" />
+                <line x1="16" y1="6" x2="16" y2="14" stroke="currentColor" strokeWidth="1" />
+                <rect x="9" y="16" width="14" height="4" rx="1" fill="white" opacity="0.3" />
+                <line x1="12" y1="16" x2="12" y2="20" stroke="currentColor" strokeWidth="0.8" />
+                <line x1="16" y1="16" x2="16" y2="20" stroke="currentColor" strokeWidth="0.8" />
+                <line x1="20" y1="16" x2="20" y2="20" stroke="currentColor" strokeWidth="0.8" />
+                <rect x="4" y="22" width="24" height="3" rx="1.5" />
+                <circle cx="7" cy="17" r="2" fill="#FCD34D" />
+                <circle cx="25" cy="17" r="2" fill="#FCD34D" />
+                <rect x="1" y="8" width="3" height="5" rx="1" />
+                <rect x="28" y="8" width="3" height="5" rx="1" />
+                <circle cx="8" cy="27" r="2.5" />
+                <circle cx="24" cy="27" r="2.5" />
+                <rect x="3" y="1" width="2" height="6" rx="1" />
+                <rect x="27" y="1" width="2" height="6" rx="1" />
               </svg>
               <span className="text-lg font-bold">
                 Desi<span className="text-[#FF6E40]">Rig</span>
