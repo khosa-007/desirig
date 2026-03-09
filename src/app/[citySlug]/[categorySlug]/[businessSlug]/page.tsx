@@ -11,7 +11,6 @@ import {
   ExternalLink,
   Truck,
   Users,
-  AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getBusinessBySlug, getCityBySlug } from "@/lib/queries";
@@ -38,9 +37,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     business.google_rating ? `Rated ${business.google_rating}/5` : ""
   }. Find address, hours, and reviews on DesiRig.`;
 
+  const cat = business.categories as { slug: string } | null;
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://desirig.com/${citySlug}/${cat?.slug ?? ""}/${businessSlug}`,
+    },
     openGraph: {
       title: `${title} | DesiRig`,
       description,
@@ -312,12 +315,12 @@ export default async function BusinessDetailPage({ params }: PageProps) {
                   <dd className="font-medium">{category.name}</dd>
                 </div>
               )}
-              <div className="flex justify-between">
-                <dt className="text-muted-foreground">Source</dt>
-                <dd className="font-medium capitalize">
-                  {(business.source ?? "").replace(/-/g, " ")}
-                </dd>
-              </div>
+              {business.google_rating && (
+                <div className="flex justify-between">
+                  <dt className="text-muted-foreground">Rating</dt>
+                  <dd className="font-medium">{business.google_rating}/5</dd>
+                </div>
+              )}
             </dl>
           </div>
         </div>

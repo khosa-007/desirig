@@ -32,6 +32,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${carrier.legal_name} — Safety Record (DOT# ${carrier.dot_number})`,
     description: `Safety record for ${carrier.legal_name} (DOT# ${carrier.dot_number}). ${carrier.total_drivers} drivers, ${carrier.power_units} power units. Safety rating: ${carrier.safety_rating || "Not rated"}.`,
+    alternates: {
+      canonical: `https://desirig.com/safety/${dot}`,
+    },
   };
 }
 

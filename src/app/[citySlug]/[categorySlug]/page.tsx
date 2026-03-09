@@ -3,7 +3,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { BusinessCard } from "@/components/business/business-card";
-import { getCityBySlug, getCategoryBySlug, getBusinesses } from "@/lib/queries";
+import {
+  getCityBySlug,
+  getCategoryBySlug,
+  getBusinesses,
+  getRelatedCategoriesInCity,
+  getSameCategoryInOtherCities,
+} from "@/lib/queries";
 
 export const revalidate = 86400; // ISR: 24 hours
 
@@ -27,6 +33,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://desirig.com/${citySlug}/${categorySlug}`,
+    },
     openGraph: {
       title: `${title} | DesiRig`,
       description,
@@ -122,6 +131,83 @@ export default async function ListingPage({ params, searchParams }: PageProps) {
               Next
             </Link>
           )}
+        </div>
+      )}
+
+      {/* Internal Linking — SEO gold */}
+      <InternalLinks
+        citySlug={citySlug}
+        categorySlug={categorySlug}
+        cityId={city.id}
+        categoryId={category.id}
+        cityName={city.name}
+        categoryName={category.name}
+      />
+    </div>
+  );
+}
+
+async function InternalLinks({
+  citySlug,
+  categorySlug,
+  cityId,
+  categoryId,
+  cityName,
+  categoryName,
+}: {
+  citySlug: string;
+  categorySlug: string;
+  cityId: number;
+  categoryId: number;
+  cityName: string;
+  categoryName: string;
+}) {
+  const [relatedCategories, otherCities] = await Promise.all([
+    getRelatedCategoriesInCity(cityId, categoryId),
+    getSameCategoryInOtherCities(categoryId, cityId),
+  ]);
+
+  if (relatedCategories.length === 0 && otherCities.length === 0) return null;
+
+  return (
+    <div className="mt-12 space-y-8 border-t pt-8">
+      {relatedCategories.length > 0 && (
+        <div>
+          <h2 className="text-lg font-semibold">
+            More Categories in {cityName}
+          </h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {relatedCategories.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/${citySlug}/${cat.slug}`}
+                className="rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+              >
+                {cat.icon} {cat.name}
+                <span className="ml-1 text-muted-foreground">({cat.count})</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {otherCities.length > 0 && (
+        <div>
+          <h2 className="text-lg font-semibold">
+            {categoryName} in Other Cities
+          </h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {otherCities.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/${c.slug}/${categorySlug}`}
+                className="rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+              >
+                {c.name}, {c.province}
+                <span className="ml-1 text-muted-foreground">({c.count})</span>
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </div>

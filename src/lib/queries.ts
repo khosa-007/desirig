@@ -139,6 +139,64 @@ export async function getCityCount() {
   return count ?? 0;
 }
 
+export async function getRelatedCategoriesInCity(cityId: number, excludeCategoryId: number, limit = 6) {
+  const supabase = await createClient();
+  // Get categories that have listings in this city, excluding current
+  const { data } = await supabase
+    .from("businesses")
+    .select("category_id, categories(name, slug, icon)")
+    .eq("city_id", cityId)
+    .neq("category_id", excludeCategoryId)
+    .limit(500);
+
+  // Dedupe by category and count
+  const catMap = new Map<number, { name: string; slug: string; icon: string; count: number }>();
+  (data ?? []).forEach((row) => {
+    const cat = row.categories as unknown as { name: string; slug: string; icon: string } | null;
+    if (cat && row.category_id) {
+      const existing = catMap.get(row.category_id);
+      if (existing) {
+        existing.count++;
+      } else {
+        catMap.set(row.category_id, { ...cat, count: 1 });
+      }
+    }
+  });
+
+  return Array.from(catMap.values())
+    .sort((a, b) => b.count - a.count)
+    .slice(0, limit);
+}
+
+export async function getSameCategoryInOtherCities(categoryId: number, excludeCityId: number, limit = 6) {
+  const supabase = await createClient();
+  // Get cities that have this category, excluding current city
+  const { data } = await supabase
+    .from("businesses")
+    .select("city_id, cities(name, slug, province)")
+    .eq("category_id", categoryId)
+    .neq("city_id", excludeCityId)
+    .limit(500);
+
+  // Dedupe by city and count
+  const cityMap = new Map<number, { name: string; slug: string; province: string; count: number }>();
+  (data ?? []).forEach((row) => {
+    const c = row.cities as unknown as { name: string; slug: string; province: string } | null;
+    if (c && row.city_id) {
+      const existing = cityMap.get(row.city_id);
+      if (existing) {
+        existing.count++;
+      } else {
+        cityMap.set(row.city_id, { ...c, count: 1 });
+      }
+    }
+  });
+
+  return Array.from(cityMap.values())
+    .sort((a, b) => b.count - a.count)
+    .slice(0, limit);
+}
+
 export async function searchBusinesses(query: string, limit = 20) {
   const supabase = await createClient();
   const { data } = await supabase

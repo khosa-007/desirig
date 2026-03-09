@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `Businesses in ${city.name}, ${city.province}`,
     description: `Browse ${city.listing_count} businesses in ${city.name}, ${city.province}. Trucking companies, mechanics, Indian grocery, restaurants, and more on DesiRig.`,
+    alternates: {
+      canonical: `https://desirig.com/${citySlug}`,
+    },
   };
 }
 
