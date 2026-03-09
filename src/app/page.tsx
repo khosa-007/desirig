@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Search, Truck, MapPin, Shield, Star, ArrowRight, Gauge } from "lucide-react";
+import { Search, MapPin, Shield, Star, ArrowRight, Gauge } from "lucide-react";
+import { SemiTruckIcon } from "@/components/layout/site-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -169,7 +170,7 @@ export default async function HomePage() {
               className="group rounded-xl border bg-card p-4 text-center transition-all hover:border-orange-200 hover:shadow-sm"
             >
               <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600 transition-colors group-hover:bg-orange-100">
-                <Truck className="h-5 w-5" />
+                <SemiTruckIcon className="h-5 w-5" />
               </div>
               <p className="mt-2 text-sm font-medium">{cat.name}</p>
             </Link>
@@ -264,7 +265,7 @@ export default async function HomePage() {
               href="/tools/fuel-cost-calculator"
               className="group rounded-xl border border-slate-700 bg-slate-800/50 p-5 transition-all hover:border-[#FF6E40] hover:shadow-lg hover:shadow-[#FF6E40]/10"
             >
-              <Truck className="h-6 w-6 text-blue-400" />
+              <SemiTruckIcon className="h-6 w-6 text-blue-400" />
               <h3 className="mt-3 font-semibold group-hover:text-[#FF6E40]">
                 Fuel Calculator
               </h3>
@@ -402,7 +403,7 @@ export default async function HomePage() {
           </div>
           <div>
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600">
-              <Truck className="h-6 w-6" />
+              <SemiTruckIcon className="h-6 w-6" />
             </div>
             <h3 className="mt-4 font-semibold">Free Forever</h3>
             <p className="mt-1 text-sm text-muted-foreground">
