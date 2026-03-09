@@ -36,6 +36,24 @@ export const blogPosts: BlogPost[] = [
     category: "guides",
     readTime: "7 min read",
   },
+  {
+    slug: "driver-inc-scam-canada",
+    title: "Driver Inc. Scam — How Trucking Companies Are Ripping Off Desi Drivers",
+    description:
+      "The Driver Inc. scheme costs truckers $10,000-$15,000/year in lost benefits. Here's how it works and how to protect yourself.",
+    date: "2026-03-09",
+    category: "safety",
+    readTime: "6 min read",
+  },
+  {
+    slug: "best-truck-stops-ontario",
+    title: "Best Truck Stops in Ontario — A Desi Driver's Guide (2026)",
+    description:
+      "The best truck stops along the 401, 400, and GTA for fuel, parking, food, and Desi-friendly services.",
+    date: "2026-03-09",
+    category: "guides",
+    readTime: "5 min read",
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
