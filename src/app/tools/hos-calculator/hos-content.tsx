@@ -29,8 +29,8 @@ export function HosContent() {
         </div>
         <h1 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl">
           {t({
-            en: "Canadian Hours of Service (HOS) — Quick Reference",
-            pa: "ਕੈਨੇਡੀਅਨ ਸੇਵਾ ਦੇ ਘੰਟੇ (HOS) — ਤੁਰੰਤ ਹਵਾਲਾ",
+            en: "Canadian Hours of Service (HOS) Quick Reference",
+            pa: "ਕੈਨੇਡੀਅਨ ਸੇਵਾ ਦੇ ਘੰਟੇ (HOS) ਤੁਰੰਤ ਹਵਾਲਾ",
           })}
         </h1>
         <p className="mt-2 text-muted-foreground">
@@ -178,8 +178,8 @@ export function HosContent() {
                 <p className="font-medium text-foreground">{t({ en: "Deferral (Day 1 / Day 2)", pa: "ਡਿਫਰਲ (ਦਿਨ 1 / ਦਿਨ 2)" })}</p>
                 <p className="text-sm text-muted-foreground">
                   {t({
-                    en: "You can defer up to 2 hours of off-duty from Day 1 to Day 2, effectively driving up to 15 hours in one day — but you must make it up the next day with 2 extra hours off.",
-                    pa: "ਤੁਸੀਂ ਦਿਨ 1 ਦੀ ਛੁੱਟੀ ਵਿੱਚੋਂ 2 ਘੰਟੇ ਦਿਨ 2 ਤੇ ਪਾ ਸਕਦੇ ਹੋ, ਮਤਲਬ ਇੱਕ ਦਿਨ 15 ਘੰਟੇ ਤੱਕ ਡਰਾਈਵ ਕਰ ਸਕਦੇ ਹੋ — ਪਰ ਅਗਲੇ ਦਿਨ 2 ਘੰਟੇ ਵਾਧੂ ਛੁੱਟੀ ਲੈਣੀ ਪਵੇਗੀ।",
+                    en: "You can defer up to 2 hours of off-duty from Day 1 to Day 2. That lets you drive up to 15 hours in one day. But you must make it up the next day with 2 extra hours off.",
+                    pa: "ਤੁਸੀਂ ਦਿਨ 1 ਦੀ ਛੁੱਟੀ ਵਿੱਚੋਂ 2 ਘੰਟੇ ਦਿਨ 2 ਤੇ ਪਾ ਸਕਦੇ ਹੋ, ਮਤਲਬ ਇੱਕ ਦਿਨ 15 ਘੰਟੇ ਤੱਕ ਡਰਾਈਵ ਕਰ ਸਕਦੇ ਹੋ। ਪਰ ਅਗਲੇ ਦਿਨ 2 ਘੰਟੇ ਵਾਧੂ ਛੁੱਟੀ ਲੈਣੀ ਪਵੇਗੀ।",
                   })}
                 </p>
               </div>
@@ -242,8 +242,8 @@ export function HosContent() {
           <li className="flex items-start gap-2">
             <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-white" />
             <span>{t({
-              en: "Use the deferral option wisely — save it for days when loading/unloading eats your clock.",
-              pa: "ਡਿਫਰਲ ਸਮਝਦਾਰੀ ਨਾਲ ਵਰਤੋ — ਉਹਨਾਂ ਦਿਨਾਂ ਲਈ ਬਚਾਓ ਜਦੋਂ ਲੋਡਿੰਗ/ਅਨਲੋਡਿੰਗ ਸਮਾਂ ਖਾ ਜਾਵੇ।",
+              en: "Use the deferral option wisely. Save it for days when loading/unloading eats your clock.",
+              pa: "ਡਿਫਰਲ ਸਮਝਦਾਰੀ ਨਾਲ ਵਰਤੋ। ਉਹਨਾਂ ਦਿਨਾਂ ਲਈ ਬਚਾਓ ਜਦੋਂ ਲੋਡਿੰਗ/ਅਨਲੋਡਿੰਗ ਸਮਾਂ ਖਾ ਜਾਵੇ।",
             })}</span>
           </li>
           <li className="flex items-start gap-2">
@@ -269,8 +269,8 @@ export function HosContent() {
         </h2>
         <p>
           {t({
-            en: "This page covers federal Canadian Hours of Service (HOS) rules as defined under the Commercial Vehicle Drivers Hours of Service Regulations (SOR/2005-313). Provincial variations may apply. This is a simplified reference — for the complete regulations, consult the official Transport Canada documentation. Always follow the most restrictive applicable rule.",
-            pa: "ਇਹ ਪੰਨਾ ਕੈਨੇਡੀਅਨ ਫੈਡਰਲ ਸੇਵਾ ਦੇ ਘੰਟੇ (HOS) ਦੇ ਨਿਯਮ ਦੱਸਦਾ ਹੈ ਜੋ ਕਮਰਸ਼ੀਅਲ ਵਹੀਕਲ ਡਰਾਈਵਰਜ਼ ਅਵਰਜ਼ ਆਫ਼ ਸਰਵਿਸ ਰੈਗੂਲੇਸ਼ਨਜ਼ (SOR/2005-313) ਅਧੀਨ ਹਨ। ਪ੍ਰਾਂਤਕ ਫ਼ਰਕ ਹੋ ਸਕਦੇ ਹਨ। ਇਹ ਸਰਲ ਹਵਾਲਾ ਹੈ — ਪੂਰੇ ਨਿਯਮਾਂ ਲਈ ਟਰਾਂਸਪੋਰਟ ਕੈਨੇਡਾ ਦੇ ਅਧਿਕਾਰਤ ਦਸਤਾਵੇਜ਼ ਵੇਖੋ।",
+            en: "This page covers federal Canadian HOS rules under the Commercial Vehicle Drivers Hours of Service Regulations (SOR/2005-313). Provincial variations may apply. This is a simplified reference. For complete regulations, check the official Transport Canada docs. Always follow the most restrictive rule.",
+            pa: "ਇਹ ਪੰਨਾ ਕੈਨੇਡੀਅਨ ਫੈਡਰਲ HOS ਨਿਯਮ ਦੱਸਦਾ ਹੈ ਜੋ SOR/2005-313 ਅਧੀਨ ਹਨ। ਪ੍ਰਾਂਤਕ ਫ਼ਰਕ ਹੋ ਸਕਦੇ ਹਨ। ਇਹ ਸਰਲ ਹਵਾਲਾ ਹੈ। ਪੂਰੇ ਨਿਯਮਾਂ ਲਈ ਟਰਾਂਸਪੋਰਟ ਕੈਨੇਡਾ ਦੇ ਅਧਿਕਾਰਤ ਦਸਤਾਵੇਜ਼ ਵੇਖੋ।",
           })}
         </p>
       </div>

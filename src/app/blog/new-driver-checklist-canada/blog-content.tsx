@@ -50,7 +50,7 @@ export function NewDriverChecklistContent({
           {t({ en: title, pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਨਵੇਂ ਟਰੱਕ ਡਰਾਈਵਰ ਦੀ ਪੂਰੀ ਚੈੱਕਲਿਸਟ" })}
         </h1>
         <p className="mt-3 text-lg text-muted-foreground">
-          {t({ en: description, pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਟਰੱਕ ਚਲਾਉਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸਭ ਕੁਝ ਜੋ ਤੁਹਾਨੂੰ ਚਾਹੀਦਾ ਹੈ — ਲਾਇਸੈਂਸ ਤੋਂ ਲੈ ਕੇ ਪਹਿਲੀ ਨੌਕਰੀ ਤੱਕ।" })}
+          {t({ en: description, pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਟਰੱਕ ਚਲਾਉਣਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸਭ ਕੁਝ ਜੋ ਤੁਹਾਨੂੰ ਚਾਹੀਦਾ ਹੈ, ਲਾਇਸੈਂਸ ਤੋਂ ਲੈ ਕੇ ਪਹਿਲੀ ਨੌਕਰੀ ਤੱਕ।" })}
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           {date} &middot; {readTime}
@@ -70,11 +70,11 @@ export function NewDriverChecklistContent({
         </h2>
         <div className="space-y-2">
           <Item>{t({
-            en: <>Find a driving school — check our{" "}
+            en: <>Find a driving school. Check our{" "}
               <Link href="/brampton-on/driving-school" className="text-orange-600 hover:underline">Brampton driving schools</Link>
               {" "}or{" "}
               <Link href="/surrey-bc/driving-school" className="text-orange-600 hover:underline">Surrey driving schools</Link></>,
-            pa: <>ਡਰਾਈਵਿੰਗ ਸਕੂਲ ਲੱਭੋ — ਸਾਡੇ{" "}
+            pa: <>ਡਰਾਈਵਿੰਗ ਸਕੂਲ ਲੱਭੋ, ਸਾਡੇ{" "}
               <Link href="/brampton-on/driving-school" className="text-orange-600 hover:underline">Brampton ਡਰਾਈਵਿੰਗ ਸਕੂਲ</Link>
               {" "}ਜਾਂ{" "}
               <Link href="/surrey-bc/driving-school" className="text-orange-600 hover:underline">Surrey ਡਰਾਈਵਿੰਗ ਸਕੂਲ</Link> ਦੇਖੋ</>
@@ -83,7 +83,7 @@ export function NewDriverChecklistContent({
           <Item>{t({ en: "Pass the written knowledge test at a DriveTest centre", pa: "DriveTest ਸੈਂਟਰ ਤੇ ਲਿਖਤੀ ਨਾਲਿਜ ਟੈਸਟ ਪਾਸ ਕਰੋ" })}</Item>
           <Item>{t({ en: "Complete mandatory training (MELT in Ontario, MELT in Alberta, etc.)", pa: "ਲਾਜ਼ਮੀ ਟ੍ਰੇਨਿੰਗ ਪੂਰੀ ਕਰੋ (Ontario ਵਿੱਚ MELT, Alberta ਵਿੱਚ MELT, ਆਦਿ)" })}</Item>
           <Item>{t({ en: "Pass the road test with air brake endorsement", pa: "ਏਅਰ ਬ੍ਰੇਕ ਐਂਡੋਰਸਮੈਂਟ ਨਾਲ ਰੋਡ ਟੈਸਟ ਪਾਸ ਕਰੋ" })}</Item>
-          <Item>{t({ en: "Budget: $5,000 — $10,000 for driving school (shop around)", pa: "ਬਜਟ: $5,000 — $10,000 ਡਰਾਈਵਿੰਗ ਸਕੂਲ ਲਈ (ਕਈ ਥਾਵਾਂ ਤੋਂ ਰੇਟ ਪੁੱਛੋ)" })}</Item>
+          <Item>{t({ en: "Budget: $5,000 to $10,000 for driving school (shop around)", pa: "ਬਜਟ: $5,000 ਤੋਂ $10,000 ਡਰਾਈਵਿੰਗ ਸਕੂਲ ਲਈ (ਕਈ ਥਾਵਾਂ ਤੋਂ ਰੇਟ ਪੁੱਛੋ)" })}</Item>
         </div>
 
         <h2 className="text-xl font-semibold text-foreground pt-4">
@@ -91,15 +91,15 @@ export function NewDriverChecklistContent({
         </h2>
         <div className="space-y-2">
           <Item>{t({
-            en: <>DOT medical exam — find a{" "}
+            en: <>DOT medical exam. Find a{" "}
               <Link href="/brampton-on/medical-exam-clinic" className="text-orange-600 hover:underline">medical exam clinic</Link></>,
-            pa: <>DOT ਮੈਡੀਕਲ ਟੈਸਟ —{" "}
+            pa: <>DOT ਮੈਡੀਕਲ ਟੈਸਟ,{" "}
               <Link href="/brampton-on/medical-exam-clinic" className="text-orange-600 hover:underline">ਮੈਡੀਕਲ ਟੈਸਟ ਕਲੀਨਿਕ</Link> ਲੱਭੋ</>
           })}</Item>
           <Item>{t({
-            en: <>Pre-employment drug and alcohol test — find a{" "}
+            en: <>Pre-employment drug and alcohol test. Find a{" "}
               <Link href="/brampton-on/drug-alcohol-testing" className="text-orange-600 hover:underline">testing centre</Link></>,
-            pa: <>ਨੌਕਰੀ ਤੋਂ ਪਹਿਲਾਂ ਡਰੱਗ ਤੇ ਅਲਕੋਹਲ ਟੈਸਟ —{" "}
+            pa: <>ਨੌਕਰੀ ਤੋਂ ਪਹਿਲਾਂ ਡਰੱਗ ਤੇ ਅਲਕੋਹਲ ਟੈਸਟ,{" "}
               <Link href="/brampton-on/drug-alcohol-testing" className="text-orange-600 hover:underline">ਟੈਸਟਿੰਗ ਸੈਂਟਰ</Link> ਲੱਭੋ</>
           })}</Item>
           <Item>{t({ en: "FAST card application (optional but helpful for cross-border)", pa: "FAST ਕਾਰਡ ਅਪਲਾਈ ਕਰੋ (ਜ਼ਰੂਰੀ ਨਹੀਂ ਪਰ ਕਰਾਸ-ਬਾਰਡਰ ਲਈ ਫ਼ਾਇਦੇਮੰਦ)" })}</Item>
@@ -120,10 +120,10 @@ export function NewDriverChecklistContent({
               <Link href="/safety" className="text-orange-600 hover:underline">DesiRig Safety Lookup</Link></>,
             pa: <><Link href="/safety" className="text-orange-600 hover:underline">DesiRig ਸੇਫਟੀ ਲੁੱਕਅੱਪ</Link> ਤੇ ਸੇਫਟੀ ਰਿਕਾਰਡ ਚੈੱਕ ਕਰੋ</>
           })}</Item>
-          <Item>{t({ en: "Ask about pay structure — per mile, per load, or hourly", pa: "ਤਨਖ਼ਾਹ ਬਾਰੇ ਪੁੱਛੋ — ਪ੍ਰਤੀ ਮੀਲ, ਪ੍ਰਤੀ ਲੋਡ, ਜਾਂ ਘੰਟੇ ਮੁਤਾਬਕ" })}</Item>
-          <Item>{t({ en: "Ask about truck maintenance — who pays for repairs?", pa: "ਟਰੱਕ ਦੀ ਸਾਂਭ-ਸੰਭਾਲ ਬਾਰੇ ਪੁੱਛੋ — ਮੁਰੰਮਤ ਦਾ ਖ਼ਰਚਾ ਕੌਣ ਦਿੰਦਾ?" })}</Item>
+          <Item>{t({ en: "Ask about pay structure: per mile, per load, or hourly", pa: "ਤਨਖ਼ਾਹ ਬਾਰੇ ਪੁੱਛੋ: ਪ੍ਰਤੀ ਮੀਲ, ਪ੍ਰਤੀ ਲੋਡ, ਜਾਂ ਘੰਟੇ ਮੁਤਾਬਕ" })}</Item>
+          <Item>{t({ en: "Ask about truck maintenance. Who pays for repairs?", pa: "ਟਰੱਕ ਦੀ ਸਾਂਭ-ਸੰਭਾਲ ਬਾਰੇ ਪੁੱਛੋ। ਮੁਰੰਮਤ ਦਾ ਖ਼ਰਚਾ ਕੌਣ ਦਿੰਦਾ?" })}</Item>
           <Item>{t({ en: "Talk to current drivers (not just the recruiter)", pa: "ਮੌਜੂਦਾ ਡਰਾਈਵਰਾਂ ਨਾਲ ਗੱਲ ਕਰੋ (ਸਿਰਫ਼ ਰਿਕਰੂਟਰ ਨਾਲ ਨਹੀਂ)" })}</Item>
-          <Item>{t({ en: "Read the contract carefully — especially termination clauses", pa: "ਕੰਟਰੈਕਟ ਧਿਆਨ ਨਾਲ ਪੜ੍ਹੋ — ਖ਼ਾਸ ਕਰਕੇ ਨੌਕਰੀ ਛੱਡਣ ਦੀਆਂ ਸ਼ਰਤਾਂ" })}</Item>
+          <Item>{t({ en: "Read the contract carefully, especially termination clauses", pa: "ਕੰਟਰੈਕਟ ਧਿਆਨ ਨਾਲ ਪੜ੍ਹੋ, ਖ਼ਾਸ ਕਰਕੇ ਨੌਕਰੀ ਛੱਡਣ ਦੀਆਂ ਸ਼ਰਤਾਂ" })}</Item>
           <Item>{t({ en: "Avoid companies that want you to \"lease\" a truck with them immediately", pa: "ਉਹ ਕੰਪਨੀਆਂ ਤੋਂ ਬਚੋ ਜੋ ਤੁਰੰਤ ਟਰੱਕ \"ਲੀਜ਼\" ਕਰਾਉਣਾ ਚਾਹੁਣ" })}</Item>
         </div>
 
@@ -133,8 +133,8 @@ export function NewDriverChecklistContent({
           </h3>
           <p className="mt-2 text-sm text-red-700">
             {t({
-              en: "Some companies will ask you to incorporate and work as an \"independent contractor\" even though you're really an employee. This is called \"Driver Inc.\" and it's illegal in many provinces. You lose EI, CPP, and workers comp protections. If they ask you to incorporate to get a job — run.",
-              pa: "ਕੁਝ ਕੰਪਨੀਆਂ ਤੁਹਾਨੂੰ ਇੰਕਾਰਪੋਰੇਟ ਕਰਕੇ \"ਇੰਡੀਪੈਂਡੈਂਟ ਕੰਟਰੈਕਟਰ\" ਵਜੋਂ ਕੰਮ ਕਰਨ ਲਈ ਕਹਿਣਗੀਆਂ ਭਾਵੇਂ ਤੁਸੀਂ ਅਸਲ ਵਿੱਚ ਕਰਮਚਾਰੀ ਹੋ। ਇਸ ਨੂੰ \"Driver Inc.\" ਕਹਿੰਦੇ ਹਨ ਤੇ ਇਹ ਕਈ ਸੂਬਿਆਂ ਵਿੱਚ ਗੈਰ-ਕਾਨੂੰਨੀ ਹੈ। ਤੁਸੀਂ EI, CPP, ਤੇ ਵਰਕਰਜ਼ ਕੰਪ ਸੁਰੱਖਿਆ ਗੁਆ ਲੈਂਦੇ ਹੋ। ਜੇ ਨੌਕਰੀ ਲਈ ਇੰਕਾਰਪੋਰੇਟ ਕਰਨ ਲਈ ਕਹਿਣ — ਭੱਜ ਜਾਓ।",
+              en: "Some companies will ask you to incorporate and work as an \"independent contractor\" even though you&apos;re really an employee. This is called \"Driver Inc.\" and it&apos;s illegal in many provinces. You lose EI, CPP, and workers comp protections. If they ask you to incorporate to get a job, run.",
+              pa: "ਕੁਝ ਕੰਪਨੀਆਂ ਤੁਹਾਨੂੰ ਇੰਕਾਰਪੋਰੇਟ ਕਰਕੇ \"ਇੰਡੀਪੈਂਡੈਂਟ ਕੰਟਰੈਕਟਰ\" ਵਜੋਂ ਕੰਮ ਕਰਨ ਲਈ ਕਹਿਣਗੀਆਂ ਭਾਵੇਂ ਤੁਸੀਂ ਅਸਲ ਵਿੱਚ ਕਰਮਚਾਰੀ ਹੋ। ਇਸ ਨੂੰ \"Driver Inc.\" ਕਹਿੰਦੇ ਹਨ ਤੇ ਇਹ ਕਈ ਸੂਬਿਆਂ ਵਿੱਚ ਗੈਰ-ਕਾਨੂੰਨੀ ਹੈ। ਤੁਸੀਂ EI, CPP, ਤੇ ਵਰਕਰਜ਼ ਕੰਪ ਸੁਰੱਖਿਆ ਗੁਆ ਲੈਂਦੇ ਹੋ। ਜੇ ਨੌਕਰੀ ਲਈ ਇੰਕਾਰਪੋਰੇਟ ਕਰਨ ਲਈ ਕਹਿਣ, ਭੱਜ ਜਾਓ।",
             })}
           </p>
         </div>
@@ -157,10 +157,10 @@ export function NewDriverChecklistContent({
           {t({ en: "Step 5: Know the Rules", pa: "ਕਦਮ 5: ਨਿਯਮ ਜਾਣੋ" })}
         </h2>
         <div className="space-y-2">
-          <Item>{t({ en: "Hours of Service (HOS) — 13 hours driving, 14 hours on-duty max", pa: "Hours of Service (HOS) — ਵੱਧ ਤੋਂ ਵੱਧ 13 ਘੰਟੇ ਡਰਾਈਵਿੰਗ, 14 ਘੰਟੇ ਡਿਊਟੀ ਤੇ" })}</Item>
-          <Item>{t({ en: "Pre-trip and post-trip inspections — do them, every time", pa: "ਸਫ਼ਰ ਤੋਂ ਪਹਿਲਾਂ ਤੇ ਬਾਅਦ ਇੰਸਪੈਕਸ਼ਨ — ਹਰ ਵਾਰ ਕਰੋ" })}</Item>
-          <Item>{t({ en: "Weight limits — 80,000 lbs gross in most provinces", pa: "ਭਾਰ ਦੀ ਹੱਦ — ਜ਼ਿਆਦਾਤਰ ਸੂਬਿਆਂ ਵਿੱਚ 80,000 lbs ਗ੍ਰਾਸ" })}</Item>
-          <Item>{t({ en: "Air brake check procedures — you WILL be tested at scales", pa: "ਏਅਰ ਬ੍ਰੇਕ ਚੈੱਕ ਦਾ ਤਰੀਕਾ — ਸਕੇਲ ਤੇ ਜ਼ਰੂਰ ਚੈੱਕ ਹੋਵੇਗਾ" })}</Item>
+          <Item>{t({ en: "Hours of Service (HOS): 13 hours driving, 14 hours on-duty max", pa: "Hours of Service (HOS): ਵੱਧ ਤੋਂ ਵੱਧ 13 ਘੰਟੇ ਡਰਾਈਵਿੰਗ, 14 ਘੰਟੇ ਡਿਊਟੀ ਤੇ" })}</Item>
+          <Item>{t({ en: "Pre-trip and post-trip inspections. Do them every single time.", pa: "ਸਫ਼ਰ ਤੋਂ ਪਹਿਲਾਂ ਤੇ ਬਾਅਦ ਇੰਸਪੈਕਸ਼ਨ। ਹਰ ਵਾਰ ਕਰੋ।" })}</Item>
+          <Item>{t({ en: "Weight limits: 80,000 lbs gross in most provinces", pa: "ਭਾਰ ਦੀ ਹੱਦ: ਜ਼ਿਆਦਾਤਰ ਸੂਬਿਆਂ ਵਿੱਚ 80,000 lbs ਗ੍ਰਾਸ" })}</Item>
+          <Item>{t({ en: "Air brake check procedures. You WILL be tested at scales.", pa: "ਏਅਰ ਬ੍ਰੇਕ ਚੈੱਕ ਦਾ ਤਰੀਕਾ। ਸਕੇਲ ਤੇ ਜ਼ਰੂਰ ਚੈੱਕ ਹੋਵੇਗਾ।" })}</Item>
           <Item>{t({ en: "Chain laws in winter (BC, Alberta especially)", pa: "ਸਰਦੀਆਂ ਵਿੱਚ ਚੇਨ ਲਾਉਣ ਦੇ ਨਿਯਮ (ਖ਼ਾਸ ਕਰਕੇ BC, Alberta)" })}</Item>
         </div>
 
@@ -169,8 +169,8 @@ export function NewDriverChecklistContent({
         </h2>
         <p>
           {t({
-            en: "Trucking is hard work but it pays well. The Desi trucking community in Canada is strong — lean on it. Use DesiRig to find companies, mechanics, and services you can trust.",
-            pa: "ਟਰੱਕਿੰਗ ਔਖਾ ਕੰਮ ਹੈ ਪਰ ਪੈਸੇ ਚੰਗੇ ਮਿਲਦੇ ਹਨ। ਕੈਨੇਡਾ ਵਿੱਚ ਦੇਸੀ ਟਰੱਕਿੰਗ ਕਮਿਊਨਿਟੀ ਮਜ਼ਬੂਤ ਹੈ — ਇਸ ਦਾ ਸਹਾਰਾ ਲਓ। ਭਰੋਸੇਯੋਗ ਕੰਪਨੀਆਂ, ਮਕੈਨਿਕ ਤੇ ਸਰਵਿਸ ਲੱਭਣ ਲਈ DesiRig ਵਰਤੋ।",
+            en: "Trucking is hard work but it pays well. The Desi trucking community in Canada is strong. Lean on it. Use DesiRig to find companies, mechanics, and services you can trust.",
+            pa: "ਟਰੱਕਿੰਗ ਔਖਾ ਕੰਮ ਹੈ ਪਰ ਪੈਸੇ ਚੰਗੇ ਮਿਲਦੇ ਹਨ। ਕੈਨੇਡਾ ਵਿੱਚ ਦੇਸੀ ਟਰੱਕਿੰਗ ਕਮਿਊਨਿਟੀ ਮਜ਼ਬੂਤ ਹੈ, ਇਸ ਦਾ ਸਹਾਰਾ ਲਓ। ਭਰੋਸੇਯੋਗ ਕੰਪਨੀਆਂ, ਮਕੈਨਿਕ ਤੇ ਸਰਵਿਸ ਲੱਭਣ ਲਈ DesiRig ਵਰਤੋ।",
           })}
         </p>
 

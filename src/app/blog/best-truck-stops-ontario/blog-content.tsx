@@ -52,10 +52,10 @@ export function BestTruckStopsContent({
 
       <header>
         <h1 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-          {t({ en: title, pa: "Ontario ਦੇ ਸਭ ਤੋਂ ਵਧੀਆ ਟਰੱਕ ਸਟੌਪ — ਡਰਾਈਵਰ ਗਾਈਡ" })}
+          {t({ en: title, pa: "Ontario ਦੇ ਸਭ ਤੋਂ ਵਧੀਆ ਟਰੱਕ ਸਟੌਪ, ਡਰਾਈਵਰ ਗਾਈਡ" })}
         </h1>
         <p className="mt-3 text-lg text-muted-foreground">
-          {t({ en: description, pa: "Ontario ਦੇ ਮੁੱਖ ਹਾਈਵੇ ਤੇ ਸਭ ਤੋਂ ਵਧੀਆ ਟਰੱਕ ਸਟੌਪ — ਡੀਜ਼ਲ, ਪਾਰਕਿੰਗ, ਖਾਣਾ ਤੇ ਸਰਵਿਸ।" })}
+          {t({ en: description, pa: "Ontario ਦੇ ਮੁੱਖ ਹਾਈਵੇ ਤੇ ਸਭ ਤੋਂ ਵਧੀਆ ਟਰੱਕ ਸਟੌਪ, ਡੀਜ਼ਲ, ਪਾਰਕਿੰਗ, ਖਾਣਾ ਤੇ ਸਰਵਿਸ।" })}
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           {date} &middot; {readTime}
@@ -65,8 +65,8 @@ export function BestTruckStopsContent({
       <div className="prose-custom mt-10 space-y-6 text-muted-foreground leading-relaxed">
         <p className="text-foreground text-lg">
           {t({
-            en: "Ontario has the busiest trucking corridors in Canada — the 401, 400, 403, and QEW carry millions of loads every year. Knowing where to stop for fuel, food, parking, and rest is essential for every long-haul driver. Here are the best truck stops across Ontario.",
-            pa: "Ontario ਵਿੱਚ ਕੈਨੇਡਾ ਦੇ ਸਭ ਤੋਂ ਬਿਜ਼ੀ ਟਰੱਕਿੰਗ ਰੂਟ ਹਨ — 401, 400, 403 ਤੇ QEW ਹਰ ਸਾਲ ਲੱਖਾਂ ਲੋਡ ਚੁੱਕਦੇ ਹਨ। ਹਰ ਲੌਂਗ-ਹੌਲ ਡਰਾਈਵਰ ਲਈ ਡੀਜ਼ਲ, ਖਾਣਾ, ਪਾਰਕਿੰਗ ਤੇ ਆਰਾਮ ਲਈ ਕਿੱਥੇ ਰੁਕਣਾ ਹੈ ਜਾਣਨਾ ਜ਼ਰੂਰੀ ਹੈ। ਇਹ ਹਨ Ontario ਦੇ ਸਭ ਤੋਂ ਵਧੀਆ ਟਰੱਕ ਸਟੌਪ।",
+            en: "Ontario has the busiest trucking corridors in Canada. The 401, 400, 403, and QEW carry millions of loads every year. You need to know where to stop for fuel, food, parking, and rest. Here are the best truck stops across Ontario.",
+            pa: "Ontario ਵਿੱਚ ਕੈਨੇਡਾ ਦੇ ਸਭ ਤੋਂ ਬਿਜ਼ੀ ਟਰੱਕਿੰਗ ਰੂਟ ਹਨ। 401, 400, 403 ਤੇ QEW ਹਰ ਸਾਲ ਲੱਖਾਂ ਲੋਡ ਚੁੱਕਦੇ ਹਨ। ਹਰ ਲੌਂਗ-ਹੌਲ ਡਰਾਈਵਰ ਲਈ ਡੀਜ਼ਲ, ਖਾਣਾ, ਪਾਰਕਿੰਗ ਤੇ ਆਰਾਮ ਲਈ ਕਿੱਥੇ ਰੁਕਣਾ ਹੈ ਜਾਣਨਾ ਜ਼ਰੂਰੀ ਹੈ। ਇਹ ਹਨ Ontario ਦੇ ਸਭ ਤੋਂ ਵਧੀਆ ਟਰੱਕ ਸਟੌਪ।",
           })}
         </p>
 
@@ -121,7 +121,7 @@ export function BestTruckStopsContent({
           <li className="flex items-start gap-2">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />
             <span>
-              <strong className="text-foreground">Flying J / Pilot — {t({ en: "various 401 locations", pa: "401 ਤੇ ਕਈ ਥਾਵਾਂ" })}</strong> — {t({
+              <strong className="text-foreground">Flying J / Pilot, {t({ en: "various 401 locations", pa: "401 ਤੇ ਕਈ ਥਾਵਾਂ" })}</strong> &ndash; {t({
                 en: "Reliable chain with truck-specific fueling, showers, and parking. Locations near London, Cambridge, and Belleville.",
                 pa: "ਭਰੋਸੇਯੋਗ ਚੇਨ ਜਿਸ ਵਿੱਚ ਟਰੱਕ ਫਿਊਲਿੰਗ, ਸ਼ਾਵਰ ਤੇ ਪਾਰਕਿੰਗ। London, Cambridge ਤੇ Belleville ਨੇੜੇ ਲੋਕੇਸ਼ਨ।",
               })}
@@ -130,7 +130,7 @@ export function BestTruckStopsContent({
           <li className="flex items-start gap-2">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />
             <span>
-              <strong className="text-foreground">ONroute — {t({ en: "across the 401", pa: "401 ਤੇ" })}</strong> — {t({
+              <strong className="text-foreground">ONroute, {t({ en: "across the 401", pa: "401 ਤੇ" })}</strong> &ndash; {t({
                 en: "Clean facilities, Tim Hortons, but limited truck parking. Better for quick stops than overnight.",
                 pa: "ਸਾਫ਼ ਸੁਵਿਧਾਵਾਂ, Tim Hortons, ਪਰ ਟਰੱਕ ਪਾਰਕਿੰਗ ਘੱਟ। ਰਾਤ ਰੁਕਣ ਨਾਲੋਂ ਛੋਟੇ ਸਟੌਪ ਲਈ ਵਧੀਆ।",
               })}
@@ -139,7 +139,7 @@ export function BestTruckStopsContent({
           <li className="flex items-start gap-2">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />
             <span>
-              <strong className="text-foreground">Truckworld — Woodstock {t({ en: "area", pa: "ਏਰੀਆ" })}</strong> — {t({
+              <strong className="text-foreground">Truckworld, Woodstock {t({ en: "area", pa: "ਏਰੀਆ" })}</strong> &ndash; {t({
                 en: "Popular with Desi drivers. Good parking, food options nearby, and mechanic services available.",
                 pa: "ਦੇਸੀ ਡਰਾਈਵਰਾਂ ਵਿੱਚ ਮਸ਼ਹੂਰ। ਚੰਗੀ ਪਾਰਕਿੰਗ, ਨੇੜੇ ਖਾਣੇ ਦੇ ਵਿਕਲਪ, ਤੇ ਮਕੈਨਿਕ ਸਰਵਿਸ ਉਪਲਬਧ।",
               })}
@@ -160,7 +160,7 @@ export function BestTruckStopsContent({
           <li className="flex items-start gap-2">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />
             <span>
-              <strong className="text-foreground">{t({ en: "Barrie-area truck stops", pa: "Barrie ਏਰੀਆ ਟਰੱਕ ਸਟੌਪ" })}</strong> — {t({
+              <strong className="text-foreground">{t({ en: "Barrie-area truck stops", pa: "Barrie ਏਰੀਆ ਟਰੱਕ ਸਟੌਪ" })}</strong> &ndash; {t({
                 en: "Several options near the 400/11 split. Good refueling point before the long stretch north.",
                 pa: "400/11 ਸਪਲਿਟ ਨੇੜੇ ਕਈ ਵਿਕਲਪ। ਉੱਤਰ ਵੱਲ ਲੰਬੇ ਸਫ਼ਰ ਤੋਂ ਪਹਿਲਾਂ ਡੀਜ਼ਲ ਪਾਉਣ ਦੀ ਵਧੀਆ ਥਾਂ।",
               })}
@@ -169,9 +169,9 @@ export function BestTruckStopsContent({
           <li className="flex items-start gap-2">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />
             <span>
-              <strong className="text-foreground">{t({ en: "Parry Sound rest areas", pa: "Parry Sound ਰੈਸਟ ਏਰੀਆ" })}</strong> — {t({
-                en: "Limited but available. Plan your HOS carefully north of Barrie — stops get sparse.",
-                pa: "ਘੱਟ ਪਰ ਉਪਲਬਧ। Barrie ਤੋਂ ਉੱਤਰ HOS ਧਿਆਨ ਨਾਲ ਪਲਾਨ ਕਰੋ — ਸਟੌਪ ਘੱਟ ਮਿਲਦੇ ਹਨ।",
+              <strong className="text-foreground">{t({ en: "Parry Sound rest areas", pa: "Parry Sound ਰੈਸਟ ਏਰੀਆ" })}</strong> &ndash; {t({
+                en: "Limited but available. Plan your HOS carefully north of Barrie. Stops get sparse up there.",
+                pa: "ਘੱਟ ਪਰ ਉਪਲਬਧ। Barrie ਤੋਂ ਉੱਤਰ HOS ਧਿਆਨ ਨਾਲ ਪਲਾਨ ਕਰੋ। ਸਟੌਪ ਘੱਟ ਮਿਲਦੇ ਹਨ।",
               })}
             </span>
           </li>

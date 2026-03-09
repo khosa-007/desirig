@@ -191,8 +191,8 @@ export function WeightContent() {
           </h3>
           <p className="mt-2 text-sm text-muted-foreground">
             {t({
-              en: "Most provinces reduce weight limits by 10-25% during spring thaw (typically March to May). This protects roads from damage when the ground is soft. Dates vary by region — check your province's transportation website.",
-              pa: "ਜ਼ਿਆਦਾਤਰ ਪ੍ਰਾਂਤ ਬਸੰਤ ਪਿਘਲਣ ਦੌਰਾਨ (ਆਮ ਤੌਰ ਤੇ ਮਾਰਚ ਤੋਂ ਮਈ) ਭਾਰ ਹੱਦਾਂ 10-25% ਘਟਾ ਦਿੰਦੇ ਹਨ। ਇਹ ਨਰਮ ਜ਼ਮੀਨ ਤੇ ਸੜਕਾਂ ਨੂੰ ਨੁਕਸਾਨ ਤੋਂ ਬਚਾਉਂਦਾ ਹੈ। ਤਾਰੀਖ਼ਾਂ ਖੇਤਰ ਅਨੁਸਾਰ ਬਦਲਦੀਆਂ ਹਨ — ਆਪਣੇ ਪ੍ਰਾਂਤ ਦੀ ਟ੍ਰਾਂਸਪੋਰਟ ਵੈੱਬਸਾਈਟ ਚੈੱਕ ਕਰੋ।",
+              en: "Most provinces cut weight limits by 10-25% during spring thaw (March to May). Soft ground means road damage. Dates vary by region, so check your province&apos;s transportation website.",
+              pa: "ਜ਼ਿਆਦਾਤਰ ਪ੍ਰਾਂਤ ਬਸੰਤ ਪਿਘਲਣ ਦੌਰਾਨ (ਮਾਰਚ ਤੋਂ ਮਈ) ਭਾਰ ਹੱਦਾਂ 10-25% ਘਟਾ ਦਿੰਦੇ ਹਨ। ਨਰਮ ਜ਼ਮੀਨ ਤੇ ਸੜਕਾਂ ਨੂੰ ਨੁਕਸਾਨ ਹੁੰਦਾ। ਤਾਰੀਖ਼ਾਂ ਖੇਤਰ ਅਨੁਸਾਰ ਬਦਲਦੀਆਂ ਹਨ, ਆਪਣੇ ਪ੍ਰਾਂਤ ਦੀ ਟ੍ਰਾਂਸਪੋਰਟ ਵੈੱਬਸਾਈਟ ਚੈੱਕ ਕਰੋ।",
             })}
           </p>
         </div>

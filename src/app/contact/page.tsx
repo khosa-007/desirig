@@ -3,7 +3,7 @@ import { Mail, MessageSquare, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Contact DesiRig.com — report issues, claim your listing, or request removal.",
+  description: "Contact DesiRig.com. Report issues, claim your listing, or request removal.",
 };
 
 export default function ContactPage() {

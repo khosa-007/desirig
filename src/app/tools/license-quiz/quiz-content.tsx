@@ -134,7 +134,7 @@ function TruckSVG() {
 /* ───────── QUESTION BANKS ───────── */
 
 
-/* === GENERAL KNOWLEDGE — Province-specific banks === */
+/* === GENERAL KNOWLEDGE: Province-specific banks === */
 
 const generalON: Question[] = [
   {
@@ -201,7 +201,7 @@ const generalON: Question[] = [
       { en: "Yield to traffic on the right only", pa: "ਸਿਰਫ਼ ਸੱਜੇ ਪਾਸੇ ਦੀ ਟ੍ਰੈਫਿਕ ਨੂੰ ਰਸਤਾ ਦਿਓ" },
     ],
     correct: 1,
-    explanation: { en: "A flashing red light is treated like a stop sign — complete stop, then proceed when safe.", pa: "ਲਾਲ ਝਪਕਦੀ ਬੱਤੀ ਸਟਾਪ ਸਾਈਨ ਵਾਂਗ ਹੈ — ਪੂਰੀ ਤਰ੍ਹਾਂ ਰੁਕੋ, ਫਿਰ ਸੁਰੱਖਿਅਤ ਹੋਣ ਤੇ ਅੱਗੇ ਵਧੋ।" },
+    explanation: { en: "A flashing red light is treated like a stop sign. Come to a complete stop, then go when safe.", pa: "ਲਾਲ ਝਪਕਦੀ ਬੱਤੀ ਸਟਾਪ ਸਾਈਨ ਵਾਂਗ ਹੈ। ਪੂਰੀ ਤਰ੍ਹਾਂ ਰੁਕੋ, ਫਿਰ ਸੁਰੱਖਿਅਤ ਹੋਣ ਤੇ ਅੱਗੇ ਵਧੋ।" },
   },
   {
     q: { en: "When approaching a railway crossing, a commercial vehicle must stop at least how far from the nearest rail?", pa: "ਰੇਲਵੇ ਕਰਾਸਿੰਗ ਤੇ ਕਮਰਸ਼ੀਅਲ ਵਾਹਨ ਨੂੰ ਨਜ਼ਦੀਕੀ ਪਟੜੀ ਤੋਂ ਘੱਟੋ-ਘੱਟ ਕਿੰਨੀ ਦੂਰ ਰੁਕਣਾ ਚਾਹੀਦਾ?" },
@@ -223,7 +223,7 @@ const generalON: Question[] = [
       { en: "Speed up to complete the turn quickly", pa: "ਮੋੜ ਜਲਦੀ ਪੂਰਾ ਕਰਨ ਲਈ ਤੇਜ਼ ਕਰੋ" },
     ],
     correct: 1,
-    explanation: { en: "Stay in your lane and use mirrors. Swinging wide into the left lane is dangerous — other vehicles may try to pass on the right.", pa: "ਆਪਣੀ ਲੇਨ ਵਿੱਚ ਰਹੋ ਤੇ ਸ਼ੀਸ਼ੇ ਵਰਤੋ। ਖੱਬੇ ਪਾਸੇ ਖੁੱਲ੍ਹਾ ਮੋੜ ਖ਼ਤਰਨਾਕ ਹੈ।" },
+    explanation: { en: "Stay in your lane and use mirrors. Swinging wide into the left lane is dangerous. Other vehicles may try to pass on the right.", pa: "ਆਪਣੀ ਲੇਨ ਵਿੱਚ ਰਹੋ ਤੇ ਸ਼ੀਸ਼ੇ ਵਰਤੋ। ਖੱਬੇ ਪਾਸੇ ਖੁੱਲ੍ਹਾ ਮੋੜ ਖ਼ਤਰਨਾਕ ਹੈ।" },
   },
   {
     q: { en: "What should you check first during a pre-trip inspection?", pa: "ਸਫ਼ਰ ਤੋਂ ਪਹਿਲਾਂ ਦੀ ਜਾਂਚ ਵਿੱਚ ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਚੈੱਕ ਕਰਨਾ ਚਾਹੀਦਾ?" },
@@ -424,7 +424,7 @@ const generalBC: Question[] = [
       { en: "Speed up to complete the turn quickly", pa: "ਤੇਜ਼ ਕਰੋ" },
     ],
     correct: 1,
-    explanation: { en: "Stay in your lane and use mirrors. Swinging wide is dangerous — other vehicles may try to pass on the right.", pa: "ਆਪਣੀ ਲੇਨ ਵਿੱਚ ਰਹੋ ਤੇ ਸ਼ੀਸ਼ੇ ਵਰਤੋ। ਖੁੱਲ੍ਹਾ ਮੋੜ ਖ਼ਤਰਨਾਕ ਹੈ।" },
+    explanation: { en: "Stay in your lane and use mirrors. Swinging wide is dangerous. Other vehicles may try to pass on the right.", pa: "ਆਪਣੀ ਲੇਨ ਵਿੱਚ ਰਹੋ ਤੇ ਸ਼ੀਸ਼ੇ ਵਰਤੋ। ਖੁੱਲ੍ਹਾ ਮੋੜ ਖ਼ਤਰਨਾਕ ਹੈ।" },
   },
   {
     q: { en: "What should you check first during a pre-trip inspection?", pa: "ਪ੍ਰੀ-ਟ੍ਰਿਪ ਜਾਂਚ ਵਿੱਚ ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਚੈੱਕ ਕਰੋ?" },
@@ -538,12 +538,12 @@ const generalBC: Question[] = [
   },
 ];
 
-/* For AB, SK, MB, QC — use a factory that copies common questions with province tweaks */
+/* For AB, SK, MB, QC: use a factory that copies common questions with province tweaks */
 function makeGeneralQuestions(province: ProvinceKey): Question[] {
   if (province === "ON") return generalON;
   if (province === "BC") return generalBC;
 
-  /* AB, SK, MB, QC share most of the same federal rules — clone ON with minor province name swaps */
+  /* AB, SK, MB, QC share most of the same federal rules. Clone ON with minor province name swaps */
   const provinceNames: Record<string, Bilingual> = {
     AB: { en: "Alberta", pa: "ਅਲਬਰਟਾ" },
     SK: { en: "Saskatchewan", pa: "ਸਸਕੈਚਵਨ" },
@@ -605,7 +605,7 @@ function makeGeneralQuestions(province: ProvinceKey): Question[] {
   return [agencyQ[province] || agencyQ.AB, ...common].slice(0, 20);
 }
 
-/* === AIR BRAKES — 20 comprehensive questions === */
+/* === AIR BRAKES: 20 comprehensive questions === */
 const airBrakesQuestions: Question[] = [
   {
     q: { en: "What is the function of the air compressor in an air brake system?", pa: "ਏਅਰ ਬ੍ਰੇਕ ਸਿਸਟਮ ਵਿੱਚ ਏਅਰ ਕੰਪ੍ਰੈਸਰ ਦਾ ਕੰਮ ਕੀ ਹੈ?" },
@@ -743,7 +743,7 @@ const airBrakesQuestions: Question[] = [
     q: { en: "What causes brake fade?", pa: "ਬ੍ਰੇਕ ਫੇਡ ਕਿਸ ਕਰਕੇ ਹੁੰਦੀ ਹੈ?" },
     options: [
       { en: "Cold brakes", pa: "ਠੰਡੇ ਬ੍ਰੇਕ" },
-      { en: "Excessive heat from overuse — brakes lose friction and stopping ability", pa: "ਜ਼ਿਆਦਾ ਵਰਤੋਂ ਨਾਲ ਬਹੁਤ ਗਰਮੀ — ਬ੍ਰੇਕ ਰਗੜ ਤੇ ਰੁਕਣ ਦੀ ਸਮਰੱਥਾ ਗੁਆ ਲੈਂਦੇ" },
+      { en: "Excessive heat from overuse. Brakes lose friction and stopping ability", pa: "ਜ਼ਿਆਦਾ ਵਰਤੋਂ ਨਾਲ ਬਹੁਤ ਗਰਮੀ। ਬ੍ਰੇਕ ਰਗੜ ਤੇ ਰੁਕਣ ਦੀ ਸਮਰੱਥਾ ਗੁਆ ਲੈਂਦੇ" },
       { en: "Too much air pressure", pa: "ਬਹੁਤ ਜ਼ਿਆਦਾ ਹਵਾ ਦਾ ਦਬਾਅ" },
       { en: "Wet brake drums", pa: "ਗਿੱਲੇ ਬ੍ਰੇਕ ਡਰੱਮ" },
     ],
@@ -759,12 +759,12 @@ const airBrakesQuestions: Question[] = [
       { en: "Service brakes are on the trailer only", pa: "ਸਰਵਿਸ ਬ੍ਰੇਕ ਸਿਰਫ਼ ਟ੍ਰੇਲਰ ਤੇ ਹਨ" },
     ],
     correct: 1,
-    explanation: { en: "Service brakes use air pressure applied by the foot pedal. Emergency/parking brakes use powerful springs that engage when air pressure is released — they work even with zero air.", pa: "ਸਰਵਿਸ ਬ੍ਰੇਕ ਪੈਰ ਨਾਲ ਦੱਬੇ ਪੈਡਲ ਰਾਹੀਂ ਹਵਾ ਦਾ ਦਬਾਅ ਵਰਤਦੇ ਹਨ। ਐਮਰਜੈਂਸੀ/ਪਾਰਕਿੰਗ ਬ੍ਰੇਕ ਤਾਕਤਵਰ ਸਪਰਿੰਗ ਵਰਤਦੇ ਹਨ ਜੋ ਹਵਾ ਛੱਡਣ ਤੇ ਲੱਗ ਜਾਂਦੇ ਹਨ — ਇਹ ਜ਼ੀਰੋ ਹਵਾ ਤੇ ਵੀ ਕੰਮ ਕਰਦੇ ਹਨ।" },
+    explanation: { en: "Service brakes use air pressure applied by the foot pedal. Emergency/parking brakes use powerful springs that engage when air pressure is released. They work even with zero air.", pa: "ਸਰਵਿਸ ਬ੍ਰੇਕ ਪੈਰ ਨਾਲ ਦੱਬੇ ਪੈਡਲ ਰਾਹੀਂ ਹਵਾ ਦਾ ਦਬਾਅ ਵਰਤਦੇ ਹਨ। ਐਮਰਜੈਂਸੀ/ਪਾਰਕਿੰਗ ਬ੍ਰੇਕ ਤਾਕਤਵਰ ਸਪਰਿੰਗ ਵਰਤਦੇ ਹਨ ਜੋ ਹਵਾ ਛੱਡਣ ਤੇ ਲੱਗ ਜਾਂਦੇ ਹਨ। ਇਹ ਜ਼ੀਰੋ ਹਵਾ ਤੇ ਵੀ ਕੰਮ ਕਰਦੇ ਹਨ।" },
   },
   {
     q: { en: "How should air tanks be drained?", pa: "ਏਅਰ ਟੈਂਕ ਕਿਵੇਂ ਖਾਲੀ ਕਰਨੇ ਚਾਹੀਦੇ ਹਨ?" },
     options: [
-      { en: "Never — they are sealed units", pa: "ਕਦੇ ਨਹੀਂ — ਇਹ ਸੀਲ ਯੂਨਿਟ ਹਨ" },
+      { en: "Never. They are sealed units", pa: "ਕਦੇ ਨਹੀਂ। ਇਹ ਸੀਲ ਯੂਨਿਟ ਹਨ" },
       { en: "Daily if equipped with manual drains; automatic drains also need periodic checks", pa: "ਜੇ ਮੈਨੂਅਲ ਡ੍ਰੇਨ ਹੋਣ ਤਾਂ ਰੋਜ਼; ਆਟੋਮੈਟਿਕ ਡ੍ਰੇਨ ਦੀ ਵੀ ਸਮੇਂ-ਸਮੇਂ ਜਾਂਚ ਕਰੋ" },
       { en: "Once a month only", pa: "ਮਹੀਨੇ ਵਿੱਚ ਸਿਰਫ਼ ਇੱਕ ਵਾਰ" },
       { en: "Only during annual inspection", pa: "ਸਿਰਫ਼ ਸਾਲਾਨਾ ਜਾਂਚ ਦੌਰਾਨ" },
@@ -787,12 +787,12 @@ const airBrakesQuestions: Question[] = [
     q: { en: "During a pre-trip air brake inspection, what is the maximum allowable pushrod stroke (applied stroke) for most brake chambers?", pa: "ਪ੍ਰੀ-ਟ੍ਰਿਪ ਏਅਰ ਬ੍ਰੇਕ ਜਾਂਚ ਦੌਰਾਨ, ਜ਼ਿਆਦਾਤਰ ਬ੍ਰੇਕ ਚੈਂਬਰਾਂ ਲਈ ਪੁਸ਼ਰਾਡ ਸਟ੍ਰੋਕ ਦੀ ਵੱਧ ਤੋਂ ਵੱਧ ਹੱਦ ਕੀ ਹੈ?" },
     options: [
       { en: "1/2 inch", pa: "1/2 ਇੰਚ" },
-      { en: "Depends on chamber size — typically 1.5 to 2 inches (check the data tag)", pa: "ਚੈਂਬਰ ਸਾਈਜ਼ ਤੇ ਨਿਰਭਰ — ਆਮ ਤੌਰ ਤੇ 1.5 ਤੋਂ 2 ਇੰਚ (ਡੇਟਾ ਟੈਗ ਚੈੱਕ ਕਰੋ)" },
+      { en: "Depends on chamber size, typically 1.5 to 2 inches (check the data tag)", pa: "ਚੈਂਬਰ ਸਾਈਜ਼ ਤੇ ਨਿਰਭਰ, ਆਮ ਤੌਰ ਤੇ 1.5 ਤੋਂ 2 ਇੰਚ (ਡੇਟਾ ਟੈਗ ਚੈੱਕ ਕਰੋ)" },
       { en: "3 inches for all types", pa: "ਸਾਰੀਆਂ ਕਿਸਮਾਂ ਲਈ 3 ਇੰਚ" },
       { en: "There is no limit", pa: "ਕੋਈ ਹੱਦ ਨਹੀਂ" },
     ],
     correct: 1,
-    explanation: { en: "Maximum pushrod travel depends on the brake chamber size (Type 20, 24, 30, etc.). Generally 1.5-2 inches. Exceeding the limit means brakes are out of adjustment — a major safety defect.", pa: "ਪੁਸ਼ਰਾਡ ਟ੍ਰੈਵਲ ਬ੍ਰੇਕ ਚੈਂਬਰ ਸਾਈਜ਼ ਤੇ ਨਿਰਭਰ ਹੈ (ਟਾਈਪ 20, 24, 30 ਆਦਿ)। ਆਮ ਤੌਰ ਤੇ 1.5-2 ਇੰਚ। ਹੱਦ ਤੋਂ ਵੱਧ ਮਤਲਬ ਬ੍ਰੇਕ ਐਡਜਸਟਮੈਂਟ ਤੋਂ ਬਾਹਰ ਹਨ — ਵੱਡਾ ਸੇਫਟੀ ਨੁਕਸ।" },
+    explanation: { en: "Maximum pushrod travel depends on the brake chamber size (Type 20, 24, 30, etc.). Generally 1.5-2 inches. Exceeding the limit means brakes are out of adjustment. That is a major safety defect.", pa: "ਪੁਸ਼ਰਾਡ ਟ੍ਰੈਵਲ ਬ੍ਰੇਕ ਚੈਂਬਰ ਸਾਈਜ਼ ਤੇ ਨਿਰਭਰ ਹੈ (ਟਾਈਪ 20, 24, 30 ਆਦਿ)। ਆਮ ਤੌਰ ਤੇ 1.5-2 ਇੰਚ। ਹੱਦ ਤੋਂ ਵੱਧ ਮਤਲਬ ਬ੍ਰੇਕ ਐਡਜਸਟਮੈਂਟ ਤੋਂ ਬਾਹਰ ਹਨ। ਵੱਡਾ ਸੇਫਟੀ ਨੁਕਸ।" },
   },
   {
     q: { en: "What is the maximum allowable air loss rate with brakes fully applied (engine off)?", pa: "ਬ੍ਰੇਕ ਪੂਰੇ ਲੱਗੇ ਹੋਣ ਤੇ (ਇੰਜਣ ਬੰਦ) ਹਵਾ ਦੇ ਲੀਕ ਹੋਣ ਦੀ ਵੱਧ ਤੋਂ ਵੱਧ ਦਰ ਕੀ ਹੈ?" },
@@ -829,7 +829,7 @@ const airBrakesQuestions: Question[] = [
   },
 ];
 
-/* === HOURS OF SERVICE — 10 questions (federal, same across provinces) === */
+/* === HOURS OF SERVICE: 10 questions (federal, same across provinces) === */
 const hosQuestions: Question[] = [
   {
     q: { en: "What is the maximum driving time allowed per day under Canadian HOS rules?", pa: "ਕੈਨੇਡੀਅਨ HOS ਨਿਯਮਾਂ ਅਧੀਨ ਪ੍ਰਤੀ ਦਿਨ ਵੱਧ ਤੋਂ ਵੱਧ ਕਿੰਨੇ ਘੰਟੇ ਡਰਾਈਵ ਕਰ ਸਕਦੇ ਹੋ?" },
@@ -922,7 +922,7 @@ const hosQuestions: Question[] = [
   {
     q: { en: "What happens if you exceed your HOS limits?", pa: "ਜੇ ਤੁਸੀਂ HOS ਹੱਦਾਂ ਤੋਂ ਵੱਧ ਜਾਓ ਤਾਂ ਕੀ ਹੁੰਦਾ?" },
     options: [
-      { en: "Nothing — it is just a guideline", pa: "ਕੁਝ ਨਹੀਂ — ਇਹ ਸਿਰਫ਼ ਗਾਈਡਲਾਈਨ ਹੈ" },
+      { en: "Nothing. It is just a guideline", pa: "ਕੁਝ ਨਹੀਂ। ਇਹ ਸਿਰਫ਼ ਗਾਈਡਲਾਈਨ ਹੈ" },
       { en: "Fines, out-of-service orders, and potential criminal charges for both driver and carrier", pa: "ਜੁਰਮਾਨੇ, ਆਊਟ-ਆਫ਼-ਸਰਵਿਸ ਆਰਡਰ, ਤੇ ਡਰਾਈਵਰ ਤੇ ਕੈਰੀਅਰ ਦੋਵਾਂ ਲਈ ਫ਼ੌਜਦਾਰੀ ਦੋਸ਼ ਲੱਗ ਸਕਦੇ" },
       { en: "A verbal warning only", pa: "ਸਿਰਫ਼ ਜ਼ੁਬਾਨੀ ਚੇਤਾਵਨੀ" },
       { en: "Points on your licence only", pa: "ਸਿਰਫ਼ ਲਾਇਸੈਂਸ ਤੇ ਪੁਆਇੰਟ" },
@@ -933,9 +933,9 @@ const hosQuestions: Question[] = [
   {
     q: { en: "Can a driver split their required daily off-duty time?", pa: "ਕੀ ਡਰਾਈਵਰ ਰੋਜ਼ਾਨਾ ਲੋੜੀਂਦੇ ਛੁੱਟੀ ਸਮੇਂ ਨੂੰ ਵੰਡ ਸਕਦਾ ਹੈ?" },
     options: [
-      { en: "No — it must all be consecutive", pa: "ਨਹੀਂ — ਸਾਰਾ ਲਗਾਤਾਰ ਹੋਣਾ ਚਾਹੀਦਾ" },
-      { en: "Yes — 8 consecutive hours required, remaining 2 hours can be split into periods of at least 30 minutes", pa: "ਹਾਂ — 8 ਲਗਾਤਾਰ ਘੰਟੇ ਜ਼ਰੂਰੀ, ਬਾਕੀ 2 ਘੰਟੇ ਘੱਟੋ-ਘੱਟ 30 ਮਿੰਟ ਦੇ ਹਿੱਸਿਆਂ ਵਿੱਚ ਵੰਡ ਸਕਦੇ" },
-      { en: "Yes — any combination adding up to 10 hours", pa: "ਹਾਂ — ਕੋਈ ਵੀ ਜੋੜ ਜੋ 10 ਘੰਟੇ ਬਣੇ" },
+      { en: "No, it must all be consecutive", pa: "ਨਹੀਂ, ਸਾਰਾ ਲਗਾਤਾਰ ਹੋਣਾ ਚਾਹੀਦਾ" },
+      { en: "Yes. 8 consecutive hours required, remaining 2 hours can be split into periods of at least 30 minutes", pa: "ਹਾਂ। 8 ਲਗਾਤਾਰ ਘੰਟੇ ਜ਼ਰੂਰੀ, ਬਾਕੀ 2 ਘੰਟੇ ਘੱਟੋ-ਘੱਟ 30 ਮਿੰਟ ਦੇ ਹਿੱਸਿਆਂ ਵਿੱਚ ਵੰਡ ਸਕਦੇ" },
+      { en: "Yes, any combination adding up to 10 hours", pa: "ਹਾਂ, ਕੋਈ ਵੀ ਜੋੜ ਜੋ 10 ਘੰਟੇ ਬਣੇ" },
       { en: "Only if carrier approves", pa: "ਸਿਰਫ਼ ਜੇ ਕੈਰੀਅਰ ਮਨਜ਼ੂਰ ਕਰੇ" },
     ],
     correct: 1,
@@ -1245,7 +1245,7 @@ export function LicenseQuizContent() {
               ? t({ en: "Excellent! You're ready!", pa: "ਬਹੁਤ ਵਧੀਆ! ਤੁਸੀਂ ਤਿਆਰ ਹੋ!" })
               : score >= questions.length * 0.6
               ? t({ en: "Good, but review the ones you missed.", pa: "ਵਧੀਆ, ਪਰ ਜੋ ਗ਼ਲਤ ਹੋਏ ਉਹ ਦੁਬਾਰਾ ਪੜ੍ਹੋ।" })
-              : t({ en: "Keep studying — you'll get there!", pa: "ਪੜ੍ਹਾਈ ਜਾਰੀ ਰੱਖੋ — ਤੁਸੀਂ ਕਰ ਲਓਗੇ!" })}
+              : t({ en: "Keep studying. You&apos;ll get there!", pa: "ਪੜ੍ਹਾਈ ਜਾਰੀ ਰੱਖੋ। ਤੁਸੀਂ ਕਰ ਲਓਗੇ!" })}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
             {t({
@@ -1275,8 +1275,8 @@ export function LicenseQuizContent() {
         </h2>
         <p>
           {t({
-            en: "Practice questions for Canadian commercial truck driver knowledge tests including General Knowledge, Air Brakes (comprehensive A-to-Z), and Hours of Service. Province-specific rules included for Ontario (MTO), British Columbia (ICBC), Alberta, Saskatchewan, Manitoba, and Quebec. Available in English and Gurmukhi Punjabi. These are practice questions only — study the official handbook for your province for complete preparation.",
-            pa: "ਕੈਨੇਡੀਅਨ ਕਮਰਸ਼ੀਅਲ ਟਰੱਕ ਡਰਾਈਵਰ ਨੌਲਿਜ ਟੈਸਟ ਲਈ ਅਭਿਆਸ ਸਵਾਲ ਜਿਸ ਵਿੱਚ ਆਮ ਗਿਆਨ, ਏਅਰ ਬ੍ਰੇਕ (ਪੂਰਾ A ਤੋਂ Z), ਤੇ ਸੇਵਾ ਦੇ ਘੰਟੇ ਸ਼ਾਮਲ ਹਨ। ਓਨਟਾਰੀਓ (MTO), ਬ੍ਰਿਟਿਸ਼ ਕੋਲੰਬੀਆ (ICBC), ਅਲਬਰਟਾ, ਸਸਕੈਚਵਨ, ਮੈਨੀਟੋਬਾ ਤੇ ਕਿਊਬੈੱਕ ਲਈ ਸੂਬਾ-ਵਿਸ਼ੇਸ਼ ਨਿਯਮ ਸ਼ਾਮਲ। English ਤੇ ਗੁਰਮੁਖੀ ਪੰਜਾਬੀ ਵਿੱਚ ਉਪਲਬਧ। ਇਹ ਸਿਰਫ਼ ਅਭਿਆਸ ਸਵਾਲ ਹਨ — ਪੂਰੀ ਤਿਆਰੀ ਲਈ ਆਪਣੇ ਸੂਬੇ ਦੀ ਅਧਿਕਾਰਤ ਹੈਂਡਬੁੱਕ ਪੜ੍ਹੋ।",
+            en: "Practice questions for Canadian commercial truck driver knowledge tests including General Knowledge, Air Brakes (comprehensive A-to-Z), and Hours of Service. Province-specific rules included for Ontario (MTO), British Columbia (ICBC), Alberta, Saskatchewan, Manitoba, and Quebec. Available in English and Gurmukhi Punjabi. These are practice questions only. Study the official handbook for your province for complete preparation.",
+            pa: "ਕੈਨੇਡੀਅਨ ਕਮਰਸ਼ੀਅਲ ਟਰੱਕ ਡਰਾਈਵਰ ਨੌਲਿਜ ਟੈਸਟ ਲਈ ਅਭਿਆਸ ਸਵਾਲ ਜਿਸ ਵਿੱਚ ਆਮ ਗਿਆਨ, ਏਅਰ ਬ੍ਰੇਕ (ਪੂਰਾ A ਤੋਂ Z), ਤੇ ਸੇਵਾ ਦੇ ਘੰਟੇ ਸ਼ਾਮਲ ਹਨ। ਓਨਟਾਰੀਓ (MTO), ਬ੍ਰਿਟਿਸ਼ ਕੋਲੰਬੀਆ (ICBC), ਅਲਬਰਟਾ, ਸਸਕੈਚਵਨ, ਮੈਨੀਟੋਬਾ ਤੇ ਕਿਊਬੈੱਕ ਲਈ ਸੂਬਾ-ਵਿਸ਼ੇਸ਼ ਨਿਯਮ ਸ਼ਾਮਲ। English ਤੇ ਗੁਰਮੁਖੀ ਪੰਜਾਬੀ ਵਿੱਚ ਉਪਲਬਧ। ਇਹ ਸਿਰਫ਼ ਅਭਿਆਸ ਸਵਾਲ ਹਨ। ਪੂਰੀ ਤਿਆਰੀ ਲਈ ਆਪਣੇ ਸੂਬੇ ਦੀ ਅਧਿਕਾਰਤ ਹੈਂਡਬੁੱਕ ਪੜ੍ਹੋ।",
           })}
         </p>
       </div>

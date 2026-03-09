@@ -102,8 +102,8 @@ export default function SpeedFuelSavingsPage() {
         </h1>
         <p className="mt-2 text-muted-foreground">
           {t({
-            en: "See how much you save by dropping a few km/h. Every owner-operator knows — speed kills your wallet.",
-            pa: "ਦੇਖੋ ਕਿ ਕੁਝ km/h ਘਟਾ ਕੇ ਤੁਸੀਂ ਕਿੰਨੀ ਬੱਚਤ ਕਰ ਸਕਦੇ ਹੋ। ਹਰ ਓਨਰ-ਆਪਰੇਟਰ ਜਾਣਦਾ — ਸਪੀਡ ਜੇਬ ਖਾਲੀ ਕਰਦੀ ਹੈ।",
+            en: "See how much you save by dropping a few km/h. Every owner-operator knows speed kills your wallet.",
+            pa: "ਦੇਖੋ ਕਿ ਕੁਝ km/h ਘਟਾ ਕੇ ਤੁਸੀਂ ਕਿੰਨੀ ਬੱਚਤ ਕਰ ਸਕਦੇ ਹੋ। ਹਰ ਓਨਰ-ਆਪਰੇਟਰ ਜਾਣਦਾ, ਸਪੀਡ ਜੇਬ ਖਾਲੀ ਕਰਦੀ ਹੈ।",
           })}
         </p>
       </div>
@@ -117,7 +117,7 @@ export default function SpeedFuelSavingsPage() {
           })}
         </p>
         <p className="mt-1 text-xs text-orange-600">
-          {t({ en: "— Long-haul driver, Ontario", pa: "— ਲੌਂਗ-ਹਾਲ ਡਰਾਈਵਰ, ਓਨਟਾਰੀਓ" })}
+          {t({ en: "Long-haul driver, Ontario", pa: "ਲੌਂਗ-ਹਾਲ ਡਰਾਈਵਰ, ਓਨਟਾਰੀਓ" })}
         </p>
       </div>
 
@@ -243,8 +243,8 @@ export default function SpeedFuelSavingsPage() {
         <div className="mt-3 space-y-3 text-sm text-muted-foreground">
           <p>
             {t({
-              en: "Aerodynamic drag increases with the square of speed. That means going from 100 to 110 km/h doesn't use 10% more fuel — it uses about 13-15% more. The wind resistance at highway speed is the single biggest fuel consumer on a semi truck.",
-              pa: "ਹਵਾ ਦਾ ਵਿਰੋਧ ਸਪੀਡ ਦੇ ਵਰਗ ਨਾਲ ਵਧਦਾ ਹੈ। ਮਤਲਬ 100 ਤੋਂ 110 km/h ਜਾਣ ਨਾਲ 10% ਨਹੀਂ — ਲਗਭਗ 13-15% ਵੱਧ ਬਾਲਣ ਲੱਗਦਾ ਹੈ। ਹਾਈਵੇ ਸਪੀਡ ਤੇ ਹਵਾ ਦਾ ਵਿਰੋਧ ਸੈਮੀ ਟਰੱਕ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਧ ਬਾਲਣ ਖਾਣ ਵਾਲਾ ਕਾਰਨ ਹੈ।",
+              en: "Aerodynamic drag increases with the square of speed. Going from 100 to 110 km/h doesn&apos;t use 10% more fuel. It uses about 13-15% more. Wind resistance at highway speed is the single biggest fuel consumer on a semi.",
+              pa: "ਹਵਾ ਦਾ ਵਿਰੋਧ ਸਪੀਡ ਦੇ ਵਰਗ ਨਾਲ ਵਧਦਾ ਹੈ। 100 ਤੋਂ 110 km/h ਜਾਣ ਨਾਲ 10% ਨਹੀਂ, ਲਗਭਗ 13-15% ਵੱਧ ਬਾਲਣ ਲੱਗਦਾ ਹੈ। ਹਾਈਵੇ ਸਪੀਡ ਤੇ ਹਵਾ ਦਾ ਵਿਰੋਧ ਸੈਮੀ ਟਰੱਕ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਧ ਬਾਲਣ ਖਾਣ ਵਾਲਾ ਕਾਰਨ ਹੈ।",
             })}
           </p>
           <p>
@@ -265,11 +265,11 @@ export default function SpeedFuelSavingsPage() {
           </div>
           <p><strong>{t({ en: "Other fuel-saving tips:", pa: "ਹੋਰ ਬਾਲਣ ਬਚਾਉਣ ਦੇ ਤਰੀਕੇ:" })}</strong></p>
           <ul className="space-y-1 ml-4 list-disc">
-            <li>{t({ en: "Keep tires at proper PSI — under-inflation wastes 3-5% fuel", pa: "ਟਾਇਰਾਂ ਦੀ ਹਵਾ ਸਹੀ ਰੱਖੋ — ਘੱਟ ਹਵਾ ਨਾਲ 3-5% ਬਾਲਣ ਬਰਬਾਦ ਹੁੰਦਾ" })}</li>
+            <li>{t({ en: "Keep tires at proper PSI. Under-inflation wastes 3-5% fuel", pa: "ਟਾਇਰਾਂ ਦੀ ਹਵਾ ਸਹੀ ਰੱਖੋ। ਘੱਟ ਹਵਾ ਨਾਲ 3-5% ਬਾਲਣ ਬਰਬਾਦ ਹੁੰਦਾ" })}</li>
             <li>{t({ en: "Use cruise control on flat highways", pa: "ਸਿੱਧੇ ਹਾਈਵੇ ਤੇ ਕਰੂਜ਼ ਕੰਟਰੋਲ ਵਰਤੋ" })}</li>
-            <li>{t({ en: "Reduce idle time — 1 hour of idling burns 3-4 litres", pa: "ਖੜ੍ਹੇ ਇੰਜਣ ਦਾ ਸਮਾਂ ਘਟਾਓ — 1 ਘੰਟਾ ਖੜ੍ਹੇ ਵਿੱਚ 3-4 ਲੀਟਰ ਸੜਦਾ" })}</li>
-            <li>{t({ en: "Check your air filter — a dirty filter can cost 5-10% efficiency", pa: "ਏਅਰ ਫਿਲਟਰ ਚੈੱਕ ਕਰੋ — ਗੰਦੇ ਫਿਲਟਰ ਨਾਲ 5-10% ਕਾਰਗੁਜ਼ਾਰੀ ਘਟਦੀ" })}</li>
-            <li>{t({ en: "Plan your fuel stops — prices can vary $0.15-0.25/L between stops", pa: "ਬਾਲਣ ਭਰਨ ਦੀ ਥਾਂ ਪਲੈਨ ਕਰੋ — ਕੀਮਤ ਵਿੱਚ $0.15-0.25/ਲੀਟਰ ਫ਼ਰਕ ਹੋ ਸਕਦਾ" })}</li>
+            <li>{t({ en: "Cut idle time. 1 hour of idling burns 3-4 litres", pa: "ਖੜ੍ਹੇ ਇੰਜਣ ਦਾ ਸਮਾਂ ਘਟਾਓ। 1 ਘੰਟਾ ਖੜ੍ਹੇ ਵਿੱਚ 3-4 ਲੀਟਰ ਸੜਦਾ" })}</li>
+            <li>{t({ en: "Check your air filter. A dirty filter can cost you 5-10% efficiency", pa: "ਏਅਰ ਫਿਲਟਰ ਚੈੱਕ ਕਰੋ। ਗੰਦੇ ਫਿਲਟਰ ਨਾਲ 5-10% ਕਾਰਗੁਜ਼ਾਰੀ ਘਟਦੀ" })}</li>
+            <li>{t({ en: "Plan your fuel stops. Prices can vary $0.15-0.25/L between stops", pa: "ਬਾਲਣ ਭਰਨ ਦੀ ਥਾਂ ਪਲੈਨ ਕਰੋ। ਕੀਮਤ ਵਿੱਚ $0.15-0.25/ਲੀਟਰ ਫ਼ਰਕ ਹੋ ਸਕਦਾ" })}</li>
           </ul>
         </div>
       </div>
@@ -280,8 +280,8 @@ export default function SpeedFuelSavingsPage() {
         </h2>
         <p>
           {t({
-            en: "This calculator estimates fuel savings based on the aerodynamic drag relationship between speed and fuel consumption. Results are estimates — actual savings depend on load weight, terrain, wind conditions, tire pressure, truck aerodynamics, and driving style. The model uses a 1.3% fuel penalty per km/h above 90 km/h, which is consistent with NRCan and US Department of Energy fleet studies.",
-            pa: "ਇਹ ਕੈਲਕੁਲੇਟਰ ਸਪੀਡ ਅਤੇ ਬਾਲਣ ਖਪਤ ਦੇ ਸਬੰਧ ਦੇ ਆਧਾਰ ਤੇ ਬਾਲਣ ਬੱਚਤ ਦਾ ਅੰਦਾਜ਼ਾ ਲਾਉਂਦਾ ਹੈ। ਨਤੀਜੇ ਅੰਦਾਜ਼ੇ ਹਨ — ਅਸਲ ਬੱਚਤ ਲੋਡ, ਰਸਤੇ, ਹਵਾ, ਟਾਇਰ ਪ੍ਰੈਸ਼ਰ, ਟਰੱਕ ਦੀ ਏਅਰੋਡਾਇਨਾਮਿਕਸ ਤੇ ਡਰਾਈਵਿੰਗ ਸਟਾਈਲ ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ। 90 km/h ਤੋਂ ਉੱਪਰ ਹਰ km/h ਲਈ 1.3% ਬਾਲਣ ਜੁਰਮਾਨਾ ਲਾਗੂ ਹੈ।",
+            en: "This calculator estimates fuel savings based on how speed affects drag. Results are estimates. Actual savings depend on load, terrain, wind, tire pressure, and driving style. Uses a 1.3% fuel penalty per km/h above 90 km/h, consistent with NRCan and DOE fleet studies.",
+            pa: "ਇਹ ਕੈਲਕੁਲੇਟਰ ਸਪੀਡ ਅਤੇ ਬਾਲਣ ਖਪਤ ਦੇ ਸਬੰਧ ਦੇ ਆਧਾਰ ਤੇ ਬਾਲਣ ਬੱਚਤ ਦਾ ਅੰਦਾਜ਼ਾ ਲਾਉਂਦਾ ਹੈ। ਨਤੀਜੇ ਅੰਦਾਜ਼ੇ ਹਨ। ਅਸਲ ਬੱਚਤ ਲੋਡ, ਰਸਤੇ, ਹਵਾ, ਟਾਇਰ ਪ੍ਰੈਸ਼ਰ, ਤੇ ਡਰਾਈਵਿੰਗ ਸਟਾਈਲ ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ। 90 km/h ਤੋਂ ਉੱਪਰ ਹਰ km/h ਲਈ 1.3% ਬਾਲਣ ਜੁਰਮਾਨਾ ਲਾਗੂ ਹੈ।",
           })}
         </p>
       </div>

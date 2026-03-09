@@ -48,7 +48,7 @@ export function TopTruckingCompaniesContent({
 
       <header>
         <h1 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-          {t({ en: title, pa: "Brampton ਦੀਆਂ ਸਭ ਤੋਂ ਵਧੀਆ ਟਰੱਕਿੰਗ ਕੰਪਨੀਆਂ — ਰੇਟਿੰਗ ਅਨੁਸਾਰ" })}
+          {t({ en: title, pa: "Brampton ਦੀਆਂ ਸਭ ਤੋਂ ਵਧੀਆ ਟਰੱਕਿੰਗ ਕੰਪਨੀਆਂ, ਰੇਟਿੰਗ ਅਨੁਸਾਰ" })}
         </h1>
         <p className="mt-3 text-lg text-muted-foreground">
           {t({ en: description, pa: "Google ਰਿਵਿਊ ਦੇ ਅਧਾਰ ਤੇ Brampton ਦੀਆਂ ਟੌਪ-ਰੇਟਿਡ ਟਰੱਕਿੰਗ ਕੰਪਨੀਆਂ। ਅਸਲ ਡੇਟਾ, ਕੋਈ ਪੇਡ ਪਲੇਸਮੈਂਟ ਨਹੀਂ।" })}
@@ -68,8 +68,8 @@ export function TopTruckingCompaniesContent({
 
         <p>
           {t({
-            en: "Below are the highest-rated trucking companies in Brampton based on Google reviews. These ratings come from real customers — not paid placements.",
-            pa: "ਹੇਠਾਂ Google ਰਿਵਿਊ ਦੇ ਅਧਾਰ ਤੇ Brampton ਦੀਆਂ ਸਭ ਤੋਂ ਉੱਚ-ਰੇਟਿਡ ਟਰੱਕਿੰਗ ਕੰਪਨੀਆਂ ਹਨ। ਇਹ ਰੇਟਿੰਗ ਅਸਲ ਕਸਟਮਰਾਂ ਤੋਂ ਹਨ — ਪੇਡ ਪਲੇਸਮੈਂਟ ਨਹੀਂ।",
+            en: "Here are the highest-rated trucking companies in Brampton based on Google reviews. Real customers, not paid placements.",
+            pa: "ਹੇਠਾਂ Google ਰਿਵਿਊ ਦੇ ਅਧਾਰ ਤੇ Brampton ਦੀਆਂ ਸਭ ਤੋਂ ਉੱਚ-ਰੇਟਿਡ ਟਰੱਕਿੰਗ ਕੰਪਨੀਆਂ ਹਨ। ਇਹ ਰੇਟਿੰਗ ਅਸਲ ਕਸਟਮਰਾਂ ਤੋਂ ਹਨ, ਪੇਡ ਪਲੇਸਮੈਂਟ ਨਹੀਂ।",
           })}
         </p>
 

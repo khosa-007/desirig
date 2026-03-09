@@ -49,8 +49,8 @@ export function SafetyBlogContent({ title, description, date, readTime }: { titl
         </h2>
         <p>
           {t({
-            en: "A company's safety record tells you how they maintain trucks, how many crashes they've had, and whether the government considers them safe to operate. This isn't just paperwork — it's your life on the line.",
-            pa: "ਕੰਪਨੀ ਦਾ ਸੇਫਟੀ ਰਿਕਾਰਡ ਦੱਸਦਾ ਹੈ ਕਿ ਉਹ ਟਰੱਕ ਕਿਵੇਂ ਸਾਂਭਦੇ ਹਨ, ਕਿੰਨੇ ਕਰੈਸ਼ ਹੋਏ, ਤੇ ਸਰਕਾਰ ਉਹਨਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਮੰਨਦੀ ਹੈ ਜਾਂ ਨਹੀਂ। ਇਹ ਸਿਰਫ਼ ਕਾਗਜ਼ੀ ਕਾਰਵਾਈ ਨਹੀਂ — ਤੁਹਾਡੀ ਜ਼ਿੰਦਗੀ ਦਾ ਸਵਾਲ ਹੈ।",
+            en: "A company&apos;s safety record tells you how they maintain their trucks, how many crashes they&apos;ve had, and whether the government considers them safe. This isn&apos;t just paperwork. It&apos;s your life on the line.",
+            pa: "ਕੰਪਨੀ ਦਾ ਸੇਫਟੀ ਰਿਕਾਰਡ ਦੱਸਦਾ ਹੈ ਕਿ ਉਹ ਟਰੱਕ ਕਿਵੇਂ ਸਾਂਭਦੇ ਹਨ, ਕਿੰਨੇ ਕਰੈਸ਼ ਹੋਏ, ਤੇ ਸਰਕਾਰ ਉਹਨਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਮੰਨਦੀ ਹੈ ਜਾਂ ਨਹੀਂ। ਇਹ ਸਿਰਫ਼ ਕਾਗਜ਼ੀ ਕਾਰਵਾਈ ਨਹੀਂ, ਤੁਹਾਡੀ ਜ਼ਿੰਦਗੀ ਦਾ ਸਵਾਲ ਹੈ।",
           })}
         </p>
 
@@ -62,19 +62,19 @@ export function SafetyBlogContent({ title, description, date, readTime }: { titl
           <ul className="mt-3 space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-red-500 shrink-0" />
-              <span>{t({ en: "\"Conditional\" or \"Unsatisfactory\" safety rating — means the government found serious problems", pa: "\"ਸ਼ਰਤੀਆ\" ਜਾਂ \"ਅਸੰਤੋਸ਼ਜਨਕ\" ਸੇਫਟੀ ਰੇਟਿੰਗ — ਮਤਲਬ ਸਰਕਾਰ ਨੂੰ ਗੰਭੀਰ ਸਮੱਸਿਆਵਾਂ ਮਿਲੀਆਂ" })}</span>
+              <span>{t({ en: "\"Conditional\" or \"Unsatisfactory\" safety rating. The government found serious problems.", pa: "\"ਸ਼ਰਤੀਆ\" ਜਾਂ \"ਅਸੰਤੋਸ਼ਜਨਕ\" ਸੇਫਟੀ ਰੇਟਿੰਗ। ਮਤਲਬ ਸਰਕਾਰ ਨੂੰ ਗੰਭੀਰ ਸਮੱਸਿਆਵਾਂ ਮਿਲੀਆਂ।" })}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-red-500 shrink-0" />
-              <span>{t({ en: "More power units than drivers — could mean trucks are poorly maintained or they're churning drivers", pa: "ਡਰਾਈਵਰਾਂ ਨਾਲੋਂ ਵੱਧ ਟਰੱਕ — ਮਤਲਬ ਟਰੱਕ ਠੀਕ ਨਹੀਂ ਸਾਂਭੇ ਜਾਂ ਡਰਾਈਵਰ ਟਿਕਦੇ ਨਹੀਂ" })}</span>
+              <span>{t({ en: "More power units than drivers. Could mean trucks aren&apos;t maintained or drivers keep quitting.", pa: "ਡਰਾਈਵਰਾਂ ਨਾਲੋਂ ਵੱਧ ਟਰੱਕ। ਮਤਲਬ ਟਰੱਕ ਠੀਕ ਨਹੀਂ ਸਾਂਭੇ ਜਾਂ ਡਰਾਈਵਰ ਟਿਕਦੇ ਨਹੀਂ।" })}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-red-500 shrink-0" />
-              <span>{t({ en: "Status is \"Inactive\" or \"Not Authorized\" — this company can't legally operate", pa: "ਸਥਿਤੀ \"ਅਕਿਰਿਆਸ਼ੀਲ\" ਜਾਂ \"ਅਣਅਧਿਕਾਰਤ\" — ਇਹ ਕੰਪਨੀ ਕਾਨੂੰਨੀ ਤੌਰ ਤੇ ਨਹੀਂ ਚੱਲ ਸਕਦੀ" })}</span>
+              <span>{t({ en: "Status is \"Inactive\" or \"Not Authorized.\" This company can&apos;t legally operate.", pa: "ਸਥਿਤੀ \"ਅਕਿਰਿਆਸ਼ੀਲ\" ਜਾਂ \"ਅਣਅਧਿਕਾਰਤ\"। ਇਹ ਕੰਪਨੀ ਕਾਨੂੰਨੀ ਤੌਰ ਤੇ ਨਹੀਂ ਚੱਲ ਸਕਦੀ।" })}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-red-500 shrink-0" />
-              <span>{t({ en: "No phone number or physical address — legitimate carriers always have these on record", pa: "ਫ਼ੋਨ ਨੰਬਰ ਜਾਂ ਪਤਾ ਨਹੀਂ — ਜਾਇਜ਼ ਕੈਰੀਅਰ ਕੋਲ ਹਮੇਸ਼ਾ ਇਹ ਹੁੰਦੇ ਹਨ" })}</span>
+              <span>{t({ en: "No phone number or physical address. Legit carriers always have these on file.", pa: "ਫ਼ੋਨ ਨੰਬਰ ਜਾਂ ਪਤਾ ਨਹੀਂ। ਜਾਇਜ਼ ਕੈਰੀਅਰ ਕੋਲ ਹਮੇਸ਼ਾ ਇਹ ਹੁੰਦੇ ਹਨ।" })}</span>
             </li>
           </ul>
         </div>
@@ -87,7 +87,7 @@ export function SafetyBlogContent({ title, description, date, readTime }: { titl
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 text-sm font-bold text-orange-600">1</div>
             <div>
               <p className="font-medium text-foreground">{t({ en: "Get the company's DOT number", pa: "ਕੰਪਨੀ ਦਾ DOT ਨੰਬਰ ਲਓ" })}</p>
-              <p className="text-sm">{t({ en: "Ask the company directly, or check their truck doors — the DOT number is required to be displayed on every commercial vehicle.", pa: "ਕੰਪਨੀ ਨੂੰ ਸਿੱਧਾ ਪੁੱਛੋ, ਜਾਂ ਟਰੱਕ ਦੇ ਦਰਵਾਜ਼ੇ ਚੈੱਕ ਕਰੋ — DOT ਨੰਬਰ ਹਰ ਕਮਰਸ਼ੀਅਲ ਵਾਹਨ ਤੇ ਲਿਖਣਾ ਜ਼ਰੂਰੀ ਹੈ।" })}</p>
+              <p className="text-sm">{t({ en: "Ask the company directly, or check their truck doors. The DOT number has to be displayed on every commercial vehicle.", pa: "ਕੰਪਨੀ ਨੂੰ ਸਿੱਧਾ ਪੁੱਛੋ, ਜਾਂ ਟਰੱਕ ਦੇ ਦਰਵਾਜ਼ੇ ਚੈੱਕ ਕਰੋ। DOT ਨੰਬਰ ਹਰ ਕਮਰਸ਼ੀਅਲ ਵਾਹਨ ਤੇ ਲਿਖਣਾ ਜ਼ਰੂਰੀ ਹੈ।" })}</p>
             </div>
           </div>
           <div className="flex gap-4">
@@ -114,19 +114,19 @@ export function SafetyBlogContent({ title, description, date, readTime }: { titl
           <ul className="mt-3 space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
-              <span>{t({ en: "\"Satisfactory\" safety rating — the best rating you can get", pa: "\"ਸੰਤੋਸ਼ਜਨਕ\" ਸੇਫਟੀ ਰੇਟਿੰਗ — ਸਭ ਤੋਂ ਵਧੀਆ ਰੇਟਿੰਗ" })}</span>
+              <span>{t({ en: "\"Satisfactory\" safety rating. That&apos;s the best you can get.", pa: "\"ਸੰਤੋਸ਼ਜਨਕ\" ਸੇਫਟੀ ਰੇਟਿੰਗ। ਸਭ ਤੋਂ ਵਧੀਆ ਰੇਟਿੰਗ।" })}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
-              <span>{t({ en: "Balanced driver-to-truck ratio — roughly 1:1 or more drivers than trucks", pa: "ਸੰਤੁਲਿਤ ਡਰਾਈਵਰ-ਟਰੱਕ ਅਨੁਪਾਤ — ਲਗਭਗ 1:1 ਜਾਂ ਟਰੱਕਾਂ ਨਾਲੋਂ ਵੱਧ ਡਰਾਈਵਰ" })}</span>
+              <span>{t({ en: "Balanced driver-to-truck ratio. Roughly 1:1 or more drivers than trucks.", pa: "ਸੰਤੁਲਿਤ ਡਰਾਈਵਰ-ਟਰੱਕ ਅਨੁਪਾਤ। ਲਗਭਗ 1:1 ਜਾਂ ਟਰੱਕਾਂ ਨਾਲੋਂ ਵੱਧ ਡਰਾਈਵਰ।" })}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
-              <span>{t({ en: "Active operating authority — means they're authorized and in good standing", pa: "ਐਕਟਿਵ ਅਪਰੇਟਿੰਗ ਅਥਾਰਿਟੀ — ਮਤਲਬ ਅਧਿਕਾਰਤ ਤੇ ਚੰਗੀ ਹਾਲਤ ਵਿੱਚ" })}</span>
+              <span>{t({ en: "Active operating authority. They&apos;re authorized and in good standing.", pa: "ਐਕਟਿਵ ਅਪਰੇਟਿੰਗ ਅਥਾਰਿਟੀ। ਮਤਲਬ ਅਧਿਕਾਰਤ ਤੇ ਚੰਗੀ ਹਾਲਤ ਵਿੱਚ।" })}</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
-              <span>{t({ en: "Real physical address — not a PO box or virtual office", pa: "ਅਸਲ ਪਤਾ — PO ਬਾਕਸ ਜਾਂ ਵਰਚੁਅਲ ਦਫ਼ਤਰ ਨਹੀਂ" })}</span>
+              <span>{t({ en: "Real physical address, not a PO box or virtual office", pa: "ਅਸਲ ਪਤਾ, PO ਬਾਕਸ ਜਾਂ ਵਰਚੁਅਲ ਦਫ਼ਤਰ ਨਹੀਂ" })}</span>
             </li>
           </ul>
         </div>
@@ -136,8 +136,8 @@ export function SafetyBlogContent({ title, description, date, readTime }: { titl
         </h2>
         <p>
           {t({
-            en: "Safety records tell you one side of the story. Talk to current and former drivers. Ask about pay, maintenance, and whether the company treats drivers fairly. The Desi trucking community is tight — word travels fast.",
-            pa: "ਸੇਫਟੀ ਰਿਕਾਰਡ ਸਿਰਫ਼ ਇੱਕ ਪਾਸਾ ਦੱਸਦੇ ਹਨ। ਮੌਜੂਦਾ ਤੇ ਪੁਰਾਣੇ ਡਰਾਈਵਰਾਂ ਨਾਲ ਗੱਲ ਕਰੋ। ਤਨਖ਼ਾਹ, ਟਰੱਕ ਦੀ ਸਾਂਭ-ਸੰਭਾਲ ਤੇ ਡਰਾਈਵਰਾਂ ਨਾਲ ਵਰਤਾਅ ਬਾਰੇ ਪੁੱਛੋ। ਦੇਸੀ ਟਰੱਕਿੰਗ ਕਮਿਊਨਿਟੀ ਨੇੜੇ ਹੈ — ਗੱਲ ਜਲਦੀ ਫੈਲਦੀ ਹੈ।",
+            en: "Safety records only tell you one side. Talk to current and former drivers. Ask about pay, maintenance, and how they treat people. The Desi trucking community is tight. Word travels fast.",
+            pa: "ਸੇਫਟੀ ਰਿਕਾਰਡ ਸਿਰਫ਼ ਇੱਕ ਪਾਸਾ ਦੱਸਦੇ ਹਨ। ਮੌਜੂਦਾ ਤੇ ਪੁਰਾਣੇ ਡਰਾਈਵਰਾਂ ਨਾਲ ਗੱਲ ਕਰੋ। ਤਨਖ਼ਾਹ, ਟਰੱਕ ਦੀ ਸਾਂਭ-ਸੰਭਾਲ ਤੇ ਡਰਾਈਵਰਾਂ ਨਾਲ ਵਰਤਾਅ ਬਾਰੇ ਪੁੱਛੋ। ਦੇਸੀ ਟਰੱਕਿੰਗ ਕਮਿਊਨਿਟੀ ਨੇੜੇ ਹੈ, ਗੱਲ ਜਲਦੀ ਫੈਲਦੀ ਹੈ।",
           })}
         </p>
 

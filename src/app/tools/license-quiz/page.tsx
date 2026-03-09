@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LicenseQuizContent } from "./quiz-content";
 
 export const metadata: Metadata = {
-  title: "Truck License Exam Practice Quiz — English & Punjabi",
+  title: "Truck License Exam Practice Quiz (English & Punjabi)",
   description:
     "Practice for your Ontario Class A/D truck driving knowledge test. Questions in English and Punjabi (ਪੰਜਾਬੀ). Free, no sign-up required.",
   alternates: {

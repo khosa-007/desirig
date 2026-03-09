@@ -22,7 +22,7 @@ export function ToolsContent() {
     },
     {
       slug: "weight-limits",
-      name: t({ en: "Axle Weight Limits — Canada", pa: "ਐਕਸਲ ਭਾਰ ਹੱਦਾਂ — ਕੈਨੇਡਾ" }),
+      name: t({ en: "Axle Weight Limits, Canada", pa: "ਐਕਸਲ ਭਾਰ ਹੱਦਾਂ, ਕੈਨੇਡਾ" }),
       description: t({
         en: "Quick reference for Canadian truck weight limits by province. Steer, drive, and tandem axle limits.",
         pa: "ਪ੍ਰਾਂਤ ਅਨੁਸਾਰ ਕੈਨੇਡੀਅਨ ਟਰੱਕ ਭਾਰ ਹੱਦਾਂ ਦਾ ਤੁਰੰਤ ਹਵਾਲਾ।",
@@ -33,10 +33,10 @@ export function ToolsContent() {
     },
     {
       slug: "hos-calculator",
-      name: t({ en: "Hours of Service Quick Reference", pa: "ਸੇਵਾ ਦੇ ਘੰਟੇ — ਤੁਰੰਤ ਹਵਾਲਾ" }),
+      name: t({ en: "Hours of Service Quick Reference", pa: "ਸੇਵਾ ਦੇ ਘੰਟੇ, ਤੁਰੰਤ ਹਵਾਲਾ" }),
       description: t({
-        en: "Canadian HOS rules at a glance — driving limits, rest requirements, cycle resets.",
-        pa: "ਕੈਨੇਡੀਅਨ HOS ਨਿਯਮ ਇੱਕ ਨਜ਼ਰ ਵਿੱਚ — ਡਰਾਈਵਿੰਗ ਹੱਦਾਂ, ਆਰਾਮ ਲੋੜਾਂ, ਸਾਈਕਲ ਰੀਸੈੱਟ।",
+        en: "Canadian HOS rules at a glance. Driving limits, rest requirements, cycle resets.",
+        pa: "ਕੈਨੇਡੀਅਨ HOS ਨਿਯਮ ਇੱਕ ਨਜ਼ਰ ਵਿੱਚ। ਡਰਾਈਵਿੰਗ ਹੱਦਾਂ, ਆਰਾਮ ਲੋੜਾਂ, ਸਾਈਕਲ ਰੀਸੈੱਟ।",
       }),
       icon: Clock,
       color: "text-orange-500",

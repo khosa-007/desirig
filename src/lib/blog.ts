@@ -7,7 +7,7 @@ export interface BlogPost {
   readTime: string;
 }
 
-// Blog post registry — add new posts here
+// Blog post registry - add new posts here
 export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-check-trucking-company-safety-before-signing",
@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "new-driver-checklist-canada",
-    title: "New Truck Driver Checklist — Everything You Need Before Your First Run",
+    title: "New Truck Driver Checklist: Everything You Need Before Your First Run",
     description:
       "From getting your AZ license to choosing the right company, here's everything a new Desi trucker in Canada needs to know.",
     date: "2026-03-09",
@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "driver-inc-scam-canada",
-    title: "Driver Inc. Scam — How Trucking Companies Are Ripping Off Desi Drivers",
+    title: "Driver Inc. Scam: How Trucking Companies Are Ripping Off Desi Drivers",
     description:
       "The Driver Inc. scheme costs truckers $10,000-$15,000/year in lost benefits. Here's how it works and how to protect yourself.",
     date: "2026-03-09",
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "best-truck-stops-ontario",
-    title: "Best Truck Stops in Ontario — A Desi Driver's Guide (2026)",
+    title: "Best Truck Stops in Ontario: A Desi Driver's Guide (2026)",
     description:
       "The best truck stops along the 401, 400, and GTA for fuel, parking, food, and Desi-friendly services.",
     date: "2026-03-09",

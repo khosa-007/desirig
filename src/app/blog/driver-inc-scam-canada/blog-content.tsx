@@ -51,8 +51,8 @@ export function DriverIncScamContent({
       <div className="prose-custom mt-10 space-y-6 text-muted-foreground leading-relaxed">
         <p className="text-foreground text-lg">
           {t({
-            en: "\"Driver Inc.\" is the biggest scam in Canadian trucking right now. Thousands of Desi truckers are being classified as \"independent contractors\" through numbered companies — when they're really employees. Here's what you need to know to protect yourself.",
-            pa: "\"Driver Inc.\" ਇਸ ਵੇਲੇ ਕੈਨੇਡੀਅਨ ਟਰੱਕਿੰਗ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਡਾ ਘਪਲਾ ਹੈ। ਹਜ਼ਾਰਾਂ ਦੇਸੀ ਟਰੱਕ ਡਰਾਈਵਰਾਂ ਨੂੰ ਨੰਬਰਡ ਕੰਪਨੀਆਂ ਰਾਹੀਂ \"ਇੰਡੀਪੈਂਡੈਂਟ ਕੰਟਰੈਕਟਰ\" ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ — ਜਦੋਂ ਕਿ ਉਹ ਅਸਲ ਵਿੱਚ ਕਰਮਚਾਰੀ ਹਨ। ਆਪਣੇ ਆਪ ਨੂੰ ਬਚਾਉਣ ਲਈ ਇਹ ਜਾਣੋ।",
+            en: "\"Driver Inc.\" is the biggest scam in Canadian trucking right now. Thousands of Desi truckers are being classified as \"independent contractors\" through numbered companies, even though they&apos;re really employees. Here&apos;s what you need to know to protect yourself.",
+            pa: "\"Driver Inc.\" ਇਸ ਵੇਲੇ ਕੈਨੇਡੀਅਨ ਟਰੱਕਿੰਗ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਡਾ ਘਪਲਾ ਹੈ। ਹਜ਼ਾਰਾਂ ਦੇਸੀ ਟਰੱਕ ਡਰਾਈਵਰਾਂ ਨੂੰ ਨੰਬਰਡ ਕੰਪਨੀਆਂ ਰਾਹੀਂ \"ਇੰਡੀਪੈਂਡੈਂਟ ਕੰਟਰੈਕਟਰ\" ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ, ਜਦੋਂ ਕਿ ਉਹ ਅਸਲ ਵਿੱਚ ਕਰਮਚਾਰੀ ਹਨ। ਆਪਣੇ ਆਪ ਨੂੰ ਬਚਾਉਣ ਲਈ ਇਹ ਜਾਣੋ।",
           })}
         </p>
 
@@ -70,7 +70,7 @@ export function DriverIncScamContent({
         </div>
 
         <h2 className="text-xl font-semibold text-foreground pt-4">
-          {t({ en: "How the Scam Works — Step by Step", pa: "ਘਪਲਾ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ — ਕਦਮ-ਦਰ-ਕਦਮ" })}
+          {t({ en: "How the Scam Works, Step by Step", pa: "ਘਪਲਾ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ, ਕਦਮ-ਦਰ-ਕਦਮ" })}
         </h2>
         <div className="space-y-3">
           <div className="flex gap-4">
@@ -81,8 +81,8 @@ export function DriverIncScamContent({
               </p>
               <p className="text-sm">
                 {t({
-                  en: "They promise higher per-mile rates because there are \"no deductions.\" This sounds good — until you realize what you're losing.",
-                  pa: "ਉਹ ਵੱਧ ਪ੍ਰਤੀ-ਮੀਲ ਰੇਟ ਦਾ ਲਾਲਚ ਦਿੰਦੇ ਹਨ ਕਿਉਂਕਿ \"ਕੋਈ ਕਟੌਤੀ ਨਹੀਂ।\" ਸੁਣਨ ਨੂੰ ਚੰਗਾ ਲੱਗਦਾ — ਜਦ ਤੱਕ ਪਤਾ ਨਹੀਂ ਲੱਗਦਾ ਕਿ ਕੀ ਗੁਆ ਰਹੇ ਹੋ।",
+                  en: "They promise higher per-mile rates because there are \"no deductions.\" Sounds good, right? Until you see what you&apos;re actually losing.",
+                  pa: "ਉਹ ਵੱਧ ਪ੍ਰਤੀ-ਮੀਲ ਰੇਟ ਦਾ ਲਾਲਚ ਦਿੰਦੇ ਹਨ ਕਿਉਂਕਿ \"ਕੋਈ ਕਟੌਤੀ ਨਹੀਂ।\" ਸੁਣਨ ਨੂੰ ਚੰਗਾ ਲੱਗਦਾ, ਜਦ ਤੱਕ ਪਤਾ ਨਹੀਂ ਲੱਗਦਾ ਕਿ ਕੀ ਗੁਆ ਰਹੇ ਹੋ।",
                 })}
               </p>
             </div>
@@ -105,12 +105,12 @@ export function DriverIncScamContent({
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-600">3</div>
             <div>
               <p className="font-medium text-foreground">
-                {t({ en: "You drive their truck, follow their rules — but you're \"not an employee\"", pa: "ਤੁਸੀਂ ਉਹਨਾਂ ਦਾ ਟਰੱਕ ਚਲਾਉਂਦੇ ਹੋ, ਉਹਨਾਂ ਦੇ ਨਿਯਮ ਮੰਨਦੇ ਹੋ — ਪਰ ਤੁਸੀਂ \"ਕਰਮਚਾਰੀ ਨਹੀਂ\"" })}
+                {t({ en: "You drive their truck, follow their rules, but you&apos;re \"not an employee\"", pa: "ਤੁਸੀਂ ਉਹਨਾਂ ਦਾ ਟਰੱਕ ਚਲਾਉਂਦੇ ਹੋ, ਉਹਨਾਂ ਦੇ ਨਿਯਮ ਮੰਨਦੇ ਹੋ, ਪਰ ਤੁਸੀਂ \"ਕਰਮਚਾਰੀ ਨਹੀਂ\"" })}
               </p>
               <p className="text-sm">
                 {t({
-                  en: "You drive their equipment, follow their dispatch, wear their uniform — but on paper, your corporation is an \"independent contractor.\"",
-                  pa: "ਤੁਸੀਂ ਉਹਨਾਂ ਦਾ ਸਾਮਾਨ ਵਰਤਦੇ ਹੋ, ਉਹਨਾਂ ਦੀ ਡਿਸਪੈਚ ਮੰਨਦੇ ਹੋ, ਉਹਨਾਂ ਦੀ ਵਰਦੀ ਪਾਉਂਦੇ ਹੋ — ਪਰ ਕਾਗਜ਼ਾਂ ਤੇ ਤੁਹਾਡੀ ਕਾਰਪੋਰੇਸ਼ਨ \"ਇੰਡੀਪੈਂਡੈਂਟ ਕੰਟਰੈਕਟਰ\" ਹੈ।",
+                  en: "You drive their equipment, follow their dispatch, wear their uniform. But on paper, your corporation is an \"independent contractor.\"",
+                  pa: "ਤੁਸੀਂ ਉਹਨਾਂ ਦਾ ਸਾਮਾਨ ਵਰਤਦੇ ਹੋ, ਉਹਨਾਂ ਦੀ ਡਿਸਪੈਚ ਮੰਨਦੇ ਹੋ, ਉਹਨਾਂ ਦੀ ਵਰਦੀ ਪਾਉਂਦੇ ਹੋ। ਪਰ ਕਾਗਜ਼ਾਂ ਤੇ ਤੁਹਾਡੀ ਕਾਰਪੋਰੇਸ਼ਨ \"ਇੰਡੀਪੈਂਡੈਂਟ ਕੰਟਰੈਕਟਰ\" ਹੈ।",
                 })}
               </p>
             </div>
@@ -154,7 +154,7 @@ export function DriverIncScamContent({
               <DollarSign className="h-4 w-4 mt-0.5 text-red-500 shrink-0" />
               <div>
                 <strong className="text-foreground">{t({ en: "WSIB coverage", pa: "WSIB ਕਵਰੇਜ" })}</strong>
-                <p>{t({ en: "No workplace injury coverage — one accident could bankrupt you", pa: "ਕੰਮ ਤੇ ਸੱਟ ਦੀ ਕਵਰੇਜ ਨਹੀਂ — ਇੱਕ ਐਕਸੀਡੈਂਟ ਤੁਹਾਨੂੰ ਤਬਾਹ ਕਰ ਸਕਦਾ" })}</p>
+                <p>{t({ en: "No workplace injury coverage. One accident could bankrupt you.", pa: "ਕੰਮ ਤੇ ਸੱਟ ਦੀ ਕਵਰੇਜ ਨਹੀਂ। ਇੱਕ ਐਕਸੀਡੈਂਟ ਤੁਹਾਨੂੰ ਤਬਾਹ ਕਰ ਸਕਦਾ।" })}</p>
               </div>
             </div>
             <div className="flex items-start gap-2 text-sm">
@@ -217,8 +217,8 @@ export function DriverIncScamContent({
               <span>
                 <strong className="text-foreground">{t({ en: "Talk to current drivers.", pa: "ਮੌਜੂਦਾ ਡਰਾਈਵਰਾਂ ਨਾਲ ਗੱਲ ਕਰੋ।" })}</strong>{" "}
                 {t({
-                  en: "Ask if they're on payroll or through a numbered company. The Desi trucking community talks — use that network.",
-                  pa: "ਪੁੱਛੋ ਕਿ ਕੀ ਉਹ ਪੇਰੋਲ ਤੇ ਹਨ ਜਾਂ ਨੰਬਰਡ ਕੰਪਨੀ ਰਾਹੀਂ। ਦੇਸੀ ਟਰੱਕਿੰਗ ਕਮਿਊਨਿਟੀ ਵਿੱਚ ਗੱਲ ਫੈਲਦੀ ਹੈ — ਇਸ ਨੈੱਟਵਰਕ ਦੀ ਵਰਤੋਂ ਕਰੋ।",
+                  en: "Ask if they&apos;re on payroll or through a numbered company. The Desi trucking community talks. Use that network.",
+                  pa: "ਪੁੱਛੋ ਕਿ ਕੀ ਉਹ ਪੇਰੋਲ ਤੇ ਹਨ ਜਾਂ ਨੰਬਰਡ ਕੰਪਨੀ ਰਾਹੀਂ। ਦੇਸੀ ਟਰੱਕਿੰਗ ਕਮਿਊਨਿਟੀ ਵਿੱਚ ਗੱਲ ਫੈਲਦੀ ਹੈ। ਇਸ ਨੈੱਟਵਰਕ ਦੀ ਵਰਤੋਂ ਕਰੋ।",
                 })}
               </span>
             </li>
@@ -237,8 +237,8 @@ export function DriverIncScamContent({
               <span>
                 <strong className="text-foreground">{t({ en: "Know the CRA test.", pa: "CRA ਦਾ ਟੈਸਟ ਜਾਣੋ।" })}</strong>{" "}
                 {t({
-                  en: "If you drive their truck, follow their schedule, and can't work for anyone else — you're an employee, regardless of what the contract says.",
-                  pa: "ਜੇ ਤੁਸੀਂ ਉਹਨਾਂ ਦਾ ਟਰੱਕ ਚਲਾਉਂਦੇ ਹੋ, ਉਹਨਾਂ ਦਾ ਸ਼ੈਡਿਊਲ ਮੰਨਦੇ ਹੋ, ਤੇ ਕਿਸੇ ਹੋਰ ਲਈ ਕੰਮ ਨਹੀਂ ਕਰ ਸਕਦੇ — ਤੁਸੀਂ ਕਰਮਚਾਰੀ ਹੋ, ਭਾਵੇਂ ਕੰਟਰੈਕਟ ਕੁਝ ਵੀ ਕਹੇ।",
+                  en: "If you drive their truck, follow their schedule, and can&apos;t work for anyone else, you&apos;re an employee. Doesn&apos;t matter what the contract says.",
+                  pa: "ਜੇ ਤੁਸੀਂ ਉਹਨਾਂ ਦਾ ਟਰੱਕ ਚਲਾਉਂਦੇ ਹੋ, ਉਹਨਾਂ ਦਾ ਸ਼ੈਡਿਊਲ ਮੰਨਦੇ ਹੋ, ਤੇ ਕਿਸੇ ਹੋਰ ਲਈ ਕੰਮ ਨਹੀਂ ਕਰ ਸਕਦੇ, ਤੁਸੀਂ ਕਰਮਚਾਰੀ ਹੋ। ਭਾਵੇਂ ਕੰਟਰੈਕਟ ਕੁਝ ਵੀ ਕਹੇ।",
                 })}
               </span>
             </li>

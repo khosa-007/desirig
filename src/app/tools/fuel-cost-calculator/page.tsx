@@ -214,8 +214,8 @@ export default function FuelCostCalculator() {
         </h2>
         <p>
           {t({
-            en: "This fuel cost calculator helps Canadian truck drivers estimate fuel expenses for any trip. Enter your distance in kilometres, current diesel price per litre, and your truck's fuel efficiency in MPG. The calculator converts MPG to litres per 100km and computes total fuel needed and total cost. Results are estimates — actual consumption depends on load weight, terrain, weather, and driving style.",
-            pa: "ਇਹ ਬਾਲਣ ਖ਼ਰਚਾ ਕੈਲਕੁਲੇਟਰ ਕੈਨੇਡੀਅਨ ਟਰੱਕ ਡਰਾਈਵਰਾਂ ਨੂੰ ਕਿਸੇ ਵੀ ਸਫ਼ਰ ਲਈ ਬਾਲਣ ਦੇ ਖ਼ਰਚੇ ਦਾ ਅੰਦਾਜ਼ਾ ਲਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ। ਆਪਣੀ ਦੂਰੀ ਕਿਲੋਮੀਟਰ ਵਿੱਚ, ਡੀਜ਼ਲ ਦੀ ਮੌਜੂਦਾ ਕੀਮਤ ਪ੍ਰਤੀ ਲੀਟਰ, ਅਤੇ ਟਰੱਕ ਦੀ ਬਾਲਣ ਕਾਰਗੁਜ਼ਾਰੀ MPG ਵਿੱਚ ਪਾਓ। ਨਤੀਜੇ ਅੰਦਾਜ਼ੇ ਹਨ — ਅਸਲ ਖਪਤ ਲੋਡ, ਰਸਤੇ, ਮੌਸਮ ਤੇ ਡਰਾਈਵਿੰਗ ਦੇ ਤਰੀਕੇ ਉੱਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ।",
+            en: "Plug in your distance, diesel price, and MPG. This calculator does the math for you. Results are estimates. Actual consumption depends on load weight, terrain, weather, and driving style.",
+            pa: "ਆਪਣੀ ਦੂਰੀ, ਡੀਜ਼ਲ ਦੀ ਕੀਮਤ, ਤੇ MPG ਪਾਓ। ਇਹ ਕੈਲਕੁਲੇਟਰ ਹਿਸਾਬ ਲਾ ਦੇਵੇਗਾ। ਨਤੀਜੇ ਅੰਦਾਜ਼ੇ ਹਨ। ਅਸਲ ਖਪਤ ਲੋਡ, ਰਸਤੇ, ਮੌਸਮ ਤੇ ਡਰਾਈਵਿੰਗ ਦੇ ਤਰੀਕੇ ਉੱਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ।",
           })}
         </p>
       </div>
