@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, Truck, MapPin, Shield, Star, ArrowRight } from "lucide-react";
+import { Search, Truck, MapPin, Shield, Star, ArrowRight, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -294,6 +294,22 @@ export default async function HomePage() {
               <p className="mt-1 text-sm text-slate-400">
                 Hours of service limits — quick reference
               </p>
+            </Link>
+            <Link
+              href="/tools/speed-fuel-savings"
+              className="group rounded-xl border border-slate-700 bg-slate-800/50 p-5 transition-all hover:border-[#FF6E40] hover:shadow-lg hover:shadow-[#FF6E40]/10 sm:col-span-2 lg:col-span-4"
+            >
+              <div className="flex items-center gap-3">
+                <Gauge className="h-6 w-6 text-green-400" />
+                <div>
+                  <h3 className="font-semibold group-hover:text-[#FF6E40]">
+                    Speed vs Fuel Savings Calculator
+                  </h3>
+                  <p className="text-sm text-slate-400">
+                    Drop 5 km/h, save thousands per year. See exactly how much your speed costs you.
+                  </p>
+                </div>
+              </div>
             </Link>
           </div>
 

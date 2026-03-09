@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Calculator, Fuel, Scale, Clock, ChevronRight } from "lucide-react";
+import { Calculator, Fuel, Scale, Clock, Gauge, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Free Trucking Tools & Calculators",
@@ -35,6 +35,14 @@ const tools = [
     icon: Clock,
     color: "text-orange-500",
     bg: "bg-orange-50",
+  },
+  {
+    slug: "speed-fuel-savings",
+    name: "Speed vs Fuel Savings",
+    description: "See how much you save by dropping 5 km/h. Spoiler: it's thousands per year.",
+    icon: Gauge,
+    color: "text-green-500",
+    bg: "bg-green-50",
   },
 ];
 
