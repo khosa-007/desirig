@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://desirig.com"),
   title: {
     default: "DesiRig — Desi Trucking & Business Directory Canada",
     template: "%s | DesiRig",
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
     "indian trucking companies",
     "carrier safety lookup",
     "dot number lookup",
+    "south asian business directory",
+    "truck mechanic brampton",
+    "driving school surrey",
   ],
   openGraph: {
     type: "website",
@@ -34,6 +38,26 @@ export const metadata: Metadata = {
     title: "DesiRig — Desi Trucking & Business Directory Canada",
     description:
       "Find trusted Desi trucking companies, mechanics, driving schools, and community businesses across Canada.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DesiRig — Desi Trucking & Business Directory Canada",
+    description:
+      "Find trusted Desi trucking companies, mechanics, and community businesses across Canada.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://desirig.com",
   },
 };
 
