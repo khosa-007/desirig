@@ -3,7 +3,7 @@ import { BusinessCard } from "@/components/business/business-card";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Desi Owned Businesses — Support Our Community",
+  title: "Desi Owned Businesses | Support Our Community",
   description:
     "Browse Desi-owned businesses across Canada. Trucking companies, restaurants, grocery stores, and services owned by our community.",
   alternates: { canonical: "https://desirig.com/desi-owned" },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HosContent } from "./hos-content";
 
 export const metadata: Metadata = {
-  title: "Hours of Service (HOS) Rules — Canada Quick Reference",
+  title: "Hours of Service (HOS) Rules | Canada Quick Reference",
   description:
     "Canadian Hours of Service rules explained simply. Driving limits, mandatory rest periods, cycle options, and reset rules for truck drivers.",
   alternates: {

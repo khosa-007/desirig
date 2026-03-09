@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const category = business.categories as { name: string } | null;
   const location = city ? `${city.name}, ${city.province}` : "";
 
-  const title = `${business.name} — ${category?.name ?? ""} in ${location}`;
+  const title = `${business.name} | ${category?.name ?? ""} in ${location}`;
   const description = `${business.name} in ${location}. Phone: ${business.phone ?? "N/A"}. ${
     business.google_rating ? `Rated ${business.google_rating}/5` : ""
   }. Find address, hours, and reviews on DesiRig.`;

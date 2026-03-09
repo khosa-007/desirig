@@ -65,7 +65,7 @@ const themes = [
   {
     id: "tangerine",
     name: "Tangerine Blaze",
-    desc: "Your fav — bold tangerine gradient, warm and energetic",
+    desc: "Your fav: bold tangerine gradient, warm and energetic",
     heroBg: "bg-gradient-to-br from-[#FF9966] via-[#FF6E40] to-[#E64A19]",
     heroText: "text-white",
     heroSub: "text-orange-100",
@@ -82,7 +82,7 @@ const themes = [
   {
     id: "black-yellow",
     name: "Black & Gold",
-    desc: "Black and yellow — premium, bold, construction/industrial feel",
+    desc: "Black and yellow, premium, bold, construction/industrial feel",
     heroBg: "bg-gradient-to-br from-gray-900 via-gray-800 to-black",
     heroText: "text-white",
     heroSub: "text-yellow-200",
@@ -99,7 +99,7 @@ const themes = [
   {
     id: "tangerine-dark",
     name: "Tangerine + Dark",
-    desc: "Dark premium base with tangerine accents — modern, clean",
+    desc: "Dark premium base with tangerine accents. Modern, clean",
     heroBg: "bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900",
     heroText: "text-white",
     heroSub: "text-orange-200",
@@ -116,7 +116,7 @@ const themes = [
   {
     id: "black-yellow-stripe",
     name: "Highway Warning",
-    desc: "Black base with bold yellow stripes — unmistakable trucker brand",
+    desc: "Black base with bold yellow stripes. Unmistakable trucker brand",
     heroBg: "bg-black",
     heroText: "text-white",
     heroSub: "text-yellow-300",
@@ -352,10 +352,10 @@ export default function PreviewPage() {
           <p className="mt-2 text-gray-500">
             Tell me which <strong>theme</strong> (1-4) and which <strong>logo</strong> (A-D) you want.
             <br />
-            You can also mix — e.g. &ldquo;Theme 1 with Logo C&rdquo; or &ldquo;Theme 3 colors but Theme 4 stripes&rdquo;
+            You can also mix, e.g. &ldquo;Theme 1 with Logo C&rdquo; or &ldquo;Theme 3 colors but Theme 4 stripes&rdquo;
           </p>
           <p className="mt-4 text-sm text-gray-400">
-            This is a preview page — your live site is unchanged until you decide.
+            This is a preview page. Your live site is unchanged until you decide.
           </p>
         </div>
       </div>

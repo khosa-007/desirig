@@ -7,7 +7,7 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchFmcsaLive } from "@/lib/fmcsa";
 
 export const metadata: Metadata = {
-  title: "Carrier Safety Lookup — Check Any Trucking Company",
+  title: "Carrier Safety Lookup | Check Any Trucking Company",
   description:
     "Look up any trucking company's safety record using their DOT number. Real-time safety ratings, fleet size, and carrier data.",
 };
@@ -177,19 +177,19 @@ export default async function SafetyPage({ searchParams }: PageProps) {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
-                  <span>Check their <strong>safety rating</strong> — Satisfactory is good, Conditional means issues</span>
+                  <span>Check their <strong>safety rating</strong>. Satisfactory is good, Conditional means issues</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
-                  <span>Look at <strong>fleet size</strong> — more power units usually means more stability</span>
+                  <span>Look at <strong>fleet size</strong>. More power units usually means more stability</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
-                  <span>Verify they&apos;re <strong>active</strong> — inactive authority means they can&apos;t legally operate</span>
+                  <span>Verify they&apos;re <strong>active</strong>. Inactive authority means they can&apos;t legally operate</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
-                  <span>Check <strong>driver count vs. power units</strong> — a good ratio means they&apos;re not overloading drivers</span>
+                  <span>Check <strong>driver count vs. power units</strong>. A good ratio means they&apos;re not overloading drivers</span>
                 </li>
               </ul>
             </div>

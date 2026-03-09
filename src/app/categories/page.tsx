@@ -5,7 +5,7 @@ import { getTruckingCategories, getCommunityCategories } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "All Categories",
-  description: "Browse all business categories on DesiRig — trucking, community services, restaurants, and more.",
+  description: "Browse all business categories on DesiRig: trucking, community services, restaurants, and more.",
 };
 
 export const revalidate = 86400;

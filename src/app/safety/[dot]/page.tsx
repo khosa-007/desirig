@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!carrier) return {};
 
   return {
-    title: `${carrier.legal_name} — Safety Record (DOT# ${carrier.dot_number})`,
+    title: `${carrier.legal_name} | Safety Record (DOT# ${carrier.dot_number})`,
     description: `Safety record for ${carrier.legal_name} (DOT# ${carrier.dot_number}). ${carrier.total_drivers} drivers, ${carrier.power_units} power units. Safety rating: ${carrier.safety_rating || "Not rated"}.`,
     alternates: {
       canonical: `https://desirig.com/safety/${dot}`,
@@ -133,11 +133,11 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
   const ratio = carrier.power_units > 0 ? carrier.total_drivers / carrier.power_units : 0;
   const ratioAssessment =
     ratio >= 1.0
-      ? { text: "Good — more drivers than trucks", color: "text-green-700" }
+      ? { text: "Good, more drivers than trucks", color: "text-green-700" }
       : ratio >= 0.7
-        ? { text: "OK — slightly fewer drivers than trucks", color: "text-yellow-700" }
+        ? { text: "OK, slightly fewer drivers than trucks", color: "text-yellow-700" }
         : ratio > 0
-          ? { text: "Caution — significantly fewer drivers than trucks", color: "text-red-700" }
+          ? { text: "Caution: significantly fewer drivers than trucks", color: "text-red-700" }
           : null;
 
   return (
@@ -226,7 +226,7 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
           {!carrier.safety_rating && (
             <p className="mt-3 text-sm text-muted-foreground">
               This carrier hasn&apos;t been rated yet. This doesn&apos;t mean they&apos;re
-              unsafe — many small carriers haven&apos;t had a formal safety review.
+              unsafe. Many small carriers haven&apos;t had a formal safety review.
             </p>
           )}
           {carrier.review_date && (
@@ -265,7 +265,7 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
           {ratioAssessment && (
             <div className="mt-3 rounded-lg bg-muted/40 px-4 py-2 text-sm">
               <span className="font-medium">Driver-to-truck ratio: </span>
-              <span className={ratioAssessment.color}>{ratio.toFixed(1)}:1 — {ratioAssessment.text}</span>
+              <span className={ratioAssessment.color}>{ratio.toFixed(1)}:1, {ratioAssessment.text}</span>
             </div>
           )}
           {carrier.total_cdl > 0 && (
@@ -302,7 +302,7 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
             )}
             <div>
               <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Hazmat</span>
-              <p className="mt-0.5 font-medium">{carrier.hm_ind === "Y" ? "Yes — carries hazardous materials" : "No"}</p>
+              <p className="mt-0.5 font-medium">{carrier.hm_ind === "Y" ? "Yes, carries hazardous materials" : "No"}</p>
             </div>
             {carrier.mcs150_mileage > 0 && (
               <div>
@@ -410,42 +410,42 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
             {carrier.safety_rating === "Satisfactory" && (
               <p className="flex items-start gap-2">
                 <CheckCircle className="mt-0.5 h-4 w-4 text-green-600 shrink-0" />
-                <span><strong>Satisfactory rating</strong> — this is the best rating. They passed their safety audit.</span>
+                <span><strong>Satisfactory rating</strong>: this is the best rating. They passed their safety audit.</span>
               </p>
             )}
             {carrier.safety_rating === "Conditional" && (
               <p className="flex items-start gap-2">
                 <AlertTriangle className="mt-0.5 h-4 w-4 text-yellow-600 shrink-0" />
-                <span><strong>Conditional rating</strong> — means safety issues were found. Ask them what&apos;s being fixed before signing on.</span>
+                <span><strong>Conditional rating</strong>: safety issues were found. Ask them what&apos;s being fixed before signing on.</span>
               </p>
             )}
             {carrier.safety_rating === "Unsatisfactory" && (
               <p className="flex items-start gap-2">
                 <XCircle className="mt-0.5 h-4 w-4 text-red-600 shrink-0" />
-                <span><strong>Unsatisfactory rating</strong> — serious problems. Think twice before driving for this company.</span>
+                <span><strong>Unsatisfactory rating</strong>: serious problems. Think twice before driving for this company.</span>
               </p>
             )}
             {ratioAssessment && ratio < 0.7 && (
               <p className="flex items-start gap-2">
                 <AlertTriangle className="mt-0.5 h-4 w-4 text-red-600 shrink-0" />
-                <span><strong>Low driver-to-truck ratio</strong> — could mean high turnover or trucks sitting unmaintained. Ask why.</span>
+                <span><strong>Low driver-to-truck ratio</strong>: could mean high turnover or trucks sitting unmaintained. Ask why.</span>
               </p>
             )}
             {carrier.total_drivers <= 5 && carrier.total_drivers > 0 && (
               <p className="flex items-start gap-2">
                 <AlertTriangle className="mt-0.5 h-4 w-4 text-yellow-600 shrink-0" />
-                <span><strong>Very small fleet</strong> ({carrier.total_drivers} drivers) — not necessarily bad, but make sure they have proper insurance and dispatch support.</span>
+                <span><strong>Very small fleet</strong> ({carrier.total_drivers} drivers). Not necessarily bad, but make sure they have proper insurance and dispatch support.</span>
               </p>
             )}
             {carrier.total_drivers > 50 && (
               <p className="flex items-start gap-2">
                 <CheckCircle className="mt-0.5 h-4 w-4 text-green-600 shrink-0" />
-                <span><strong>Established fleet</strong> ({carrier.total_drivers} drivers) — larger companies usually mean more stability and consistent loads.</span>
+                <span><strong>Established fleet</strong> ({carrier.total_drivers} drivers). Larger companies usually mean more stability and consistent loads.</span>
               </p>
             )}
             <p className="flex items-start gap-2">
               <CheckCircle className="mt-0.5 h-4 w-4 text-orange-600 shrink-0" />
-              <span>Always talk to current drivers before signing. Ask about pay, maintenance, and home time. The community talks — use that.</span>
+              <span>Always talk to current drivers before signing. Ask about pay, maintenance, and home time. The community talks, so use that.</span>
             </p>
           </div>
         </div>

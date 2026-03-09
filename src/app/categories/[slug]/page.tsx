@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!category) return {};
 
   return {
-    title: `${category.name} — Browse by City`,
+    title: `${category.name} | Browse by City`,
     description: `Find ${category.name.toLowerCase()} across Canada. Browse by city on DesiRig.`,
     alternates: {
       canonical: `https://desirig.com/categories/${slug}`,

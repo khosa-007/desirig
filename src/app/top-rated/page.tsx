@@ -4,7 +4,7 @@ import { Star, MapPin, Phone } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "Top Rated Businesses — Highest Rated Desi Businesses in Canada",
+  title: "Top Rated Businesses | Highest Rated Desi Businesses in Canada",
   description:
     "The highest-rated Desi businesses across Canada based on Google reviews. Trucking companies, restaurants, grocery stores, and more.",
   alternates: { canonical: "https://desirig.com/top-rated" },
