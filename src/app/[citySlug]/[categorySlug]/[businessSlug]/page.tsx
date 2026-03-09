@@ -242,6 +242,17 @@ export default async function BusinessDetailPage({ params }: PageProps) {
                 </a>
               )}
             </div>
+
+            {/* Report link */}
+            <p className="mt-4 text-xs text-muted-foreground">
+              See something wrong?{" "}
+              <a
+                href={`mailto:rig@desirig.com?subject=Incorrect%20Info%3A%20${encodeURIComponent(business.name)}&body=Business%3A%20${encodeURIComponent(business.name)}%0APage%3A%20${encodeURIComponent(`https://desirig.com/${citySlug}/${categorySlug}/${business.slug}`)}%0A%0AWhat%20is%20incorrect%3A%0A`}
+                className="text-orange-600 hover:underline"
+              >
+                Report incorrect information
+              </a>
+            </p>
           </div>
 
           {/* FMCSA Safety Card */}

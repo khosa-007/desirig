@@ -181,6 +181,27 @@ export default async function ListingPage({ params, searchParams }: PageProps) {
         </div>
       )}
 
+      {/* SEO content — unique text for each page */}
+      {total > 0 && (
+        <div className="mt-10 rounded-xl bg-muted/40 p-6 text-sm text-muted-foreground leading-relaxed">
+          <h2 className="mb-2 text-base font-semibold text-foreground">
+            About {category.name} in {city.name}
+          </h2>
+          <p>
+            DesiRig lists {total} {category.name.toLowerCase()} in {city.name},{" "}
+            {city.province}. Each listing includes phone numbers, addresses,
+            Google ratings from real customers, and links to their websites.
+            {category.is_trucking
+              ? ` Whether you're a new driver looking for a job or an owner-operator
+                needing services, our directory helps you find trusted
+                ${category.name.toLowerCase()} in the ${city.name} area.`
+              : ` Browse our directory to find the best
+                ${category.name.toLowerCase()} serving the South Asian community
+                in ${city.name} and surrounding areas.`}
+          </p>
+        </div>
+      )}
+
       {/* Internal Linking — SEO gold */}
       <InternalLinks
         citySlug={citySlug}
