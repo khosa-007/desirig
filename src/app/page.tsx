@@ -187,6 +187,50 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Quick links */}
+      <section className="border-t bg-muted/40">
+        <div className="container mx-auto px-4 py-10">
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Link
+              href="/top-rated"
+              className="group rounded-xl border bg-card p-5 transition-all hover:border-orange-200 hover:shadow-md"
+            >
+              <Star className="h-6 w-6 text-orange-500" />
+              <h3 className="mt-3 font-semibold group-hover:text-orange-600">
+                Top Rated
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                The highest-rated businesses across Canada
+              </p>
+            </Link>
+            <Link
+              href="/desi-owned"
+              className="group rounded-xl border bg-card p-5 transition-all hover:border-orange-200 hover:shadow-md"
+            >
+              <Shield className="h-6 w-6 text-green-600" />
+              <h3 className="mt-3 font-semibold group-hover:text-orange-600">
+                Desi Owned
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Support community-owned businesses
+              </p>
+            </Link>
+            <Link
+              href="/province"
+              className="group rounded-xl border bg-card p-5 transition-all hover:border-orange-200 hover:shadow-md"
+            >
+              <MapPin className="h-6 w-6 text-blue-500" />
+              <h3 className="mt-3 font-semibold group-hover:text-orange-600">
+                Browse by Province
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Ontario, BC, Alberta, and more
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FMCSA Safety CTA */}
       <section className="bg-gradient-to-r from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto flex flex-col items-center gap-6 px-4 py-16 text-center md:flex-row md:text-left">
