@@ -71,6 +71,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "DesiRig",
+              url: "https://desirig.com",
+              logo: "https://desirig.com/icon",
+              description:
+                "The trusted directory for South Asian trucking and community businesses across Canada.",
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "rig@desirig.com",
+                contactType: "customer service",
+              },
+              sameAs: [],
+            }),
+          }}
+        />
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>
