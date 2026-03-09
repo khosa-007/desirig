@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${category.name} — Browse by City`,
     description: `Find ${category.name.toLowerCase()} across Canada. Browse by city on DesiRig.`,
+    alternates: {
+      canonical: `https://desirig.com/categories/${slug}`,
+    },
   };
 }
 
@@ -65,29 +68,46 @@ export default async function CategoryDetailPage({ params }: PageProps) {
         {category.name}
       </h1>
       <p className="mt-1 text-muted-foreground">
-        Available in {cities.length} cities across Canada
+        {cities.reduce((s, c) => s + c.count, 0)} listings across {cities.length} cities
       </p>
 
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-        {cities.map((city) => (
-          <Link
-            key={city.slug}
-            href={`/${city.slug}/${category.slug}`}
-            className="group rounded-xl border bg-card p-4 transition-all hover:border-orange-200 hover:shadow-sm"
-          >
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-orange-500" />
-              <span className="text-sm font-semibold group-hover:text-orange-600">
-                {city.name}
-              </span>
+      {/* Group by province */}
+      {(() => {
+        const byProvince = new Map<string, typeof cities>();
+        cities.forEach((c) => {
+          const list = byProvince.get(c.province) ?? [];
+          list.push(c);
+          byProvince.set(c.province, list);
+        });
+        // Sort provinces by total count
+        const sorted = Array.from(byProvince.entries()).sort(
+          (a, b) => b[1].reduce((s, c) => s + c.count, 0) - a[1].reduce((s, c) => s + c.count, 0)
+        );
+        return sorted.map(([province, provinceCities]) => (
+          <div key={province} className="mt-8">
+            <h2 className="mb-3 text-lg font-semibold">{province}</h2>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {provinceCities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/${city.slug}/${category.slug}`}
+                  className="group rounded-xl border bg-card p-4 transition-all hover:border-orange-200 hover:shadow-sm"
+                >
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-orange-500" />
+                    <span className="text-sm font-semibold group-hover:text-orange-600">
+                      {city.name}
+                    </span>
+                  </div>
+                  <div className="mt-1 text-right text-xs text-muted-foreground">
+                    {city.count} {city.count === 1 ? "listing" : "listings"}
+                  </div>
+                </Link>
+              ))}
             </div>
-            <div className="mt-1 flex items-center justify-between text-xs text-muted-foreground">
-              <span>{city.province}</span>
-              <span>{city.count} listings</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+          </div>
+        ));
+      })()}
     </div>
   );
 }

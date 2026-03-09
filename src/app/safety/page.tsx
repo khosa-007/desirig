@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Shield, Search, Truck, AlertTriangle } from "lucide-react";
+import { Shield, Search, Truck, AlertTriangle, Users, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { createClient } from "@/lib/supabase/server";
+import { fetchFmcsaLive } from "@/lib/fmcsa";
 
 export const metadata: Metadata = {
   title: "Carrier Safety Lookup — Check Any Trucking Company",
@@ -39,12 +40,32 @@ export default async function SafetyPage({ searchParams }: PageProps) {
     const query = q.trim();
 
     if (/^\d+$/.test(query)) {
+      // DOT number search — try DB first, then live API
       const { data } = await supabase
         .from("fmcsa_carriers")
         .select("id, dot_number, legal_name, dba_name, phy_city, phy_state, total_drivers, power_units, safety_rating, is_desi_owned")
         .eq("dot_number", query)
         .limit(1);
       results = (data ?? []) as CarrierResult[];
+
+      // If not in our DB, try live API (covers US carriers not in our scrape)
+      if (results.length === 0) {
+        const live = await fetchFmcsaLive(query);
+        if (live) {
+          results = [{
+            id: "live",
+            dot_number: live.dot_number,
+            legal_name: live.legal_name,
+            dba_name: live.dba_name,
+            phy_city: live.phy_city,
+            phy_state: live.phy_state,
+            total_drivers: live.total_drivers,
+            power_units: live.power_units,
+            safety_rating: live.safety_rating,
+            is_desi_owned: false,
+          }];
+        }
+      }
     } else {
       const { data } = await supabase
         .from("fmcsa_carriers")
@@ -86,6 +107,51 @@ export default async function SafetyPage({ searchParams }: PageProps) {
             Look Up
           </Button>
         </form>
+
+        {/* Quick Tips — show when no search */}
+        {!searched && (
+          <div className="mt-10 space-y-6">
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-xl border bg-card p-5 text-center">
+                <Shield className="mx-auto h-6 w-6 text-green-600" />
+                <div className="mt-2 text-2xl font-bold">15,688</div>
+                <div className="text-sm text-muted-foreground">Carriers Tracked</div>
+              </div>
+              <div className="rounded-xl border bg-card p-5 text-center">
+                <Users className="mx-auto h-6 w-6 text-orange-500" />
+                <div className="mt-2 text-2xl font-bold">Live Data</div>
+                <div className="text-sm text-muted-foreground">Real-Time from Gov Records</div>
+              </div>
+              <div className="rounded-xl border bg-card p-5 text-center">
+                <CheckCircle className="mx-auto h-6 w-6 text-blue-500" />
+                <div className="mt-2 text-2xl font-bold">Free</div>
+                <div className="text-sm text-muted-foreground">Always Free for Drivers</div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border bg-muted/40 p-6">
+              <h2 className="font-semibold">Before You Sign On With a Company</h2>
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                  <span>Check their <strong>safety rating</strong> — Satisfactory is good, Conditional means issues</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                  <span>Look at <strong>fleet size</strong> — more power units usually means more stability</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                  <span>Verify they&apos;re <strong>active</strong> — inactive authority means they can&apos;t legally operate</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                  <span>Check <strong>driver count vs. power units</strong> — a good ratio means they&apos;re not overloading drivers</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
 
         {/* Results */}
         {searched && (
