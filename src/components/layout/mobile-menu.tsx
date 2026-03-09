@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Truck, Search, Shield, MapPin, Grid3X3 } from "lucide-react";
+import { Menu, X, Truck, Search, Shield, MapPin, Grid3X3, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function MobileMenu() {
@@ -80,6 +80,14 @@ export function MobileMenu() {
           >
             <Shield className="h-4 w-4 text-muted-foreground" />
             Safety Lookup
+          </Link>
+          <Link
+            href="/blog"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
+          >
+            <BookOpen className="h-4 w-4 text-muted-foreground" />
+            Blog
           </Link>
 
           <div className="my-3 border-t" />

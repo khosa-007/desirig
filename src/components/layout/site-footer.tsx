@@ -77,6 +77,11 @@ export function SiteFooter() {
             <h3 className="mb-3 text-sm font-semibold">Company</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
+                <Link href="/blog" className="hover:text-foreground">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="hover:text-foreground">
                   About Us
                 </Link>

@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { getBusinessBySlug, getCityBySlug } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
+import { NearbyBusinesses } from "./nearby";
 
 export const revalidate = 86400;
 
@@ -365,6 +366,15 @@ export default async function BusinessDetailPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+
+      {/* Nearby businesses */}
+      <NearbyBusinesses
+        businessId={business.id}
+        cityId={business.city_id ?? 0}
+        categoryId={business.category_id}
+        citySlug={citySlug}
+        categorySlug={categorySlug}
+      />
     </div>
   );
 }
