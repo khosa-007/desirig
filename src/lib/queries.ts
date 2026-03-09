@@ -1,0 +1,150 @@
+import { createClient } from "@/lib/supabase/server";
+
+export async function getCategories() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("categories")
+    .select("*")
+    .order("display_order");
+  return data ?? [];
+}
+
+export async function getTruckingCategories() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("categories")
+    .select("*")
+    .eq("is_trucking", true)
+    .order("display_order");
+  return data ?? [];
+}
+
+export async function getCommunityCategories() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("categories")
+    .select("*")
+    .eq("is_trucking", false)
+    .order("display_order");
+  return data ?? [];
+}
+
+export async function getFeaturedCities() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("cities")
+    .select("*")
+    .eq("is_featured", true)
+    .order("listing_count", { ascending: false })
+    .limit(20);
+  return data ?? [];
+}
+
+export async function getCityBySlug(slug: string) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("cities")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+  return data;
+}
+
+export async function getCategoryBySlug(slug: string) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("categories")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+  return data;
+}
+
+export async function getBusinesses({
+  cityId,
+  categoryId,
+  limit = 20,
+  offset = 0,
+  search,
+}: {
+  cityId?: number;
+  categoryId?: number;
+  limit?: number;
+  offset?: number;
+  search?: string;
+}) {
+  const supabase = await createClient();
+  let query = supabase
+    .from("businesses")
+    .select("*, categories(name, slug, icon), cities(name, slug, province)", {
+      count: "exact",
+    });
+
+  if (cityId) query = query.eq("city_id", cityId);
+  if (categoryId) query = query.eq("category_id", categoryId);
+  if (search) query = query.textSearch("fts", search);
+
+  const { data, count } = await query
+    .order("google_rating", { ascending: false, nullsFirst: false })
+    .range(offset, offset + limit - 1);
+
+  return { businesses: data ?? [], total: count ?? 0 };
+}
+
+export async function getBusinessBySlug(slug: string, citySlug: string) {
+  const supabase = await createClient();
+
+  // First get city
+  const { data: city } = await supabase
+    .from("cities")
+    .select("id")
+    .eq("slug", citySlug)
+    .single();
+
+  if (!city) return null;
+
+  const { data } = await supabase
+    .from("businesses")
+    .select("*, categories(name, slug, icon), cities(name, slug, province)")
+    .eq("slug", slug)
+    .eq("city_id", city.id)
+    .single();
+
+  return data;
+}
+
+export async function getFmcsaByDot(dotNumber: string) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("fmcsa_carriers")
+    .select("*")
+    .eq("dot_number", dotNumber)
+    .single();
+  return data;
+}
+
+export async function getBusinessCount() {
+  const supabase = await createClient();
+  const { count } = await supabase
+    .from("businesses")
+    .select("*", { count: "exact", head: true });
+  return count ?? 0;
+}
+
+export async function getCityCount() {
+  const supabase = await createClient();
+  const { count } = await supabase
+    .from("cities")
+    .select("*", { count: "exact", head: true });
+  return count ?? 0;
+}
+
+export async function searchBusinesses(query: string, limit = 20) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("businesses")
+    .select("id, name, slug, phone, address, website, google_rating, google_review_count, is_desi_owned, is_verified, province, categories(name, slug, icon), cities(name, slug, province)")
+    .textSearch("fts", query)
+    .limit(limit);
+  return data ?? [];
+}
