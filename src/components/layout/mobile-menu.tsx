@@ -1,9 +1,34 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Menu, X, Truck, Search, Shield, MapPin, Grid3X3, BookOpen, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+function MenuPortal({ open, onClose, children }: { open: boolean; onClose: () => void; children: React.ReactNode }) {
+  if (typeof window === "undefined") return null;
+  return createPortal(
+    <>
+      {/* Overlay */}
+      {open && (
+        <div
+          className="fixed inset-0 z-[9998] bg-black/50 md:hidden"
+          onClick={onClose}
+        />
+      )}
+      {/* Slide-in panel */}
+      <div
+        className={`fixed inset-y-0 right-0 z-[9999] w-72 bg-background shadow-xl transition-transform duration-200 md:hidden ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {children}
+      </div>
+    </>,
+    document.body
+  );
+}
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -20,20 +45,7 @@ export function MobileMenu() {
         <Menu className="h-5 w-5" />
       </Button>
 
-      {/* Overlay */}
-      {open && (
-        <div
-          className="fixed inset-0 z-[60] bg-black/50 md:hidden"
-          onClick={() => setOpen(false)}
-        />
-      )}
-
-      {/* Slide-in panel */}
-      <div
-        className={`fixed inset-y-0 right-0 z-[60] w-72 bg-background shadow-xl transition-transform duration-200 md:hidden ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+      <MenuPortal open={open} onClose={() => setOpen(false)}>
         <div className="flex items-center justify-between border-b p-4">
           <span className="text-lg font-bold">
             Desi<span className="text-[#FF6E40]">Rig</span>
@@ -153,7 +165,7 @@ export function MobileMenu() {
             Contact
           </Link>
         </nav>
-      </div>
+      </MenuPortal>
     </>
   );
 }
