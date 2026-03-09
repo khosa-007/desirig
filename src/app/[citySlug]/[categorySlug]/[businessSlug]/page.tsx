@@ -293,11 +293,23 @@ export default async function BusinessDetailPage({ params }: PageProps) {
 
         {/* Sidebar */}
         <div className="space-y-6">
-          {/* Map placeholder */}
-          <div className="rounded-xl border bg-muted/40 p-8 text-center">
-            <MapPin className="mx-auto h-8 w-8 text-muted-foreground" />
-            <p className="mt-2 text-sm text-muted-foreground">Map coming soon</p>
-          </div>
+          {/* Map link */}
+          {business.address && (
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.name + " " + business.address)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-xl border bg-muted/40 p-8 text-center transition-colors hover:bg-muted/60"
+            >
+              <MapPin className="mx-auto h-8 w-8 text-orange-500" />
+              <p className="mt-2 text-sm font-medium text-orange-600">
+                View on Google Maps
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {business.address}
+              </p>
+            </a>
+          )}
 
           {/* Quick info */}
           <div className="rounded-xl border bg-card p-5">
@@ -322,6 +334,23 @@ export default async function BusinessDetailPage({ params }: PageProps) {
                 </div>
               )}
             </dl>
+          </div>
+
+          {/* Claim CTA */}
+          <div className="rounded-xl border border-orange-200 bg-orange-50 p-5">
+            <h3 className="font-semibold text-orange-900">Is this your business?</h3>
+            <p className="mt-1 text-sm text-orange-700">
+              Claim your listing to update info, respond to reviews, and get
+              verified.
+            </p>
+            <Link href="/contact" className="mt-3 block">
+              <Button
+                size="sm"
+                className="w-full bg-orange-500 hover:bg-orange-600"
+              >
+                Claim This Listing
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
