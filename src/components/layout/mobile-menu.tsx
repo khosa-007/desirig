@@ -36,7 +36,7 @@ export function MobileMenu() {
       >
         <div className="flex items-center justify-between border-b p-4">
           <span className="text-lg font-bold">
-            Desi<span className="text-orange-500">Rig</span>
+            Desi<span className="text-[#FF6E40]">Rig</span>
           </span>
           <Button
             variant="ghost"

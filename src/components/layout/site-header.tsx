@@ -1,18 +1,24 @@
 import Link from "next/link";
-import { Truck, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileMenu } from "./mobile-menu";
+
+function SemiTruckIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg width="28" height="18" viewBox="0 0 36 24" fill="currentColor" className={className}>
+      <path d="M0 10h20V6h6l4 4v6h-2.1a3 3 0 0 1-5.8 0H9.9a3 3 0 0 1-5.8 0H0V10zm7 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm18 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM20 8H2v6h2.1a3 3 0 0 1 5.8 0h8.2a3 3 0 0 1 1.9-2.8V8zm2 0v4h5.2l-2.5-4H22z" />
+    </svg>
+  );
+}
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500 text-white">
-            <Truck className="h-5 w-5" />
-          </div>
+        <Link href="/" className="flex items-center gap-2.5">
+          <SemiTruckIcon className="text-[#FF6E40]" />
           <span className="text-xl font-bold tracking-tight">
-            Desi<span className="text-orange-500">Rig</span>
+            Desi<span className="text-[#FF6E40]">Rig</span>
           </span>
         </Link>
 

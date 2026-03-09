@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Truck } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -7,17 +6,17 @@ export function SiteFooter() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500 text-white">
-                <Truck className="h-4 w-4" />
-              </div>
+            <Link href="/" className="flex items-center gap-2.5">
+              <svg width="24" height="16" viewBox="0 0 36 24" fill="currentColor" className="text-[#FF6E40]">
+                <path d="M0 10h20V6h6l4 4v6h-2.1a3 3 0 0 1-5.8 0H9.9a3 3 0 0 1-5.8 0H0V10zm7 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm18 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM20 8H2v6h2.1a3 3 0 0 1 5.8 0h8.2a3 3 0 0 1 1.9-2.8V8zm2 0v4h5.2l-2.5-4H22z" />
+              </svg>
               <span className="text-lg font-bold">
-                Desi<span className="text-orange-500">Rig</span>
+                Desi<span className="text-[#FF6E40]">Rig</span>
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              Your trusted directory for Desi trucking and community businesses
-              across Canada.
+              Built by a trucker, for truckers. Your toolkit and directory for
+              Desi businesses across Canada.
             </p>
           </div>
 
