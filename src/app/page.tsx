@@ -108,6 +108,7 @@ export default async function HomePage() {
             {[
               { label: "Safety Lookup", href: "/safety" },
               { label: "Trucking Companies", href: "/brampton-on/trucking-company" },
+              { label: "Truck Washes", href: "/brampton-on/truck-wash" },
               { label: "Truck Mechanics", href: "/brampton-on/truck-mechanic" },
               { label: "HOS Rules", href: "/tools/hos-calculator" },
               { label: "Weight Limits", href: "/tools/weight-limits" },

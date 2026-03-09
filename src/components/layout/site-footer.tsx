@@ -8,22 +8,24 @@ export function SiteFooter() {
           <div>
             <Link href="/" className="flex items-center gap-2.5">
               <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" className="text-[#FF6E40]">
-                <rect x="5" y="4" width="22" height="18" rx="3" />
-                <rect x="8" y="6" width="16" height="8" rx="1.5" fill="white" opacity="0.85" />
-                <line x1="16" y1="6" x2="16" y2="14" stroke="currentColor" strokeWidth="1" />
-                <rect x="9" y="16" width="14" height="4" rx="1" fill="white" opacity="0.3" />
-                <line x1="12" y1="16" x2="12" y2="20" stroke="currentColor" strokeWidth="0.8" />
-                <line x1="16" y1="16" x2="16" y2="20" stroke="currentColor" strokeWidth="0.8" />
-                <line x1="20" y1="16" x2="20" y2="20" stroke="currentColor" strokeWidth="0.8" />
+                <rect x="7" y="1" width="18" height="5" rx="1.5" fill="white" opacity="0.9" />
+                <text x="16" y="5" textAnchor="middle" fontSize="4" fontWeight="bold" fill="currentColor" fontFamily="sans-serif">DESIRIG</text>
+                <rect x="5" y="6" width="22" height="16" rx="3" />
+                <rect x="8" y="8" width="16" height="7" rx="1.5" fill="white" opacity="0.85" />
+                <line x1="16" y1="8" x2="16" y2="15" stroke="currentColor" strokeWidth="1" />
+                <rect x="9" y="17" width="14" height="3" rx="1" fill="white" opacity="0.3" />
+                <line x1="12" y1="17" x2="12" y2="20" stroke="currentColor" strokeWidth="0.8" />
+                <line x1="16" y1="17" x2="16" y2="20" stroke="currentColor" strokeWidth="0.8" />
+                <line x1="20" y1="17" x2="20" y2="20" stroke="currentColor" strokeWidth="0.8" />
                 <rect x="4" y="22" width="24" height="3" rx="1.5" />
-                <circle cx="7" cy="17" r="2" fill="#FCD34D" />
-                <circle cx="25" cy="17" r="2" fill="#FCD34D" />
-                <rect x="1" y="8" width="3" height="5" rx="1" />
-                <rect x="28" y="8" width="3" height="5" rx="1" />
+                <circle cx="7" cy="18" r="2" fill="#FCD34D" />
+                <circle cx="25" cy="18" r="2" fill="#FCD34D" />
+                <rect x="1" y="10" width="3" height="5" rx="1" />
+                <rect x="28" y="10" width="3" height="5" rx="1" />
                 <circle cx="8" cy="27" r="2.5" />
                 <circle cx="24" cy="27" r="2.5" />
-                <rect x="3" y="1" width="2" height="6" rx="1" />
-                <rect x="27" y="1" width="2" height="6" rx="1" />
+                <rect x="3" y="2" width="2" height="6" rx="1" />
+                <rect x="27" y="2" width="2" height="6" rx="1" />
               </svg>
               <span className="text-lg font-bold">
                 Desi<span className="text-[#FF6E40]">Rig</span>
@@ -51,6 +53,11 @@ export function SiteFooter() {
               <li>
                 <Link href="/brampton-on/driving-school" className="hover:text-foreground">
                   Driving Schools
+                </Link>
+              </li>
+              <li>
+                <Link href="/brampton-on/truck-wash" className="hover:text-foreground">
+                  Truck Washes
                 </Link>
               </li>
               <li>
