@@ -68,8 +68,55 @@ export default async function ListingPage({ params, searchParams }: PageProps) {
 
   const totalPages = Math.ceil(total / limit);
 
+  // JSON-LD: BreadcrumbList
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://desirig.com" },
+      { "@type": "ListItem", position: 2, name: city.name, item: `https://desirig.com/${city.slug}` },
+      { "@type": "ListItem", position: 3, name: category.name, item: `https://desirig.com/${city.slug}/${category.slug}` },
+    ],
+  };
+
+  // JSON-LD: ItemList for search engines
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${category.name} in ${city.name}, ${city.province}`,
+    numberOfItems: total,
+    itemListElement: businesses.slice(0, 10).map((biz, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "LocalBusiness",
+        name: biz.name,
+        address: biz.address,
+        telephone: biz.phone,
+        ...(biz.google_rating
+          ? {
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: biz.google_rating,
+                reviewCount: biz.google_review_count || 1,
+              },
+            }
+          : {}),
+      },
+    })),
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumb */}
       <nav className="mb-6 flex items-center gap-1 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">

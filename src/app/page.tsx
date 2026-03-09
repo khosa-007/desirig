@@ -38,20 +38,41 @@ export default async function HomePage() {
           </p>
 
           {/* Search bar */}
-          <div className="mx-auto mt-8 flex max-w-xl items-center gap-2 rounded-xl bg-white p-2 shadow-2xl">
+          <form
+            action="/search"
+            className="mx-auto mt-8 flex max-w-xl items-center gap-2 rounded-xl bg-white p-2 shadow-2xl"
+          >
             <div className="flex flex-1 items-center gap-2 px-3">
               <Search className="h-5 w-5 text-muted-foreground" />
-              <form action="/search" className="flex-1">
-                <Input
-                  name="q"
-                  placeholder="Search businesses, categories, cities..."
-                  className="border-0 bg-transparent text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
-                />
-              </form>
+              <Input
+                name="q"
+                placeholder="Search businesses, categories, cities..."
+                className="border-0 bg-transparent text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
+              />
             </div>
-            <Button className="bg-orange-500 hover:bg-orange-600">
+            <Button type="submit" className="bg-orange-500 hover:bg-orange-600">
               Search
             </Button>
+          </form>
+
+          {/* Popular searches — crawlable links */}
+          <div className="mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-center gap-2 text-sm">
+            <span className="text-orange-200">Popular:</span>
+            {[
+              { label: "Trucking Companies", href: "/brampton-on/trucking-company" },
+              { label: "Truck Mechanics", href: "/brampton-on/truck-mechanic" },
+              { label: "Driving Schools", href: "/brampton-on/driving-school" },
+              { label: "Indian Grocery", href: "/brampton-on/indian-grocery" },
+              { label: "Safety Lookup", href: "/safety" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-full border border-white/20 px-3 py-1 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
 
           {/* Stats */}
@@ -196,6 +217,9 @@ export default async function HomePage() {
 
       {/* Trust signals */}
       <section className="container mx-auto px-4 py-16">
+        <h2 className="mb-8 text-center text-2xl font-bold tracking-tight">
+          Why Drivers Trust DesiRig
+        </h2>
         <div className="grid gap-8 text-center md:grid-cols-3">
           <div>
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 text-orange-600">
@@ -225,6 +249,31 @@ export default async function HomePage() {
               By truckers, for truckers. We know what drivers need — from
               mechanics to dhabas to permit services.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="border-t bg-muted/40">
+        <div className="container mx-auto px-4 py-16 text-center">
+          <h2 className="text-2xl font-bold tracking-tight">
+            Ready to Find What You Need?
+          </h2>
+          <p className="mx-auto mt-2 max-w-lg text-muted-foreground">
+            Browse {businessCount.toLocaleString()} businesses across {cityCount} Canadian
+            cities. Free for drivers, always.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/categories">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
+                Browse Categories
+              </Button>
+            </Link>
+            <Link href="/cities">
+              <Button size="lg" variant="outline">
+                Explore Cities
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

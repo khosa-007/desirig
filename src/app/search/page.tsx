@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Search } from "lucide-react";
+import Link from "next/link";
+import { Search, Truck, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { BusinessCard } from "@/components/business/business-card";
-import { searchBusinesses } from "@/lib/queries";
+import { searchBusinesses, getTruckingCategories, getCommunityCategories, getFeaturedCities } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Search Businesses",
@@ -48,7 +49,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
         </form>
       </div>
 
-      {q && (
+      {q ? (
         <div className="mt-8">
           <p className="mb-4 text-sm text-muted-foreground">
             {results.length} results for &ldquo;{q}&rdquo;
@@ -69,7 +70,75 @@ export default async function SearchPage({ searchParams }: PageProps) {
             </div>
           )}
         </div>
+      ) : (
+        <BrowseSuggestions />
       )}
+    </div>
+  );
+}
+
+async function BrowseSuggestions() {
+  const [truckingCats, communityCats, cities] = await Promise.all([
+    getTruckingCategories(),
+    getCommunityCategories(),
+    getFeaturedCities(),
+  ]);
+
+  return (
+    <div className="mt-10 space-y-10">
+      <div>
+        <h2 className="flex items-center gap-2 text-lg font-semibold">
+          <Truck className="h-5 w-5 text-orange-500" />
+          Trucking Categories
+        </h2>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {truckingCats.slice(0, 12).map((cat) => (
+            <Link
+              key={cat.id}
+              href={`/categories/${cat.slug}`}
+              className="rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              {cat.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 className="flex items-center gap-2 text-lg font-semibold">
+          <MapPin className="h-5 w-5 text-green-500" />
+          Community Categories
+        </h2>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {communityCats.slice(0, 12).map((cat) => (
+            <Link
+              key={cat.id}
+              href={`/categories/${cat.slug}`}
+              className="rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              {cat.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 className="flex items-center gap-2 text-lg font-semibold">
+          <MapPin className="h-5 w-5 text-orange-500" />
+          Popular Cities
+        </h2>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {cities.map((city) => (
+            <Link
+              key={city.id}
+              href={`/${city.slug}`}
+              className="rounded-lg border bg-card px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              {city.name}, {city.province}
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
