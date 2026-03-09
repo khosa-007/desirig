@@ -33,7 +33,7 @@ export default async function HomePage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-orange-100 md:text-xl">
             Find trucking companies, mechanics, driving schools, and community
-            businesses across Canada. Real ratings, FMCSA safety data, and
+            businesses across Canada. Real ratings, safety data, and
             verified listings.
           </p>
 
@@ -172,14 +172,14 @@ export default async function HomePage() {
           <div className="flex-1">
             <div className="inline-flex items-center gap-2 rounded-full bg-green-500/20 px-3 py-1 text-sm font-medium text-green-400">
               <Shield className="h-4 w-4" />
-              Live from FMCSA
+              Live Safety Data
             </div>
             <h2 className="mt-4 text-2xl font-bold md:text-3xl">
               Check Any Carrier&apos;s Safety Record
             </h2>
             <p className="mt-2 text-slate-300">
               Real-time safety ratings, crash data, and inspection records
-              pulled directly from FMCSA. Never stale, always accurate.
+              pulled from government records. Never stale, always accurate.
             </p>
           </div>
           <Link href="/safety">
@@ -210,10 +210,10 @@ export default async function HomePage() {
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
               <Shield className="h-6 w-6" />
             </div>
-            <h3 className="mt-4 font-semibold">FMCSA Verified</h3>
+            <h3 className="mt-4 font-semibold">Safety Verified</h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              Carrier safety data pulled live from FMCSA. DOT numbers, crash
-              rates, inspection records.
+              Carrier safety data pulled live from government records. DOT numbers,
+              fleet size, safety ratings.
             </p>
           </div>
           <div>

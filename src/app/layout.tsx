@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | DesiRig",
   },
   description:
-    "Find trusted Desi trucking companies, mechanics, driving schools, and community businesses across Canada. FMCSA safety ratings, reviews, and more.",
+    "Find trusted Desi trucking companies, mechanics, driving schools, and community businesses across Canada. Safety ratings, reviews, and more.",
   keywords: [
     "desi trucking",
     "punjabi trucking",
@@ -23,7 +23,8 @@ export const metadata: Metadata = {
     "desi business directory",
     "brampton trucking",
     "indian trucking companies",
-    "fmcsa safety lookup",
+    "carrier safety lookup",
+    "dot number lookup",
   ],
   openGraph: {
     type: "website",

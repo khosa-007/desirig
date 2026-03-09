@@ -6,9 +6,9 @@ import { Input } from "@/components/ui/input";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "FMCSA Safety Lookup — Check Any Carrier",
+  title: "Carrier Safety Lookup — Check Any Trucking Company",
   description:
-    "Look up any trucking company's safety record using their DOT number. Real-time data from FMCSA including safety ratings, fleet size, and crash records.",
+    "Look up any trucking company's safety record using their DOT number. Real-time safety ratings, fleet size, and carrier data.",
 };
 
 interface PageProps {
@@ -64,7 +64,7 @@ export default async function SafetyPage({ searchParams }: PageProps) {
             <Shield className="h-8 w-8 text-green-600" />
           </div>
           <h1 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl">
-            FMCSA Safety Lookup
+            Carrier Safety Lookup
           </h1>
           <p className="mt-2 text-muted-foreground">
             Search by DOT number or company name. Data from 15,688 active Canadian carriers.

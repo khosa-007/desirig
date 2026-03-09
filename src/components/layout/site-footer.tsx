@@ -41,7 +41,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="/safety" className="hover:text-foreground">
-                  FMCSA Safety Lookup
+                  Safety Lookup
                 </Link>
               </li>
             </ul>

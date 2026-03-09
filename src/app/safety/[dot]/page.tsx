@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${carrier.legal_name} — Safety Record (DOT# ${carrier.dot_number})`,
-    description: `FMCSA safety record for ${carrier.legal_name} (DOT# ${carrier.dot_number}). ${carrier.total_drivers} drivers, ${carrier.power_units} power units. Safety rating: ${carrier.safety_rating || "Not rated"}.`,
+    description: `Safety record for ${carrier.legal_name} (DOT# ${carrier.dot_number}). ${carrier.total_drivers} drivers, ${carrier.power_units} power units. Safety rating: ${carrier.safety_rating || "Not rated"}.`,
   };
 }
 
@@ -109,7 +109,7 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
                 {isLive && (
                   <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
                     <Zap className="h-3 w-3" />
-                    Live from FMCSA
+                    Live Data
                   </span>
                 )}
               </div>
@@ -187,23 +187,15 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
             {isLive ? (
               <>
                 <span className="font-medium text-emerald-600">Live data</span> fetched
-                directly from FMCSA (Federal Motor Carrier Safety Administration).
+                in real-time from public government records.
               </>
             ) : (
               <>
-                Data sourced from FMCSA. Last synced from our database.
+                Data sourced from public government records.
               </>
             )}{" "}
-            For official records, visit{" "}
-            <a
-              href={`https://ai.fmcsa.dot.gov/SMS/Carrier/${carrier.dot_number}/Overview.aspx`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-orange-600 hover:underline"
-            >
-              FMCSA directly
-            </a>
-            .
+            Safety information is provided for informational purposes only. Always verify
+            critical details with the appropriate regulatory authority before making decisions.
           </p>
         </div>
       </div>

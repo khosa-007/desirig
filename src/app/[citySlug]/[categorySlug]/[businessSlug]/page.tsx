@@ -176,7 +176,7 @@ export default async function BusinessDetailPage({ params }: PageProps) {
                   className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700 hover:bg-emerald-100"
                 >
                   <Shield className="h-3.5 w-3.5" />
-                  FMCSA DOT# {fmcsa.dot_number}
+                  DOT# {fmcsa.dot_number}
                 </Link>
               )}
             </div>
@@ -246,10 +246,10 @@ export default async function BusinessDetailPage({ params }: PageProps) {
             <div className="mt-6 rounded-xl border bg-card p-6">
               <h2 className="flex items-center gap-2 text-lg font-semibold">
                 <Shield className="h-5 w-5 text-green-600" />
-                FMCSA Safety Record
+                Carrier Safety Record
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Data from the Federal Motor Carrier Safety Administration
+                Official government safety data
               </p>
 
               <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-4">

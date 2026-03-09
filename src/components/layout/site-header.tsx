@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Truck, Search, Menu } from "lucide-react";
+import { Truck, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MobileMenu } from "./mobile-menu";
 
 export function SiteHeader() {
   return (
@@ -42,9 +43,7 @@ export function SiteHeader() {
               <Search className="h-5 w-5" />
             </Button>
           </Link>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
-          </Button>
+          <MobileMenu />
         </div>
       </div>
     </header>
