@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, MapPin, Shield, Star, ArrowRight, Gauge } from "lucide-react";
+import { Search, MapPin, Shield, Star, ArrowRight, Gauge, BookOpen } from "lucide-react";
 import { SemiTruckIcon } from "@/components/layout/site-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -57,9 +57,16 @@ export default async function HomePage() {
                 <path d="M55 120c0-8 20-14 45-14s45 6 45 14v60H55v-60z" fill="#FF6E40"/>
                 {/* Jacket collar */}
                 <path d="M80 106l20 14 20-14" stroke="#E64A19" strokeWidth="3" fill="none"/>
-                {/* Hands pointing down — presenting */}
+                {/* Left hand — presenting */}
                 <path d="M52 150c-8 4-15 12-15 20l12 4c2-8 6-14 10-18" fill="#C68642"/>
-                <path d="M148 150c8 4 15 12 15 20l-12 4c-2-8-6-14-10-18" fill="#C68642"/>
+                {/* Right hand — waving */}
+                <g className="wave-hand">
+                  <path d="M148 130c8-4 16-20 20-36" stroke="#C68642" strokeWidth="8" strokeLinecap="round" fill="none"/>
+                  <path d="M166 90c2-4 6-6 10-4s4 6 2 10c-1 2-3 5-4 6" fill="#C68642"/>
+                  <path d="M164 92c-2-4-1-8 3-10s8 0 9 4c0 2 0 5-1 7" fill="#C68642"/>
+                  <path d="M162 95c-3-3-3-7 0-10s7-2 9 1c1 2 1 5 0 7" fill="#C68642"/>
+                  <circle cx="168" cy="88" r="5" fill="#C68642"/>
+                </g>
                 {/* Belt */}
                 <rect x="55" y="175" width="90" height="5" rx="2" fill="#E64A19"/>
                 {/* Legs */}
@@ -298,8 +305,24 @@ export default async function HomePage() {
               </p>
             </Link>
             <Link
+              href="/tools/license-quiz"
+              className="group rounded-xl border border-slate-700 bg-slate-800/50 p-5 transition-all hover:border-[#FF6E40] hover:shadow-lg hover:shadow-[#FF6E40]/10 sm:col-span-2 lg:col-span-2"
+            >
+              <div className="flex items-center gap-3">
+                <BookOpen className="h-6 w-6 text-purple-400" />
+                <div>
+                  <h3 className="font-semibold group-hover:text-[#FF6E40]">
+                    License Exam Quiz
+                  </h3>
+                  <p className="text-sm text-slate-400">
+                    Practice for your truck license test — English &amp; ਪੰਜਾਬੀ. Air brakes, HOS, general knowledge.
+                  </p>
+                </div>
+              </div>
+            </Link>
+            <Link
               href="/tools/speed-fuel-savings"
-              className="group rounded-xl border border-slate-700 bg-slate-800/50 p-5 transition-all hover:border-[#FF6E40] hover:shadow-lg hover:shadow-[#FF6E40]/10 sm:col-span-2 lg:col-span-4"
+              className="group rounded-xl border border-slate-700 bg-slate-800/50 p-5 transition-all hover:border-[#FF6E40] hover:shadow-lg hover:shadow-[#FF6E40]/10 sm:col-span-2 lg:col-span-2"
             >
               <div className="flex items-center gap-3">
                 <Gauge className="h-6 w-6 text-green-400" />
@@ -369,6 +392,82 @@ export default async function HomePage() {
               Safety Lookup
             </Button>
           </Link>
+        </div>
+      </section>
+
+      {/* License Quiz — standalone section */}
+      <section className="border-t bg-gradient-to-br from-purple-950 via-slate-900 to-slate-800 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <div className="flex flex-col items-center gap-8 md:flex-row">
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 rounded-full bg-purple-500/20 px-3 py-1 text-sm font-medium text-purple-300">
+                <BookOpen className="h-4 w-4" />
+                Free Practice Tests
+              </div>
+              <h2 className="mt-4 text-2xl font-bold md:text-3xl">
+                Truck License Exam Quiz
+              </h2>
+              <p className="mt-2 text-slate-300">
+                Practice for your Class A/D knowledge test in English &amp; ਪੰਜਾਬੀ.
+                Pick your province, choose a topic, and start drilling.
+              </p>
+              <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+                <div className="rounded-xl bg-white/10 px-3 py-3">
+                  <div className="text-xl font-bold">50+</div>
+                  <div className="text-xs text-purple-200">Questions</div>
+                </div>
+                <div className="rounded-xl bg-white/10 px-3 py-3">
+                  <div className="text-xl font-bold">6</div>
+                  <div className="text-xs text-purple-200">Provinces</div>
+                </div>
+                <div className="rounded-xl bg-white/10 px-3 py-3">
+                  <div className="text-xl font-bold">3</div>
+                  <div className="text-xs text-purple-200">Categories</div>
+                </div>
+              </div>
+            </div>
+            <div className="grid w-full max-w-sm gap-3">
+              <Link
+                href="/tools/license-quiz"
+                className="group flex items-center gap-4 rounded-xl border border-purple-500/30 bg-purple-900/40 p-4 transition-all hover:border-purple-400 hover:bg-purple-900/60"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-purple-500/20">
+                  <BookOpen className="h-6 w-6 text-purple-300" />
+                </div>
+                <div>
+                  <h3 className="font-semibold group-hover:text-purple-300">General Knowledge</h3>
+                  <p className="text-sm text-slate-400">20 questions per province</p>
+                </div>
+                <ArrowRight className="ml-auto h-5 w-5 text-slate-500 group-hover:text-purple-300" />
+              </Link>
+              <Link
+                href="/tools/license-quiz"
+                className="group flex items-center gap-4 rounded-xl border border-orange-500/30 bg-orange-900/20 p-4 transition-all hover:border-orange-400 hover:bg-orange-900/40"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-orange-500/20">
+                  <SemiTruckIcon className="h-6 w-6 text-orange-300" />
+                </div>
+                <div>
+                  <h3 className="font-semibold group-hover:text-orange-300">Air Brakes A–Z</h3>
+                  <p className="text-sm text-slate-400">20 questions — compressor to S-cam</p>
+                </div>
+                <ArrowRight className="ml-auto h-5 w-5 text-slate-500 group-hover:text-orange-300" />
+              </Link>
+              <Link
+                href="/tools/license-quiz"
+                className="group flex items-center gap-4 rounded-xl border border-blue-500/30 bg-blue-900/20 p-4 transition-all hover:border-blue-400 hover:bg-blue-900/40"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-500/20">
+                  <Gauge className="h-6 w-6 text-blue-300" />
+                </div>
+                <div>
+                  <h3 className="font-semibold group-hover:text-blue-300">Hours of Service</h3>
+                  <p className="text-sm text-slate-400">10 questions — cycles, resets, ELD</p>
+                </div>
+                <ArrowRight className="ml-auto h-5 w-5 text-slate-500 group-hover:text-blue-300" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -116,6 +116,33 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Waving hand animation for hero character */
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+  85% { transform: rotate(0deg); }
+}
+
+.wave-hand {
+  animation: wave 2.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+  transform-origin: 148px 130px; /* shoulder pivot */
+}
+
+/* Truck driving animation for quiz */
+@keyframes truck-drive {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(calc(100% + 100px)); }
+}
+
+.truck-drive {
+  animation: truck-drive 3s ease-in-out;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
