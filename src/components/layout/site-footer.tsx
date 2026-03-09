@@ -44,6 +44,11 @@ export function SiteFooter() {
                   Safety Lookup
                 </Link>
               </li>
+              <li>
+                <Link href="/tools" className="hover:text-foreground">
+                  Trucker Tools
+                </Link>
+              </li>
             </ul>
           </div>
 

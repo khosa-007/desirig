@@ -36,6 +36,12 @@ export function SiteHeader() {
             Safety Lookup
           </Link>
           <Link
+            href="/tools"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Tools
+          </Link>
+          <Link
             href="/blog"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
