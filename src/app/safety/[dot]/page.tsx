@@ -7,16 +7,16 @@ import {
   Truck,
   Users,
   Phone,
-  Mail,
   MapPin,
   AlertTriangle,
   CheckCircle,
   XCircle,
+  Zap,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { fetchFmcsaLive } from "@/lib/fmcsa";
 import { getFmcsaByDot } from "@/lib/queries";
 
-export const revalidate = 86400;
+export const revalidate = 3600; // ISR: 1 hour (live data is fresh anyway)
 
 interface PageProps {
   params: Promise<{ dot: string }>;
@@ -24,7 +24,9 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { dot } = await params;
-  const carrier = await getFmcsaByDot(dot);
+
+  // Try live first, fall back to DB
+  const carrier = (await fetchFmcsaLive(dot)) ?? (await getFmcsaByDot(dot));
   if (!carrier) return {};
 
   return {
@@ -35,7 +37,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CarrierSafetyPage({ params }: PageProps) {
   const { dot } = await params;
-  const carrier = await getFmcsaByDot(dot);
+
+  // Live fetch from FMCSA API — always fresh
+  const liveCarrier = await fetchFmcsaLive(dot);
+  // Fall back to our database if API is down
+  const dbCarrier = !liveCarrier ? await getFmcsaByDot(dot) : null;
+  const carrier = liveCarrier ?? dbCarrier;
+  const isLive = !!liveCarrier;
+
   if (!carrier) notFound();
 
   const ratingColor =
@@ -53,6 +62,10 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
       : carrier.safety_rating === "Unsatisfactory"
         ? XCircle
         : AlertTriangle;
+
+  // Check Desi ownership from our DB (live API doesn't have this)
+  const dbData = dbCarrier ?? (liveCarrier ? await getFmcsaByDot(dot) : null);
+  const isDesi = dbData?.is_desi_owned ?? false;
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -85,7 +98,7 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
                 <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium">
                   DOT# {carrier.dot_number}
                 </span>
-                {carrier.is_desi_owned && (
+                {isDesi && (
                   <span className="rounded-full bg-green-50 px-3 py-1 text-sm font-medium text-green-700">
                     Desi Owned
                   </span>
@@ -93,6 +106,12 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
                 <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium capitalize">
                   {carrier.status_code === "A" ? "Active" : carrier.status_code}
                 </span>
+                {isLive && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                    <Zap className="h-3 w-3" />
+                    Live from FMCSA
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -128,14 +147,14 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
           </div>
           <div className="rounded-xl border bg-card p-5 text-center">
             <Shield className="mx-auto h-6 w-6 text-orange-500" />
-            <div className="mt-2 text-2xl font-bold">
+            <div className="mt-2 text-2xl font-bold text-sm">
               {carrier.carrier_operation || "N/A"}
             </div>
             <div className="text-sm text-muted-foreground">Operation Type</div>
           </div>
         </div>
 
-        {/* Contact & Address */}
+        {/* Contact & Address — NO emails, NO officer names */}
         <div className="mt-6 rounded-xl border bg-card p-6">
           <h2 className="text-lg font-semibold">Contact Information</h2>
           <div className="mt-4 space-y-3">
@@ -159,36 +178,23 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
                 </a>
               </div>
             )}
-            {carrier.email && (
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-muted-foreground" />
-                <a
-                  href={`mailto:${carrier.email}`}
-                  className="text-orange-600 hover:underline"
-                >
-                  {carrier.email}
-                </a>
-              </div>
-            )}
           </div>
-
-          {(carrier.company_officer_1 || carrier.company_officer_2) && (
-            <div className="mt-4 border-t pt-4">
-              <h3 className="text-sm font-semibold">Company Officers</h3>
-              <div className="mt-2 space-y-1 text-sm text-muted-foreground">
-                {carrier.company_officer_1 && <p>{carrier.company_officer_1}</p>}
-                {carrier.company_officer_2 && <p>{carrier.company_officer_2}</p>}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Disclaimer */}
         <div className="mt-6 rounded-xl bg-muted/40 p-4 text-center text-xs text-muted-foreground">
           <p>
-            Data sourced from FMCSA (Federal Motor Carrier Safety
-            Administration). Last synced from our database. For the most
-            up-to-date information, visit{" "}
+            {isLive ? (
+              <>
+                <span className="font-medium text-emerald-600">Live data</span> fetched
+                directly from FMCSA (Federal Motor Carrier Safety Administration).
+              </>
+            ) : (
+              <>
+                Data sourced from FMCSA. Last synced from our database.
+              </>
+            )}{" "}
+            For official records, visit{" "}
             <a
               href={`https://ai.fmcsa.dot.gov/SMS/Carrier/${carrier.dot_number}/Overview.aspx`}
               target="_blank"

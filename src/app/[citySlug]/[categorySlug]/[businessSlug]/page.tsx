@@ -279,13 +279,6 @@ export default async function BusinessDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {fmcsa.company_officer_1 && (
-                <div className="mt-4 text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Officer:</span>{" "}
-                  {fmcsa.company_officer_1}
-                </div>
-              )}
-
               <Link href={`/safety/${fmcsa.dot_number}`} className="mt-4 block">
                 <Button variant="outline" size="sm" className="gap-1">
                   View Full Safety Report <ArrowRight className="h-3.5 w-3.5" />
