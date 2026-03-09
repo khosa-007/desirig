@@ -5,8 +5,11 @@ import Link from "next/link";
 import { ChevronRight, Fuel, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { LanguageToggle } from "@/components/language-toggle";
+import { useLanguage } from "@/lib/language-context";
 
 export default function FuelCostCalculator() {
+  const { lang, t } = useLanguage();
   const [distance, setDistance] = useState("");
   const [fuelPrice, setFuelPrice] = useState("1.65");
   const [mpg, setMpg] = useState("6.5");
@@ -22,7 +25,6 @@ export default function FuelCostCalculator() {
     const efficiency = parseFloat(mpg);
     if (!d || !price || !efficiency || d <= 0 || price <= 0 || efficiency <= 0) return;
 
-    // Convert MPG to L/100km: L/100km = 235.215 / MPG
     const lPer100 = 235.215 / efficiency;
     const litres = (d / 100) * lPer100;
     const cost = litres * price;
@@ -47,32 +49,42 @@ export default function FuelCostCalculator() {
             url: "https://desirig.com/tools/fuel-cost-calculator",
             applicationCategory: "UtilityApplication",
             operatingSystem: "Web",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "CAD",
-            },
+            offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },
           }),
         }}
       />
 
       <nav className="mb-6 flex items-center gap-1 text-sm text-muted-foreground">
-        <Link href="/" className="hover:text-foreground">Home</Link>
+        <Link href="/" className="hover:text-foreground">
+          {t({ en: "Home", pa: "ਹੋਮ" })}
+        </Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <Link href="/tools" className="hover:text-foreground">Tools</Link>
+        <Link href="/tools" className="hover:text-foreground">
+          {t({ en: "Tools", pa: "ਟੂਲ" })}
+        </Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <span className="text-foreground">Fuel Cost Calculator</span>
+        <span className="text-foreground">
+          {t({ en: "Fuel Cost Calculator", pa: "ਬਾਲਣ ਖ਼ਰਚਾ ਕੈਲਕੁਲੇਟਰ" })}
+        </span>
       </nav>
 
-      <div className="text-center">
+      <div className="flex items-center justify-between">
+        <div />
+        <LanguageToggle />
+      </div>
+
+      <div className="mt-4 text-center">
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
           <Fuel className="h-8 w-8 text-blue-600" />
         </div>
         <h1 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl">
-          Truck Fuel Cost Calculator
+          {t({ en: "Truck Fuel Cost Calculator", pa: "ਟਰੱਕ ਬਾਲਣ ਖ਼ਰਚਾ ਕੈਲਕੁਲੇਟਰ" })}
         </h1>
         <p className="mt-2 text-muted-foreground">
-          Calculate how much fuel you&apos;ll need and what it&apos;ll cost for any trip.
+          {t({
+            en: "Calculate how much fuel you'll need and what it'll cost for any trip.",
+            pa: "ਪਤਾ ਕਰੋ ਕਿ ਤੁਹਾਡੇ ਸਫ਼ਰ ਲਈ ਕਿੰਨਾ ਬਾਲਣ ਚਾਹੀਦਾ ਤੇ ਕਿੰਨਾ ਖ਼ਰਚਾ ਆਵੇਗਾ।",
+          })}
         </p>
       </div>
 
@@ -80,19 +92,19 @@ export default function FuelCostCalculator() {
         <div className="space-y-4">
           <div>
             <label className="text-sm font-medium text-foreground">
-              Trip Distance (km)
+              {t({ en: "Trip Distance (km)", pa: "ਸਫ਼ਰ ਦੀ ਦੂਰੀ (ਕਿਲੋਮੀਟਰ)" })}
             </label>
             <Input
               type="number"
               value={distance}
               onChange={(e) => setDistance(e.target.value)}
-              placeholder="e.g. 550 (Toronto to Montreal)"
+              placeholder={t({ en: "e.g. 550 (Toronto to Montreal)", pa: "ਜਿਵੇਂ 550 (ਟੋਰਾਂਟੋ ਤੋਂ ਮਾਂਟਰੀਅਲ)" })}
               className="mt-1"
             />
           </div>
           <div>
             <label className="text-sm font-medium text-foreground">
-              Diesel Price ($/litre)
+              {t({ en: "Diesel Price ($/litre)", pa: "ਡੀਜ਼ਲ ਦੀ ਕੀਮਤ ($/ਲੀਟਰ)" })}
             </label>
             <Input
               type="number"
@@ -103,12 +115,15 @@ export default function FuelCostCalculator() {
               className="mt-1"
             />
             <p className="mt-1 text-xs text-muted-foreground">
-              Average Ontario diesel: ~$1.55-$1.75/L
+              {t({
+                en: "Average Ontario diesel: ~$1.55-$1.75/L",
+                pa: "ਔਸਤ ਓਨਟਾਰੀਓ ਡੀਜ਼ਲ: ~$1.55-$1.75/ਲੀਟਰ",
+              })}
             </p>
           </div>
           <div>
             <label className="text-sm font-medium text-foreground">
-              Fuel Efficiency (MPG)
+              {t({ en: "Fuel Efficiency (MPG)", pa: "ਬਾਲਣ ਦੀ ਕਾਰਗੁਜ਼ਾਰੀ (MPG)" })}
             </label>
             <Input
               type="number"
@@ -119,39 +134,47 @@ export default function FuelCostCalculator() {
               className="mt-1"
             />
             <p className="mt-1 text-xs text-muted-foreground">
-              Average semi truck: 5.5-7.5 MPG (loaded vs empty)
+              {t({
+                en: "Average semi truck: 5.5-7.5 MPG (loaded vs empty)",
+                pa: "ਔਸਤ ਸੈਮੀ ਟਰੱਕ: 5.5-7.5 MPG (ਲੋਡ ਨਾਲ ਤੇ ਖਾਲੀ)",
+              })}
             </p>
           </div>
-          <Button
-            onClick={calculate}
-            className="w-full bg-blue-600 hover:bg-blue-700"
-          >
+          <Button onClick={calculate} className="w-full bg-blue-600 hover:bg-blue-700">
             <Calculator className="mr-2 h-4 w-4" />
-            Calculate Fuel Cost
+            {t({ en: "Calculate Fuel Cost", pa: "ਬਾਲਣ ਦਾ ਖ਼ਰਚਾ ਪਤਾ ਕਰੋ" })}
           </Button>
         </div>
 
         {result && (
           <div className="mt-6 rounded-xl bg-blue-50 p-5">
-            <h2 className="font-semibold text-blue-900">Trip Fuel Estimate</h2>
+            <h2 className="font-semibold text-blue-900">
+              {t({ en: "Trip Fuel Estimate", pa: "ਸਫ਼ਰ ਦਾ ਬਾਲਣ ਅੰਦਾਜ਼ਾ" })}
+            </h2>
             <div className="mt-3 grid grid-cols-3 gap-4 text-center">
               <div>
                 <div className="text-2xl font-bold text-blue-700">
                   {result.litres.toLocaleString()}L
                 </div>
-                <div className="text-xs text-blue-600">Fuel Needed</div>
+                <div className="text-xs text-blue-600">
+                  {t({ en: "Fuel Needed", pa: "ਬਾਲਣ ਲੋੜੀਂਦਾ" })}
+                </div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-blue-700">
                   ${result.cost.toLocaleString()}
                 </div>
-                <div className="text-xs text-blue-600">Total Cost</div>
+                <div className="text-xs text-blue-600">
+                  {t({ en: "Total Cost", pa: "ਕੁੱਲ ਖ਼ਰਚਾ" })}
+                </div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-blue-700">
                   ${result.costPerKm}
                 </div>
-                <div className="text-xs text-blue-600">Per km</div>
+                <div className="text-xs text-blue-600">
+                  {t({ en: "Per km", pa: "ਪ੍ਰਤੀ ਕਿ.ਮੀ." })}
+                </div>
               </div>
             </div>
           </div>
@@ -160,7 +183,9 @@ export default function FuelCostCalculator() {
 
       {/* Common routes */}
       <div className="mt-8 rounded-xl border bg-card p-6">
-        <h2 className="font-semibold text-foreground">Common Canadian Routes</h2>
+        <h2 className="font-semibold text-foreground">
+          {t({ en: "Common Canadian Routes", pa: "ਆਮ ਕੈਨੇਡੀਅਨ ਰੂਟ" })}
+        </h2>
         <div className="mt-3 space-y-2 text-sm">
           {[
             { route: "Toronto → Montreal", km: 540 },
@@ -185,15 +210,13 @@ export default function FuelCostCalculator() {
 
       <div className="mt-8 rounded-xl bg-muted/40 p-6 text-sm text-muted-foreground leading-relaxed">
         <h2 className="mb-2 text-base font-semibold text-foreground">
-          About This Calculator
+          {t({ en: "About This Calculator", pa: "ਇਸ ਕੈਲਕੁਲੇਟਰ ਬਾਰੇ" })}
         </h2>
         <p>
-          This fuel cost calculator helps Canadian truck drivers estimate fuel expenses
-          for any trip. Enter your distance in kilometres, current diesel price per litre,
-          and your truck&apos;s fuel efficiency in MPG. The calculator converts MPG to
-          litres per 100km and computes total fuel needed and total cost. Results are
-          estimates — actual consumption depends on load weight, terrain, weather, and
-          driving style.
+          {t({
+            en: "This fuel cost calculator helps Canadian truck drivers estimate fuel expenses for any trip. Enter your distance in kilometres, current diesel price per litre, and your truck's fuel efficiency in MPG. The calculator converts MPG to litres per 100km and computes total fuel needed and total cost. Results are estimates — actual consumption depends on load weight, terrain, weather, and driving style.",
+            pa: "ਇਹ ਬਾਲਣ ਖ਼ਰਚਾ ਕੈਲਕੁਲੇਟਰ ਕੈਨੇਡੀਅਨ ਟਰੱਕ ਡਰਾਈਵਰਾਂ ਨੂੰ ਕਿਸੇ ਵੀ ਸਫ਼ਰ ਲਈ ਬਾਲਣ ਦੇ ਖ਼ਰਚੇ ਦਾ ਅੰਦਾਜ਼ਾ ਲਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ। ਆਪਣੀ ਦੂਰੀ ਕਿਲੋਮੀਟਰ ਵਿੱਚ, ਡੀਜ਼ਲ ਦੀ ਮੌਜੂਦਾ ਕੀਮਤ ਪ੍ਰਤੀ ਲੀਟਰ, ਅਤੇ ਟਰੱਕ ਦੀ ਬਾਲਣ ਕਾਰਗੁਜ਼ਾਰੀ MPG ਵਿੱਚ ਪਾਓ। ਨਤੀਜੇ ਅੰਦਾਜ਼ੇ ਹਨ — ਅਸਲ ਖਪਤ ਲੋਡ, ਰਸਤੇ, ਮੌਸਮ ਤੇ ਡਰਾਈਵਿੰਗ ਦੇ ਤਰੀਕੇ ਉੱਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ।",
+          })}
         </p>
       </div>
     </div>

@@ -23,14 +23,14 @@ export function MobileMenu() {
       {/* Overlay */}
       {open && (
         <div
-          className="fixed inset-0 z-50 bg-black/50 md:hidden"
+          className="fixed inset-0 z-[60] bg-black/50 md:hidden"
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* Slide-in panel */}
       <div
-        className={`fixed inset-y-0 right-0 z-50 w-72 bg-background shadow-xl transition-transform duration-200 md:hidden ${
+        className={`fixed inset-y-0 right-0 z-[60] w-72 bg-background shadow-xl transition-transform duration-200 md:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >

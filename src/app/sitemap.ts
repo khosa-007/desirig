@@ -20,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/tools/weight-limits`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/tools/hos-calculator`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/tools/speed-fuel-savings`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/tools/license-quiz`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/top-rated`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/desi-owned`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/about`, changeFrequency: "monthly", priority: 0.4 },
