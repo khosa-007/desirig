@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Get answers to common questions about DesiRig — Canada's trusted Desi trucking and business directory. Safety lookups, business listings, and more.",
+    "Get answers to common questions about DesiRig, Canada's trusted Desi trucking and business directory. Safety lookups, business listings, and more.",
   alternates: {
     canonical: "https://desirig.com/faq",
   },
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "How do I look up a trucking company's safety record?",
-    a: "Go to our Safety Lookup page and enter the company's DOT number or name. We pull live data from government records to show you their safety rating, fleet size, driver count, and more.",
+    a: "Go to our Safety Lookup page and enter the company's DOT number or name. You'll see their safety rating, fleet size, driver count, and more.",
   },
   {
     q: "What does a 'Satisfactory' safety rating mean?",
@@ -42,11 +42,11 @@ const faqs = [
   },
   {
     q: "Where does DesiRig get its data?",
-    a: "Our business listings include information from public sources such as business registries and user-submitted data. Safety data is pulled in real-time from government records. Google ratings come directly from Google.",
+    a: "We collect business info from public sources and user submissions. Safety data comes from official government records. Google ratings come directly from Google.",
   },
   {
     q: "Can I look up US trucking companies?",
-    a: "Yes. Enter any US DOT number in our Safety Lookup and we'll fetch the carrier's information directly from government records in real-time.",
+    a: "Yes. Enter any US DOT number in our Safety Lookup and you'll get the carrier's safety info right away.",
   },
   {
     q: "What is Driver Inc. and why should I care?",

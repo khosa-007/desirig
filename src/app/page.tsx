@@ -57,9 +57,9 @@ export default async function HomePage() {
                 <path d="M55 120c0-8 20-14 45-14s45 6 45 14v60H55v-60z" fill="#FF6E40"/>
                 {/* Jacket collar */}
                 <path d="M80 106l20 14 20-14" stroke="#E64A19" strokeWidth="3" fill="none"/>
-                {/* Left hand — presenting */}
+                {/* Left hand  - presenting */}
                 <path d="M52 150c-8 4-15 12-15 20l12 4c2-8 6-14 10-18" fill="#C68642"/>
-                {/* Right hand — waving */}
+                {/* Right hand  - waving */}
                 <g className="wave-hand">
                   <path d="M148 130c8-4 16-20 20-36" stroke="#C68642" strokeWidth="8" strokeLinecap="round" fill="none"/>
                   <path d="M166 90c2-4 6-6 10-4s4 6 2 10c-1 2-3 5-4 6" fill="#C68642"/>
@@ -86,8 +86,7 @@ export default async function HomePage() {
                 Your Trusted<br />Desi Directory
               </h1>
               <p className="mt-4 max-w-xl text-lg text-orange-200 md:text-xl">
-                Find trucking companies, mechanics, driving schools, and community
-                businesses across Canada. Real ratings, safety data — keep it in your pocket.
+                Trucking companies, mechanics, driving schools, community businesses across Canada. Real ratings, real safety data. All in your pocket.
               </p>
             </div>
           </div>
@@ -110,7 +109,7 @@ export default async function HomePage() {
             </Button>
           </form>
 
-          {/* Popular searches — crawlable links */}
+          {/* Popular searches  - crawlable links */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm md:justify-start">
             <span className="text-orange-300">Quick:</span>
             {[
@@ -159,7 +158,7 @@ export default async function HomePage() {
               For Truckers
             </h2>
             <p className="mt-1 text-muted-foreground">
-              Everything a trucker needs, in one place
+              Companies, shops, tools. All here.
             </p>
           </div>
           <Link href="/categories">
@@ -243,7 +242,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Driver's Toolkit — the reason truckers come back */}
+      {/* Driver's Toolkit  - the reason truckers come back */}
       <section className="border-t bg-gradient-to-b from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
@@ -251,7 +250,7 @@ export default async function HomePage() {
               Driver&apos;s Real Toolkit
             </h2>
             <p className="mt-1 text-slate-400">
-              Everything you need on the road — keep it in your pocket
+              Tools you actually use. Right on your phone.
             </p>
           </div>
 
@@ -277,7 +276,7 @@ export default async function HomePage() {
                 Fuel Calculator
               </h3>
               <p className="mt-1 text-sm text-slate-400">
-                Calculate trip fuel costs for any route
+                Get trip fuel costs for any route
               </p>
             </Link>
             <Link
@@ -289,7 +288,7 @@ export default async function HomePage() {
                 Weight Limits
               </h3>
               <p className="mt-1 text-sm text-slate-400">
-                Axle weights by province — in pounds
+                Axle weights by province, in pounds
               </p>
             </Link>
             <Link
@@ -301,7 +300,7 @@ export default async function HomePage() {
                 HOS Rules
               </h3>
               <p className="mt-1 text-sm text-slate-400">
-                Hours of service limits — quick reference
+                HOS limits, quick reference
               </p>
             </Link>
             <Link
@@ -315,7 +314,7 @@ export default async function HomePage() {
                     License Exam Quiz
                   </h3>
                   <p className="text-sm text-slate-400">
-                    Practice for your truck license test — English &amp; ਪੰਜਾਬੀ. Air brakes, HOS, general knowledge.
+                    Practice your truck license test. English &amp; ਪੰਜਾਬੀ. Air brakes, HOS, general knowledge.
                   </p>
                 </div>
               </div>
@@ -331,7 +330,7 @@ export default async function HomePage() {
                     Speed vs Fuel Savings Calculator
                   </h3>
                   <p className="text-sm text-slate-400">
-                    Drop 5 km/h, save thousands per year. See exactly how much your speed costs you.
+                    Drop 5 km/h, save thousands a year. See what your speed really costs.
                   </p>
                 </div>
               </div>
@@ -345,7 +344,7 @@ export default async function HomePage() {
             >
               <Star className="h-6 w-6 text-orange-400" />
               <h3 className="mt-3 font-semibold group-hover:text-[#FF6E40]">Top Rated</h3>
-              <p className="mt-1 text-sm text-slate-400">Highest-rated businesses across Canada</p>
+              <p className="mt-1 text-sm text-slate-400">The best-rated spots across Canada</p>
             </Link>
             <Link
               href="/desi-owned"
@@ -353,7 +352,7 @@ export default async function HomePage() {
             >
               <Shield className="h-6 w-6 text-green-400" />
               <h3 className="mt-3 font-semibold group-hover:text-[#FF6E40]">Desi Owned</h3>
-              <p className="mt-1 text-sm text-slate-400">Support community-owned businesses</p>
+              <p className="mt-1 text-sm text-slate-400">Support our own</p>
             </Link>
             <Link
               href="/province"
@@ -367,7 +366,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* FMCSA Safety CTA */}
+      {/* Safety CTA */}
       <section className="bg-gradient-to-r from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto flex flex-col items-center gap-6 px-4 py-16 text-center md:flex-row md:text-left">
           <div className="flex-1">
@@ -379,8 +378,7 @@ export default async function HomePage() {
               Check Any Carrier&apos;s Safety Record
             </h2>
             <p className="mt-2 text-slate-300">
-              Real-time safety ratings, crash data, and inspection records
-              pulled from government records. Never stale, always accurate.
+              Safety ratings, crash data, inspections. Pulled straight from government records. Always fresh.
             </p>
           </div>
           <Link href="/safety">
@@ -395,7 +393,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* License Quiz — standalone section */}
+      {/* License Quiz  - standalone section */}
       <section className="border-t bg-gradient-to-br from-purple-950 via-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4 py-16">
           <div className="flex flex-col items-center gap-8 md:flex-row">
@@ -408,8 +406,7 @@ export default async function HomePage() {
                 Truck License Exam Quiz
               </h2>
               <p className="mt-2 text-slate-300">
-                Practice for your Class A/D knowledge test in English &amp; ਪੰਜਾਬੀ.
-                Pick your province, choose a topic, and start drilling.
+                Class A/D practice tests in English &amp; ਪੰਜਾਬੀ. Pick your province and start drilling.
               </p>
               <div className="mt-6 grid grid-cols-3 gap-3 text-center">
                 <div className="rounded-xl bg-white/10 px-3 py-3">
@@ -448,8 +445,8 @@ export default async function HomePage() {
                   <SemiTruckIcon className="h-6 w-6 text-orange-300" />
                 </div>
                 <div>
-                  <h3 className="font-semibold group-hover:text-orange-300">Air Brakes A–Z</h3>
-                  <p className="text-sm text-slate-400">20 questions — compressor to S-cam</p>
+                  <h3 className="font-semibold group-hover:text-orange-300">Air Brakes A-Z</h3>
+                  <p className="text-sm text-slate-400">20 questions, compressor to S-cam</p>
                 </div>
                 <ArrowRight className="ml-auto h-5 w-5 text-slate-500 group-hover:text-orange-300" />
               </Link>
@@ -462,7 +459,7 @@ export default async function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-semibold group-hover:text-blue-300">Hours of Service</h3>
-                  <p className="text-sm text-slate-400">10 questions — cycles, resets, ELD</p>
+                  <p className="text-sm text-slate-400">10 questions, cycles, resets, ELD</p>
                 </div>
                 <ArrowRight className="ml-auto h-5 w-5 text-slate-500 group-hover:text-blue-300" />
               </Link>
@@ -471,13 +468,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Trust signals — driver-focused, not corporate */}
+      {/* Trust signals  - driver-focused, not corporate */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="mb-2 text-center text-2xl font-bold tracking-tight">
           Built by a Trucker, for Truckers
         </h2>
         <p className="mb-8 text-center text-muted-foreground">
-          We know what it&apos;s like on the road — because we&apos;re out there too
+          We drive too. We get it.
         </p>
         <div className="grid gap-8 text-center md:grid-cols-3">
           <div>
@@ -486,8 +483,7 @@ export default async function HomePage() {
             </div>
             <h3 className="mt-4 font-semibold">No Fake Reviews</h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              Real Google ratings from real customers. No paid placements,
-              no BS. What you see is what you get.
+              Real Google ratings from real customers. No paid spots, no BS.
             </p>
           </div>
           <div>
@@ -496,8 +492,7 @@ export default async function HomePage() {
             </div>
             <h3 className="mt-4 font-semibold">Live Safety Data</h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              Check any company before signing on. DOT records, fleet size,
-              safety ratings — pulled fresh from government data.
+              Look up any company before you sign. DOT records, fleet size, safety ratings. Fresh from government data.
             </p>
           </div>
           <div>
@@ -506,23 +501,20 @@ export default async function HomePage() {
             </div>
             <h3 className="mt-4 font-semibold">Free Forever</h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              Every tool, every lookup, every listing — free for drivers.
-              No sign-up required. No hidden fees. Ever.
+              Every tool, every lookup, every listing. Free for drivers. No sign-up, no hidden fees.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA — comfort, not sales */}
+      {/* Bottom CTA  - comfort, not sales */}
       <section className="border-t bg-muted/40">
         <div className="container mx-auto px-4 py-16 text-center">
           <h2 className="text-2xl font-bold tracking-tight">
             Your Road, Your Tools
           </h2>
           <p className="mx-auto mt-2 max-w-lg text-muted-foreground">
-            {businessCount.toLocaleString()} businesses, {cityCount} cities, safety lookups,
-            fuel calculators, weight limits, HOS rules — all in one place.
-            Bookmark it, share it with your crew.
+            {businessCount.toLocaleString()} businesses, {cityCount} cities, safety lookups, fuel calculators, weight limits, HOS rules. One spot. Bookmark it, send it to your crew.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link href="/tools">

@@ -16,7 +16,6 @@ import {
   Route,
   Building,
   Scale,
-  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { fetchFmcsaLive } from "@/lib/fmcsa";
@@ -451,28 +450,11 @@ export default async function CarrierSafetyPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Link to full FMCSA record */}
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href={`https://ai.fmcsa.dot.gov/SMS/Carrier/${carrier.dot_number}/Overview.aspx`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant="outline" className="gap-2">
-              <ExternalLink className="h-4 w-4" />
-              Full FMCSA Record
-            </Button>
-          </a>
-          <a
-            href={`https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=${carrier.dot_number}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant="outline" className="gap-2">
-              <ExternalLink className="h-4 w-4" />
-              SAFER Snapshot
-            </Button>
-          </a>
+        {/* Note to check official sources */}
+        <div className="mt-6 rounded-xl bg-blue-50 p-4 text-sm text-blue-900">
+          <p>
+            Want the full official record? Visit your provincial or federal transport authority website and search by DOT number.
+          </p>
         </div>
 
         {/* Disclaimer */}

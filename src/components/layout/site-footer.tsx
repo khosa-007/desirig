@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EmailSignup } from "@/components/email-signup";
 
 export function SiteFooter() {
   return (
@@ -145,6 +146,19 @@ export function SiteFooter() {
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Email signup */}
+        <div className="mt-8 border-t pt-8">
+          <div className="mx-auto max-w-md text-center">
+            <h3 className="font-semibold">Get trucking news in your inbox</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Safety alerts, new tools, industry updates. No spam, just the stuff that matters.
+            </p>
+            <div className="mt-3">
+              <EmailSignup />
+            </div>
           </div>
         </div>
 

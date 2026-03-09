@@ -86,7 +86,7 @@ export default async function SafetyPage({ searchParams }: PageProps) {
         name: "How do I check a trucking company's safety record?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Enter the company's DOT number or name in the search box above. We pull live data from government records to show you their safety rating, fleet size, and driver count.",
+          text: "Enter the company's DOT number or name in the search box above. You'll see their safety rating, fleet size, and driver count.",
         },
       },
       {
@@ -102,7 +102,7 @@ export default async function SafetyPage({ searchParams }: PageProps) {
         name: "Is this safety data accurate?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. We pull data in real-time from public government records. For carriers in our database (15,688 active Canadian carriers), we also store backup data in case the live source is temporarily unavailable.",
+          text: "Yes. Our safety data comes from official government records and stays up to date. We also keep backup data for 15,688 active Canadian carriers.",
         },
       },
       {
@@ -110,7 +110,7 @@ export default async function SafetyPage({ searchParams }: PageProps) {
         name: "Can I look up US trucking companies?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Enter any US DOT number and we'll fetch the carrier's information directly from government records in real-time.",
+          text: "Yes. Enter any US DOT number and you'll get the carrier's safety info right away.",
         },
       },
     ],

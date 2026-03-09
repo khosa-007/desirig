@@ -16,8 +16,9 @@ import { Button } from "@/components/ui/button";
 import { getBusinessBySlug, getCityBySlug } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
 import { NearbyBusinesses } from "./nearby";
+import { BusinessReviews } from "@/components/reviews/business-reviews";
 
-export const revalidate = 86400;
+export const revalidate = 3600; // revalidate every hour so new reviews show up
 
 interface PageProps {
   params: Promise<{ citySlug: string; categorySlug: string; businessSlug: string }>;
@@ -73,6 +74,21 @@ export default async function BusinessDetailPage({ params }: PageProps) {
       .maybeSingle();
     fmcsa = data;
   }
+
+  // Fetch DesiRig reviews
+  const reviewSupabase = await createClient();
+  const { data: reviewsData } = await reviewSupabase
+    .from("reviews")
+    .select("*")
+    .eq("business_id", business.id)
+    .order("created_at", { ascending: false })
+    .limit(20);
+
+  const reviews = reviewsData ?? [];
+  const reviewCount = reviews.length;
+  const reviewAvg = reviewCount > 0
+    ? reviews.reduce((sum: number, r: { rating: number }) => sum + r.rating, 0) / reviewCount
+    : 0;
 
   // JSON-LD structured data
   const jsonLd = {
@@ -366,6 +382,15 @@ export default async function BusinessDetailPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+
+      {/* DesiRig Reviews */}
+      <BusinessReviews
+        businessId={business.id}
+        businessName={business.name}
+        initialReviews={reviews}
+        initialAvg={reviewAvg}
+        initialCount={reviewCount}
+      />
 
       {/* Nearby businesses */}
       <NearbyBusinesses

@@ -57,7 +57,7 @@ export default function AboutPage() {
         <p>
           Finding reliable trucking services shouldn&apos;t be a guessing game.
           Whether you&apos;re looking for a mechanic in Brampton, a driving school in
-          Surrey, or checking a carrier&apos;s safety record before signing on — DesiRig
+          Surrey, or checking a carrier&apos;s safety record before you sign on, DesiRig
           has your back.
         </p>
 
@@ -68,8 +68,8 @@ export default function AboutPage() {
             <Shield className="h-6 w-6 text-green-600" />
             <h3 className="mt-3 font-semibold text-foreground">Real Safety Data</h3>
             <p className="mt-1 text-sm">
-              Live safety ratings pulled directly from government records.
-              Not cached, not stale — real-time data you can trust.
+              Live safety ratings from official records.
+              Always fresh, always accurate. Data you can trust.
             </p>
           </div>
 
@@ -87,7 +87,7 @@ export default function AboutPage() {
             <h3 className="mt-3 font-semibold text-foreground">Built for Truckers</h3>
             <p className="mt-1 text-sm">
               Categories that matter: truck mechanics, tire shops, permit
-              services, drug testing, ELD suppliers — not just restaurants.
+              services, drug testing, ELD suppliers. Not just restaurants.
             </p>
           </div>
 
@@ -121,10 +121,9 @@ export default function AboutPage() {
         <h2 className="text-xl font-semibold text-foreground pt-4">Our Mission</h2>
 
         <p>
-          Every Desi trucker deserves access to trusted information — which
-          companies are safe to drive for, which mechanics won&apos;t rip you off,
-          where to find a good dhaba on the road. DesiRig is free for drivers,
-          always will be.
+          Every Desi trucker deserves trusted information. Which companies are
+          safe to drive for. Which mechanics won&apos;t rip you off. Where to find a
+          good dhaba on the road. DesiRig is free for drivers and always will be.
         </p>
 
         <p>
