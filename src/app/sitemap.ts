@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@/lib/supabase/server";
 import { blogPosts } from "@/lib/blog";
+import { provinces } from "@/lib/provinces";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = await createClient();
@@ -113,6 +114,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
     .filter(Boolean) as MetadataRoute.Sitemap;
 
+  // Province pages
+  const provincePages: MetadataRoute.Sitemap = Object.values(provinces).map((p) => ({
+    url: `${baseUrl}/province/${p.slug}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   // Blog posts
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -123,6 +131,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...staticPages,
+    { url: `${baseUrl}/province`, changeFrequency: "weekly" as const, priority: 0.7 },
+    ...provincePages,
     { url: `${baseUrl}/blog`, changeFrequency: "weekly" as const, priority: 0.7 },
     ...blogPages,
     ...cityPages,
