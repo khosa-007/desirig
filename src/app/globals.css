@@ -136,11 +136,105 @@
 /* Truck driving animation for quiz */
 @keyframes truck-drive {
   0% { transform: translateX(-100%); }
-  100% { transform: translateX(calc(100% + 100px)); }
+  100% { transform: translateX(calc(100vw + 100px)); }
 }
 
 .truck-drive {
-  animation: truck-drive 3s ease-in-out;
+  animation: truck-drive 2.5s ease-in-out;
+}
+
+/* Correct answer: truck bounces and honks */
+@keyframes truck-bounce {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-8px) rotate(-2deg); }
+  40% { transform: translateY(0) rotate(0deg); }
+  60% { transform: translateY(-5px) rotate(1deg); }
+  80% { transform: translateY(0); }
+}
+
+.truck-bounce {
+  animation: truck-bounce 0.6s ease-in-out;
+}
+
+/* Wrong answer: truck skids and shakes */
+@keyframes truck-skid {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-6px) rotate(-1deg); }
+  20% { transform: translateX(5px) rotate(1deg); }
+  30% { transform: translateX(-4px) rotate(-0.5deg); }
+  40% { transform: translateX(3px) rotate(0.5deg); }
+  50% { transform: translateX(-2px); }
+  60% { transform: translateX(1px); }
+}
+
+.truck-skid {
+  animation: truck-skid 0.5s ease-in-out;
+}
+
+/* Victory: truck does a wheelie celebration */
+@keyframes truck-victory {
+  0% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(-8deg) scale(1.1); }
+  40% { transform: rotate(0deg) scale(1.2); }
+  60% { transform: rotate(5deg) scale(1.15); }
+  80% { transform: rotate(-2deg) scale(1.05); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.truck-victory {
+  animation: truck-victory 1s ease-in-out;
+}
+
+/* Fail: truck breaks down, wobbles and drops */
+@keyframes truck-breakdown {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  30% { transform: translateY(-3px) rotate(2deg); }
+  50% { transform: translateY(0) rotate(-3deg); }
+  70% { transform: translateY(2px) rotate(1deg); }
+  100% { transform: translateY(4px) rotate(-1deg); opacity: 0.7; }
+}
+
+.truck-breakdown {
+  animation: truck-breakdown 1.2s ease-in-out forwards;
+}
+
+/* Road progress bar background */
+@keyframes road-dash {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+.road-progress {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #FF6E40 0px,
+    #FF6E40 15px,
+    transparent 15px,
+    transparent 25px
+  );
+  background-size: 40px 100%;
+  animation: road-dash 1s linear infinite;
+}
+
+/* Confetti burst for passing */
+@keyframes confetti-pop {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.3) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(1) rotate(360deg); opacity: 1; }
+}
+
+.confetti-pop {
+  animation: confetti-pop 0.8s ease-out;
+}
+
+/* Pulse for timer warning (last 5 min) */
+@keyframes timer-pulse {
+  0%, 100% { color: inherit; }
+  50% { color: #ef4444; transform: scale(1.05); }
+}
+
+.timer-warning {
+  animation: timer-pulse 1s ease-in-out infinite;
 }
 
 @layer base {

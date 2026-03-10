@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { Menu, X, Truck, Search, Shield, MapPin, Grid3X3, BookOpen, Wrench } from "lucide-react";
+import { Menu, X, Truck, Search, Shield, MapPin, Grid3X3, BookOpen, Wrench, Newspaper } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function MenuPortal({ open, onClose, children }: { open: boolean; onClose: () => void; children: React.ReactNode }) {
@@ -100,6 +100,14 @@ export function MobileMenu() {
           >
             <Wrench className="h-4 w-4 text-muted-foreground" />
             Tools
+          </Link>
+          <Link
+            href="/news"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
+          >
+            <Newspaper className="h-4 w-4 text-muted-foreground" />
+            News
           </Link>
           <Link
             href="/blog"

@@ -90,6 +90,12 @@ export function SiteHeader() {
             Tools
           </Link>
           <Link
+            href="/news"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            News
+          </Link>
+          <Link
             href="/blog"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
