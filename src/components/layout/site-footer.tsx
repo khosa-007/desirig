@@ -45,7 +45,7 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              Built by a trucker, for truckers. Your toolkit and directory for
+              Built by a trucker, for truckers. Your toolkit for
               Desi businesses across Canada.
             </p>
           </div>

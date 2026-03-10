@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "DesiRig | Your Trusted Desi Directory",
+    name: "DesiRig | Your Trusted Desi Toolkit",
     short_name: "DesiRig",
     description:
       "Find trucking companies, mechanics, driving schools, and community businesses across Canada.",

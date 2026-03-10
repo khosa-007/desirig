@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "DesiRig | Your Trusted Desi Directory";
+export const alt = "DesiRig | Your Trusted Desi Toolkit";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -57,7 +57,7 @@ export default function OGImage() {
             lineHeight: 1.4,
           }}
         >
-          Your Trusted Desi Trucking & Business Directory
+          Your Trusted Desi Trucking & Business Toolkit
         </div>
         <div
           style={{

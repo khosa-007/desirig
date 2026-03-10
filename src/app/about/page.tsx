@@ -4,7 +4,7 @@ import { Truck, Shield, Star, Users, MapPin, Heart } from "lucide-react";
 export const metadata: Metadata = {
   title: "About DesiRig",
   description:
-    "DesiRig.com is built by truckers, for truckers. The most trusted Desi trucking and business directory in Canada.",
+    "DesiRig.com is built by truckers, for truckers. The most trusted Desi trucking and business platform in Canada.",
 };
 
 export default function AboutPage() {
@@ -17,7 +17,7 @@ export default function AboutPage() {
         name: "What is DesiRig?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "DesiRig is the trusted directory for South Asian trucking and community businesses across Canada. We list 38,000+ businesses across 244 cities with real Google ratings and live carrier safety data.",
+          text: "DesiRig is the trusted platform for South Asian trucking and community businesses across Canada. We list 38,000+ businesses across 244 cities with real Google ratings and live carrier safety data.",
         },
       },
       {
@@ -49,7 +49,7 @@ export default function AboutPage() {
 
       <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
         <p className="text-lg text-foreground">
-          DesiRig is the trusted directory for South Asian trucking and community
+          DesiRig is the trusted platform for South Asian trucking and community
           businesses across Canada. Built by a trucker who knows what drivers
           actually need.
         </p>

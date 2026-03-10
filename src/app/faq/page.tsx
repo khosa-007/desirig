@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Get answers to common questions about DesiRig, Canada's trusted Desi trucking and business directory. Safety lookups, business listings, and more.",
+    "Get answers to common questions about DesiRig, Canada's trusted Desi trucking and business platform. Safety lookups, business listings, and more.",
   alternates: {
     canonical: "https://desirig.com/faq",
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is DesiRig?",
-    a: "DesiRig is the trusted directory for South Asian trucking and community businesses across Canada. We list 38,000+ businesses across 244 cities with real Google ratings and live carrier safety data.",
+    a: "DesiRig is the trusted platform for South Asian trucking and community businesses across Canada. We list 38,000+ businesses across 244 cities with real Google ratings and live carrier safety data.",
   },
   {
     q: "Is DesiRig free to use?",

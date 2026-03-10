@@ -218,7 +218,7 @@ export default function PreviewPage() {
         )}
         <div className="container relative mx-auto px-4 py-20 text-center md:py-28">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl">
-            Your Trusted Desi Directory
+            Your Trusted Desi Toolkit
           </h1>
           <p className={`mx-auto mt-4 max-w-2xl text-lg ${t.heroSub} md:text-xl`}>
             Find trucking companies, mechanics, driving schools, and community

@@ -3,6 +3,7 @@ import { Search, MapPin, Shield, Star, ArrowRight, Gauge, BookOpen } from "lucid
 import { SemiTruckIcon } from "@/components/layout/site-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { NearMe } from "@/components/near-me";
 import {
   getTruckingCategories,
   getCommunityCategories,
@@ -83,7 +84,7 @@ export default async function HomePage() {
                 Driver&apos;s Real Toolkit
               </div>
               <h1 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
-                Your Trusted<br />Desi Directory
+                Your Trusted<br />Desi Toolkit
               </h1>
               <p className="mt-4 max-w-xl text-lg text-orange-200 md:text-xl">
                 Trucking companies, mechanics, driving schools, community businesses across Canada. Real ratings, real safety data. All in your pocket.
@@ -149,6 +150,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Near Me - location-based city suggestion */}
+      <NearMe />
 
       {/* Trucking Categories */}
       <section className="container mx-auto px-4 py-16">
@@ -524,7 +528,7 @@ export default async function HomePage() {
             </Link>
             <Link href="/categories">
               <Button size="lg" variant="outline">
-                Browse Directory
+                Browse Businesses
               </Button>
             </Link>
           </div>

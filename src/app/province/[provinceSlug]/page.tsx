@@ -171,7 +171,7 @@ export default async function ProvincePage({ params }: PageProps) {
         </h2>
         <p>
           DesiRig lists {totalListings.toLocaleString()} businesses across{" "}
-          {allCities.length} cities in {province.name}. Our directory includes
+          {allCities.length} cities in {province.name}. You can find
           trucking companies, truck mechanics, driving schools, Indian grocery
           stores, gurdwaras, restaurants, immigration consultants, and more.
           Every listing includes phone numbers, addresses, and Google ratings

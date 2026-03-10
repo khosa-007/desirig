@@ -193,9 +193,9 @@ export default async function ListingPage({ params, searchParams }: PageProps) {
             Google ratings from real customers, and links to their websites.
             {category.is_trucking
               ? ` Whether you're a new driver looking for a job or an owner-operator
-                needing services, our directory helps you find trusted
+                needing services, we help you find trusted
                 ${category.name.toLowerCase()} in the ${city.name} area.`
-              : ` Browse our directory to find the best
+              : ` Browse to find the best
                 ${category.name.toLowerCase()} serving the South Asian community
                 in ${city.name} and surrounding areas.`}
           </p>

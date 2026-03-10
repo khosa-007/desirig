@@ -15,7 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://desirig.com"),
   title: {
-    default: "DesiRig | Desi Trucking & Business Directory Canada",
+    default: "DesiRig | Desi Trucking & Business Toolkit for Canada",
     template: "%s | DesiRig",
   },
   description:
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://desirig.com",
     siteName: "DesiRig",
-    title: "DesiRig | Desi Trucking & Business Directory Canada",
+    title: "DesiRig | Desi Trucking & Business Toolkit for Canada",
     description:
       "Find trusted Desi trucking companies, mechanics, driving schools, and community businesses across Canada.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DesiRig | Desi Trucking & Business Directory Canada",
+    title: "DesiRig | Desi Trucking & Business Toolkit for Canada",
     description:
       "Find trusted Desi trucking companies, mechanics, and community businesses across Canada.",
   },
@@ -82,7 +82,7 @@ export default function RootLayout({
               url: "https://desirig.com",
               logo: "https://desirig.com/icon",
               description:
-                "The trusted directory for South Asian trucking and community businesses across Canada.",
+                "The trusted platform for South Asian trucking and community businesses across Canada.",
               contactPoint: {
                 "@type": "ContactPoint",
                 email: "rig@desirig.com",
