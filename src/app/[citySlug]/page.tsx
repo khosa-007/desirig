@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return {};
 
   return {
-    title: `Businesses in ${city.name}, ${city.province}`,
-    description: `Browse ${city.listing_count} businesses in ${city.name}, ${city.province}. Trucking companies, mechanics, Indian grocery, restaurants, and more on DesiRig.`,
+    title: `Desi Businesses & Trucking in ${city.name}, ${city.province}`,
+    description: `Browse ${city.listing_count}+ Desi businesses in ${city.name}, ${city.province}. Trucking companies, mechanics, driving schools, Indian grocery, gurdwaras, restaurants, and more.`,
     alternates: {
       canonical: `https://desirig.com/${citySlug}`,
     },

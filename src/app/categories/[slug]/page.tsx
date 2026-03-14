@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!category) return {};
 
   return {
-    title: `${category.name} | Browse by City`,
-    description: `Find ${category.name.toLowerCase()} across Canada. Browse by city on DesiRig.`,
+    title: `${category.name} Near You — All Cities in Canada`,
+    description: `Find ${category.name.toLowerCase()} in every major Canadian city. Browse Brampton, Surrey, Mississauga, Calgary, Edmonton, and more on DesiRig.`,
     alternates: {
       canonical: `https://desirig.com/categories/${slug}`,
     },

@@ -18,6 +18,15 @@ import {
 
 export const revalidate = 3600; // ISR: rebuild every hour
 
+export async function generateMetadata() {
+  return {
+    title: "DesiRig | Desi Trucking & Business Directory for Canada & USA",
+    description:
+      "Find trusted Desi trucking companies, mechanics, driving schools, Indian grocery stores, gurdwaras, and 38,000+ businesses across Canada and USA. Free trucking tools, safety lookup, and live news.",
+    alternates: { canonical: "https://desirig.com" },
+  };
+}
+
 export default async function HomePage() {
   const [truckingCats, communityCats, featuredCities, businessCount, cityCount, latestNews] =
     await Promise.all([
@@ -31,6 +40,28 @@ export default async function HomePage() {
 
   return (
     <>
+      {/* JSON-LD: WebSite + SearchAction for Google Sitelinks search box */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "DesiRig",
+            url: "https://desirig.com",
+            description:
+              "Find trusted Desi trucking companies, mechanics, driving schools, and community businesses across Canada and USA.",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://desirig.com/search?q={search_term_string}",
+              },
+              "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-[#111] text-white">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
