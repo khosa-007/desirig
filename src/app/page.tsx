@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Search, MapPin, Shield, Star, ArrowRight, Gauge, BookOpen, Newspaper, Clock, Fuel } from "lucide-react";
 import { SemiTruckIcon } from "@/components/layout/site-header";
+import { CategoryIcon, isDesiCategory, DesiBadge } from "@/components/category-icon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { NearMe } from "@/components/near-me";
@@ -345,11 +346,13 @@ export default async function HomePage() {
                     </h3>
                     <div className="mt-2 flex items-center gap-2">
                       <span className={`rounded px-2 py-0.5 text-xs ${
-                        item.lang === "pa"
-                          ? "bg-[#FACC15]/20 text-[#FACC15]"
-                          : "bg-blue-500/20 text-blue-400"
+                        item.region === "CA"
+                          ? "bg-red-500/20 text-red-400"
+                          : item.region === "US"
+                            ? "bg-blue-500/20 text-blue-400"
+                            : "bg-[#FACC15]/20 text-[#FACC15]"
                       }`}>
-                        {item.lang === "pa" ? "ਪੰਜਾਬੀ" : "EN"}
+                        {item.region === "CA" ? "🇨🇦" : item.region === "US" ? "🇺🇸" : "ਪੰਜਾਬੀ"}
                       </span>
                       <span className="rounded bg-[#FACC15]/10 px-2 py-0.5 text-xs text-[#FACC15]/70">
                         {item.source}
@@ -419,12 +422,15 @@ export default async function HomePage() {
               <Link
                 key={cat.id}
                 href={`/categories/${cat.slug}`}
-                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 text-center transition-all hover:border-[#FACC15]"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
               >
-                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-[#FACC15]/10 text-[#FACC15] transition-colors">
-                  <SemiTruckIcon className="h-5 w-5" />
+                <div className="flex items-center justify-between">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#FACC15]/10">
+                    <CategoryIcon icon={cat.icon} size={22} className="text-[#FACC15]" />
+                  </div>
+                  {isDesiCategory(cat.slug) && <DesiBadge compact />}
                 </div>
-                <p className="mt-2 text-sm font-medium text-gray-200">{cat.name}</p>
+                <p className="mt-2 text-sm font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
               </Link>
             ))}
           </div>
@@ -516,8 +522,9 @@ export default async function HomePage() {
                 href={`/categories/${cat.slug}`}
                 className="group rounded-lg border border-[#333] bg-[#111] p-3 text-center transition-all hover:border-[#FACC15]/50"
               >
-                <MapPin className="mx-auto h-4 w-4 text-green-400/70" />
+                <CategoryIcon icon={cat.icon} size={18} className="mx-auto text-green-400/70" />
                 <p className="mt-1.5 text-xs font-medium text-gray-400 group-hover:text-white">{cat.name}</p>
+                {isDesiCategory(cat.slug) && <div className="mt-1"><DesiBadge compact /></div>}
               </Link>
             ))}
           </div>
