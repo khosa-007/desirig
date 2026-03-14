@@ -38,6 +38,11 @@ export function NearMe() {
           );
           if (!res.ok) throw new Error("API error");
           const data = await res.json();
+          if (!data.city) {
+            // Too far from any Canadian city — hide component
+            setState({ status: "denied" });
+            return;
+          }
           setState({
             status: "found",
             city: data.city,

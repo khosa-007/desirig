@@ -9,6 +9,13 @@ export function SikhTrucker({ size = 200, className = "" }: { size?: number; cla
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
+      {/* Truck silhouette behind */}
+      <rect x="10" y="180" width="180" height="50" rx="8" fill="#333" opacity="0.25" />
+      <rect x="120" y="155" width="70" height="75" rx="6" fill="#333" opacity="0.25" />
+      <circle cx="40" cy="232" r="12" fill="#333" opacity="0.2" />
+      <circle cx="80" cy="232" r="12" fill="#333" opacity="0.2" />
+      <circle cx="160" cy="232" r="12" fill="#333" opacity="0.2" />
+
       {/* Turban - orange */}
       <ellipse cx="100" cy="52" rx="42" ry="38" fill="#E85D26" />
       <path d="M62 55c0-22 17-40 38-40s38 18 38 40" fill="#D4521E" />
@@ -49,13 +56,17 @@ export function SikhTrucker({ size = 200, className = "" }: { size?: number; cla
       {/* Vest collar */}
       <path d="M78 106l22 14 22-14" stroke="#E5A100" strokeWidth="3" fill="none" />
 
-      {/* Left hand - thumbs up */}
+      {/* Left hand holding steering wheel */}
       <g>
-        <circle cx="38" cy="162" r="8" fill="#C68642" />
-        <rect x="34" y="148" width="8" height="18" rx="4" fill="#C68642" />
-        <rect x="31" y="160" width="6" height="10" rx="3" fill="#C68642" />
-        <rect x="36" y="164" width="5" height="8" rx="2.5" fill="#C68642" />
-        <rect x="41" y="162" width="5" height="8" rx="2.5" fill="#C68642" />
+        {/* Steering wheel */}
+        <circle cx="38" cy="158" r="16" fill="none" stroke="#555" strokeWidth="4" />
+        <circle cx="38" cy="158" r="4" fill="#555" />
+        <line x1="38" y1="142" x2="38" y2="154" stroke="#555" strokeWidth="2.5" />
+        <line x1="38" y1="162" x2="38" y2="174" stroke="#555" strokeWidth="2.5" />
+        <line x1="22" y1="158" x2="34" y2="158" stroke="#555" strokeWidth="2.5" />
+        <line x1="42" y1="158" x2="54" y2="158" stroke="#555" strokeWidth="2.5" />
+        {/* Hand gripping top */}
+        <circle cx="38" cy="143" r="6" fill="#C68642" />
       </g>
 
       {/* Right hand - waving */}

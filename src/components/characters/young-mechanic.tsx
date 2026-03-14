@@ -45,15 +45,29 @@ export function YoungMechanic({ size = 200, className = "" }: { size?: number; c
       {/* Pocket */}
       <rect x="62" y="135" width="18" height="16" rx="2" fill="#4B5563" />
 
-      {/* Left hand holding wrench */}
-      <circle cx="48" cy="165" r="7" fill="#C68642" />
-      {/* Wrench */}
-      <rect x="30" y="140" width="6" height="35" rx="3" fill="#9CA3AF" />
-      <circle cx="33" cy="140" r="6" fill="none" stroke="#9CA3AF" strokeWidth="3" />
-      <rect x="30" y="172" width="6" height="4" rx="1" fill="#6B7280" />
+      {/* Oil stains on coveralls */}
+      <circle cx="82" cy="145" r="5" fill="#1a1a1a" opacity="0.2" />
+      <circle cx="118" cy="155" r="4" fill="#1a1a1a" opacity="0.15" />
+      <ellipse cx="95" cy="168" rx="6" ry="3" fill="#1a1a1a" opacity="0.18" />
+
+      {/* Left hand holding BIG wrench */}
+      <circle cx="42" cy="155" r="8" fill="#C68642" />
+      {/* Wrench — 2.5x bigger */}
+      <rect x="24" y="110" width="10" height="60" rx="5" fill="#9CA3AF" />
+      <circle cx="29" cy="108" r="10" fill="none" stroke="#9CA3AF" strokeWidth="5" />
+      <rect x="24" y="167" width="10" height="8" rx="2" fill="#6B7280" />
+      {/* Wrench jaw opening */}
+      <rect x="19" y="96" width="7" height="14" rx="2" fill="#9CA3AF" />
+      <rect x="33" y="96" width="7" height="14" rx="2" fill="#9CA3AF" />
 
       {/* Right hand */}
       <circle cx="152" cy="165" r="7" fill="#C68642" />
+
+      {/* Red toolbox at feet */}
+      <rect x="120" y="215" width="40" height="22" rx="3" fill="#DC2626" />
+      <rect x="120" y="215" width="40" height="6" rx="2" fill="#B91C1C" />
+      <rect x="134" y="213" width="12" height="4" rx="2" fill="#9CA3AF" />
+      <rect x="125" y="225" width="30" height="2" rx="1" fill="#991B1B" />
 
       {/* Belt */}
       <rect x="55" y="178" width="90" height="5" rx="2" fill="#1a1a1a" />

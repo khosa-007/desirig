@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { NearMe } from "@/components/near-me";
 import { SikhTrucker, YoungMechanic, CompanyOwner } from "@/components/characters";
+import { LiveNewsTicker } from "@/components/live-news-ticker";
 import { getTruckingNews, timeAgo } from "@/lib/news";
 import {
   getTruckingCategories,
@@ -33,16 +34,34 @@ export default async function HomePage() {
       <section className="relative overflow-hidden bg-[#111] text-white">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
         <div className="container relative mx-auto px-4 py-16 md:py-24">
-          {/* Characters row */}
+          {/* Characters row with labels */}
           <div className="flex items-end justify-center gap-4 md:gap-8">
-            <div className="w-[120px] md:w-[200px]">
-              <SikhTrucker />
+            <div className="flex flex-col items-center">
+              <div className="w-[120px] md:w-[200px]">
+                <SikhTrucker />
+              </div>
+              <div className="mt-2 text-center">
+                <p className="text-sm font-bold text-white">Driver</p>
+                <p className="font-gurmukhi text-xs text-[#FACC15]">ਡਰਾਈਵਰ</p>
+              </div>
             </div>
-            <div className="w-[120px] md:w-[200px]">
-              <YoungMechanic />
+            <div className="flex flex-col items-center">
+              <div className="w-[120px] md:w-[200px]">
+                <YoungMechanic />
+              </div>
+              <div className="mt-2 text-center">
+                <p className="text-sm font-bold text-white">Mechanic</p>
+                <p className="font-gurmukhi text-xs text-[#FACC15]">ਮਕੈਨਿਕ</p>
+              </div>
             </div>
-            <div className="w-[120px] md:w-[200px]">
-              <CompanyOwner />
+            <div className="flex flex-col items-center">
+              <div className="w-[120px] md:w-[200px]">
+                <CompanyOwner />
+              </div>
+              <div className="mt-2 text-center">
+                <p className="text-sm font-bold text-white">Owner</p>
+                <p className="font-gurmukhi text-xs text-[#FACC15]">ਮਾਲਕ</p>
+              </div>
             </div>
           </div>
 
@@ -58,7 +77,13 @@ export default async function HomePage() {
             <p className="mt-2 font-gurmukhi text-2xl text-[#FACC15]">
               ਤੁਹਾਡੀ ਟਰੱਕਿੰਗ ਟੂਲਕਿੱਟ
             </p>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-gray-400">
+            <p className="mx-auto mt-3 text-xl font-semibold text-white/90">
+              Find Your Desi Business
+            </p>
+            <p className="font-gurmukhi text-lg text-[#FACC15]/80">
+              ਆਪਣਾ ਦੇਸੀ ਕਾਰੋਬਾਰ ਲੱਭੋ
+            </p>
+            <p className="mx-auto mt-3 max-w-xl text-lg text-gray-400">
               Safety lookups, fuel calculators, route weather, license prep. Built by a trucker who gets it.
             </p>
           </div>
@@ -72,7 +97,7 @@ export default async function HomePage() {
               <Search className="h-5 w-5 text-muted-foreground" />
               <Input
                 name="q"
-                placeholder="Search companies, mechanics, cities..."
+                placeholder="Find trucking companies, mechanics, dhabas..."
                 className="border-0 bg-transparent text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
               />
             </div>
@@ -123,6 +148,9 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ── Live News Ticker ── */}
+      <LiveNewsTicker initialNews={latestNews} />
+
       {/* ── Near Me ── */}
       <NearMe />
 
@@ -141,106 +169,94 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <Link
-              href="/safety"
-              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
-            >
-              <Shield className="h-6 w-6 text-green-400" />
-              <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">
-                Safety Lookup
-              </h3>
-              <p className="mt-1 text-sm text-gray-400">
-                Check any carrier&apos;s DOT record before signing
-              </p>
-            </Link>
-            <Link
-              href="/tools/fuel-cost-calculator"
-              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
-            >
-              <SemiTruckIcon className="h-6 w-6 text-blue-400" />
-              <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">
-                Fuel Calculator
-              </h3>
-              <p className="mt-1 text-sm text-gray-400">
-                Get trip fuel costs for any route
-              </p>
-            </Link>
-            <Link
-              href="/tools/weight-limits"
-              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
-            >
-              <Star className="h-6 w-6 text-yellow-400" />
-              <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">
-                Weight Limits
-              </h3>
-              <p className="mt-1 text-sm text-gray-400">
-                Axle weights by province, in pounds
-              </p>
-            </Link>
-            <Link
-              href="/tools/hos-calculator"
-              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
-            >
-              <MapPin className="h-6 w-6 text-orange-400" />
-              <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">
-                HOS Rules
-              </h3>
-              <p className="mt-1 text-sm text-gray-400">
-                HOS limits, quick reference
-              </p>
-            </Link>
-            <Link
-              href="/tools/license-quiz"
-              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15] sm:col-span-2 lg:col-span-2"
-            >
-              <div className="flex items-center gap-3">
+          {/* For Drivers */}
+          <div className="mt-8">
+            <div className="mb-3 border-b border-[#333] pb-2">
+              <h3 className="text-lg font-bold text-white">For Drivers</h3>
+              <p className="font-gurmukhi text-sm text-[#FACC15]">ਡਰਾਈਵਰਾਂ ਲਈ</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <Link
+                href="/tools/weight-limits"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <Star className="h-6 w-6 text-yellow-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Weight Limits</h3>
+                <p className="mt-1 text-sm text-gray-400">Axle weights by province, in pounds</p>
+              </Link>
+              <Link
+                href="/tools/hos-calculator"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <MapPin className="h-6 w-6 text-orange-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">HOS Rules</h3>
+                <p className="mt-1 text-sm text-gray-400">HOS limits, quick reference</p>
+              </Link>
+              <Link
+                href="/tools/license-quiz"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
                 <BookOpen className="h-6 w-6 text-purple-400" />
-                <div>
-                  <h3 className="font-semibold text-white group-hover:text-[#FACC15]">
-                    License Exam Quiz
-                  </h3>
-                  <p className="text-sm text-gray-400">
-                    Practice your truck license test. English &amp; &#x0A2A;&#x0A70;&#x0A1C;&#x0A3E;&#x0A2C;&#x0A40;. Air brakes, HOS, general knowledge.
-                  </p>
-                </div>
-              </div>
-            </Link>
-            <Link
-              href="/tools/speed-fuel-savings"
-              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15] sm:col-span-2 lg:col-span-2"
-            >
-              <div className="flex items-center gap-3">
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">License Quiz</h3>
+                <p className="mt-1 text-sm text-gray-400">Practice your truck license test in English &amp; Punjabi</p>
+              </Link>
+              <Link
+                href="/tools/trip-planner"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <MapPin className="h-6 w-6 text-yellow-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Trip Planner</h3>
+                <p className="mt-1 text-sm text-gray-400">Plan routes with live weather along the way</p>
+              </Link>
+            </div>
+          </div>
+
+          {/* For Owner-Operators */}
+          <div className="mt-8">
+            <div className="mb-3 border-b border-[#333] pb-2">
+              <h3 className="text-lg font-bold text-white">For Owner-Operators</h3>
+              <p className="font-gurmukhi text-sm text-[#FACC15]">ਓਨਰ-ਆਪਰੇਟਰ ਲਈ</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <Link
+                href="/tools/fuel-cost-calculator"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <SemiTruckIcon className="h-6 w-6 text-blue-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Fuel Calculator</h3>
+                <p className="mt-1 text-sm text-gray-400">Get trip fuel costs for any route</p>
+              </Link>
+              <Link
+                href="/tools/speed-fuel-savings"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
                 <Gauge className="h-6 w-6 text-green-400" />
-                <div>
-                  <h3 className="font-semibold text-white group-hover:text-[#FACC15]">
-                    Speed vs Fuel Savings Calculator
-                  </h3>
-                  <p className="text-sm text-gray-400">
-                    Drop 5 km/h, save thousands a year. See what your speed really costs.
-                  </p>
-                </div>
-              </div>
-            </Link>
-            <Link
-              href="/tools/trip-planner"
-              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
-            >
-              <MapPin className="h-6 w-6 text-yellow-400" />
-              <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">
-                Trip Planner &amp; Weather
-              </h3>
-              <p className="mt-1 font-gurmukhi text-sm text-[#FACC15]/70">
-                ਟ੍ਰਿਪ ਪਲੈਨਰ
-              </p>
-              <p className="mt-1 text-sm text-gray-400">
-                Plan routes with live weather along the way
-              </p>
-            </Link>
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Speed vs Fuel Savings</h3>
+                <p className="mt-1 text-sm text-gray-400">Drop 5 km/h, save thousands a year</p>
+              </Link>
+            </div>
+          </div>
+
+          {/* For Company Owners */}
+          <div className="mt-8">
+            <div className="mb-3 border-b border-[#333] pb-2">
+              <h3 className="text-lg font-bold text-white">For Company Owners</h3>
+              <p className="font-gurmukhi text-sm text-[#FACC15]">ਕੰਪਨੀ ਮਾਲਕਾਂ ਲਈ</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <Link
+                href="/safety"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <Shield className="h-6 w-6 text-green-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Safety Lookup</h3>
+                <p className="mt-1 text-sm text-gray-400">Check any carrier&apos;s DOT record</p>
+              </Link>
+            </div>
           </div>
 
           {/* Quick links row */}
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
             <Link
               href="/top-rated"
               className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
@@ -295,7 +311,14 @@ export default async function HomePage() {
                       {item.title}
                     </h3>
                     <div className="mt-2 flex items-center gap-2">
-                      <span className="rounded bg-[#FACC15]/20 px-2 py-0.5 text-xs text-[#FACC15]/70">
+                      <span className={`rounded px-2 py-0.5 text-xs ${
+                        item.lang === "pa"
+                          ? "bg-[#FACC15]/20 text-[#FACC15]"
+                          : "bg-blue-500/20 text-blue-400"
+                      }`}>
+                        {item.lang === "pa" ? "ਪੰਜਾਬੀ" : "EN"}
+                      </span>
+                      <span className="rounded bg-[#FACC15]/10 px-2 py-0.5 text-xs text-[#FACC15]/70">
                         {item.source}
                       </span>
                       <span className="text-xs text-gray-500">{timeAgo(item.pubDate)}</span>

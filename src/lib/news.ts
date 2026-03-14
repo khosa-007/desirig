@@ -6,18 +6,22 @@ export interface NewsItem {
   pubDate: string;
   source: string;
   description: string;
+  lang: "en" | "pa";
 }
 
-const RSS_FEEDS = [
-  { url: "https://www.trucknews.com/feed/", source: "Truck News" },
-  { url: "https://www.todaystrucking.com/feed/", source: "Today's Trucking" },
+const RSS_FEEDS: { url: string; source: string; lang: "en" | "pa" }[] = [
+  { url: "https://www.trucknews.com/feed/", source: "Truck News", lang: "en" },
+  { url: "https://www.todaystrucking.com/feed/", source: "Today's Trucking", lang: "en" },
+  { url: "https://5abinews.com/feed/", source: "5abi News", lang: "pa" },
+  { url: "https://ptcnews.tv/feed/", source: "PTC News", lang: "pa" },
+  { url: "https://rozanaspokesman.com/feed/", source: "Rozana Spokesman", lang: "pa" },
 ];
 
 function extractCDATA(text: string): string {
   return text.replace(new RegExp("<!\\[CDATA\\[(.*?)\\]\\]>", "gs"), "$1").replace(/<[^>]+>/g, "").trim();
 }
 
-async function fetchRSS(feedUrl: string, source: string): Promise<NewsItem[]> {
+async function fetchRSS(feedUrl: string, source: string, lang: "en" | "pa"): Promise<NewsItem[]> {
   try {
     const res = await fetch(feedUrl, { next: { revalidate: 1800 } }); // cache 30 min
     if (!res.ok) return [];
@@ -35,7 +39,7 @@ async function fetchRSS(feedUrl: string, source: string): Promise<NewsItem[]> {
       ).slice(0, 200);
 
       if (title && link) {
-        items.push({ title, link, pubDate, source, description: desc });
+        items.push({ title, link, pubDate, source, description: desc, lang });
       }
     }
     return items;
@@ -46,7 +50,7 @@ async function fetchRSS(feedUrl: string, source: string): Promise<NewsItem[]> {
 
 export async function getTruckingNews(limit = 15): Promise<NewsItem[]> {
   const feeds = await Promise.all(
-    RSS_FEEDS.map((f) => fetchRSS(f.url, f.source))
+    RSS_FEEDS.map((f) => fetchRSS(f.url, f.source, f.lang))
   );
 
   const all = feeds.flat();
@@ -55,6 +59,11 @@ export async function getTruckingNews(limit = 15): Promise<NewsItem[]> {
   all.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
 
   return all.slice(0, limit);
+}
+
+export async function getTruckingNewsByLang(lang: "en" | "pa", limit = 15): Promise<NewsItem[]> {
+  const all = await getTruckingNews(50);
+  return all.filter((item) => item.lang === lang).slice(0, limit);
 }
 
 export function timeAgo(dateStr: string): string {

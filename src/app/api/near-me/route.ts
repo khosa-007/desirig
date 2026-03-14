@@ -87,6 +87,11 @@ export async function GET(request: NextRequest) {
     }
   }
 
+  // If closest city is more than 200km away, user is likely outside Canada
+  if (closestDistance > 200) {
+    return NextResponse.json({ city: null, distanceKm: Math.round(closestDistance) });
+  }
+
   return NextResponse.json({
     city: {
       name: closestCity.name,

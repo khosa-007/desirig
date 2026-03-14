@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Menu, X, Search, Shield, MapPin, Grid3X3, BookOpen, Wrench, Newspaper, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SemiTruckIcon } from "./site-header";
 
 function MenuPortal({ open, onClose, children }: { open: boolean; onClose: () => void; children: React.ReactNode }) {
   if (typeof window === "undefined") return null;
@@ -45,9 +46,12 @@ export function MobileMenu() {
 
       <MenuPortal open={open} onClose={() => setOpen(false)}>
         <div className="flex items-center justify-between border-b-[3px] border-[#FACC15] p-4">
-          <span className="text-lg font-extrabold text-white">
-            Desi<span className="text-[#FACC15]">Rig</span>
-          </span>
+          <div className="flex items-center gap-2">
+            <SemiTruckIcon className="text-[#FACC15]" />
+            <span className="text-lg font-extrabold text-white">
+              Desi<span className="text-[#FACC15]">Rig</span>
+            </span>
+          </div>
           <Button
             variant="ghost"
             size="icon"

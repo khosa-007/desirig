@@ -46,15 +46,27 @@ export function CompanyOwner({ size = 200, className = "" }: { size?: number; cl
       <path d="M96 118l4-6 4 6" fill="#7F1D1D" />
       <path d="M95 168l5 8 5-8" fill="#7F1D1D" />
 
-      {/* Arms crossed */}
-      {/* Right arm (crosses left) */}
+      {/* Gold CEO badge on chest */}
+      <rect x="64" y="128" width="28" height="14" rx="3" fill="#FACC15" />
+      <text x="78" y="138" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#111" fontFamily="sans-serif">CEO</text>
+
+      {/* Left arm with clipboard */}
       <path d="M48 130c-5 5-8 15-5 25l15-2c-2-8 0-15 3-20" fill="#C68642" />
-      <path d="M45 155c10 5 25 8 40 6" stroke="#C68642" strokeWidth="12" strokeLinecap="round" />
-      {/* Left arm (crosses right) */}
+      <path d="M45 155c10 5 20 6 30 4" stroke="#C68642" strokeWidth="12" strokeLinecap="round" />
+      <circle cx="48" cy="155" r="7" fill="#C68642" />
+      {/* Clipboard */}
+      <rect x="20" y="132" width="30" height="40" rx="3" fill="#92400E" />
+      <rect x="24" y="136" width="22" height="32" rx="2" fill="white" />
+      <rect x="30" y="128" width="10" height="8" rx="2" fill="#666" />
+      {/* Clipboard lines */}
+      <line x1="27" y1="143" x2="43" y2="143" stroke="#ccc" strokeWidth="1.5" />
+      <line x1="27" y1="149" x2="43" y2="149" stroke="#ccc" strokeWidth="1.5" />
+      <line x1="27" y1="155" x2="40" y2="155" stroke="#ccc" strokeWidth="1.5" />
+      <line x1="27" y1="161" x2="43" y2="161" stroke="#ccc" strokeWidth="1.5" />
+
+      {/* Right arm (crosses body) */}
       <path d="M152 130c5 5 8 15 5 25l-15-2c2-8 0-15-3-20" fill="#C68642" />
       <path d="M155 155c-10 5-25 8-40 6" stroke="#C68642" strokeWidth="12" strokeLinecap="round" />
-      {/* Hands visible */}
-      <circle cx="48" cy="155" r="7" fill="#C68642" />
       <circle cx="152" cy="155" r="7" fill="#C68642" />
 
       {/* Shirt sleeve cuffs */}

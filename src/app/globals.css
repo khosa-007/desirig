@@ -203,6 +203,26 @@
   animation: timer-pulse 1s ease-in-out infinite;
 }
 
+/* Live news ticker scroll */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-scroll {
+  animation: ticker-scroll 60s linear infinite;
+}
+
+/* LIVE pulse dot */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+}
+
+.live-pulse {
+  animation: live-pulse 1.5s ease-in-out infinite;
+}
+
 .font-gurmukhi {
   font-family: 'Noto Sans Gurmukhi', sans-serif;
 }

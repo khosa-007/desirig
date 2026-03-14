@@ -62,7 +62,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b-[3px] border-[#FACC15] bg-[#111]">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <TurbanIcon />
+          <SemiTruckIcon className="text-[#FACC15]" />
           <span className="text-xl font-extrabold tracking-tight text-white">
             Desi<span className="text-[#FACC15]">Rig</span>
           </span>
