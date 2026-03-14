@@ -152,3 +152,45 @@ export function CategoryIcon({
   const IconComponent = ICON_MAP[icon ?? ""] ?? Truck;
   return <IconComponent size={size} className={className} />;
 }
+
+/** Slugs that are inherently South Asian / Desi categories */
+const DESI_SLUGS = new Set([
+  "dhaba-restaurant",
+  "restaurant",
+  "indian-grocery",
+  "gurdwara",
+  "indian-sweets",
+  "indian-clothing",
+  "indian-jewellery",
+  "halal-meat",
+  "punjabi-media",
+  "banquet-hall",
+  "catering",
+  "community-hall",
+  "immigration-consultant",
+  "immigration-lawyer",
+  "money-transfer",
+  "travel-agency",
+]);
+
+export function isDesiCategory(slug: string): boolean {
+  return DESI_SLUGS.has(slug);
+}
+
+/** "Desi Certified" badge — shows on desi-specific categories */
+export function DesiBadge({ compact = false }: { compact?: boolean } = {}) {
+  if (compact) {
+    return (
+      <span className="inline-flex items-center gap-0.5 rounded-full bg-orange-500/20 px-1.5 py-0.5 text-[10px] font-bold leading-none text-orange-400">
+        <svg viewBox="0 0 10 10" className="h-2.5 w-2.5 fill-orange-400"><circle cx="5" cy="5" r="4" /><path d="M3.5 5l1 1 2-2.5" stroke="white" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        ਦੇਸੀ
+      </span>
+    );
+  }
+  return (
+    <span className="inline-flex items-center gap-1 rounded-full bg-orange-500/15 px-2 py-0.5 text-[11px] font-bold leading-none text-orange-400 ring-1 ring-orange-500/30">
+      <svg viewBox="0 0 10 10" className="h-3 w-3 fill-orange-400"><circle cx="5" cy="5" r="4" /><path d="M3.5 5l1 1 2-2.5" stroke="white" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      Desi Certified
+    </span>
+  );
+}

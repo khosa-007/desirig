@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ChevronRight, MapPin, Truck } from "lucide-react";
 import { getCityBySlug, getCategories, getFeaturedCities } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
-import { CategoryIcon } from "@/components/category-icon";
+import { CategoryIcon, isDesiCategory, DesiBadge } from "@/components/category-icon";
 
 export const revalidate = 86400;
 
@@ -86,8 +86,11 @@ export default async function CityPage({ params }: PageProps) {
               >
                 <div className="flex items-center gap-3">
                   <CategoryIcon icon={cat.icon} size={24} className="text-[#FACC15]" />
-                  <div>
-                    <p className="font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5">
+                      <p className="font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
+                      {isDesiCategory(cat.slug) && <DesiBadge compact />}
+                    </div>
                     <p className="text-sm text-gray-500">
                       {cat.count} {cat.count === 1 ? "listing" : "listings"}
                     </p>
@@ -114,8 +117,11 @@ export default async function CityPage({ params }: PageProps) {
               >
                 <div className="flex items-center gap-3">
                   <CategoryIcon icon={cat.icon} size={24} className="text-green-400" />
-                  <div>
-                    <p className="font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5">
+                      <p className="font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
+                      {isDesiCategory(cat.slug) && <DesiBadge compact />}
+                    </div>
                     <p className="text-sm text-gray-500">
                       {cat.count} {cat.count === 1 ? "listing" : "listings"}
                     </p>

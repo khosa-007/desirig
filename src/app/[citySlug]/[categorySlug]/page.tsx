@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { BusinessCard } from "@/components/business/business-card";
-import { CategoryIcon } from "@/components/category-icon";
+import { CategoryIcon, isDesiCategory, DesiBadge } from "@/components/category-icon";
 import {
   getCityBySlug,
   getCategoryBySlug,
@@ -137,9 +137,12 @@ export default async function ListingPage({ params, searchParams }: PageProps) {
           <CategoryIcon icon={category.icon} size={28} className="text-[#FACC15]" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
-            {category.name} in {city.name}, {city.province}
-          </h1>
+          <div className="flex items-center gap-2">
+            <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
+              {category.name} in {city.name}, {city.province}
+            </h1>
+            {isDesiCategory(category.slug) && <DesiBadge />}
+          </div>
           <p className="mt-1 text-muted-foreground">
             {total} {total === 1 ? "listing" : "listings"} found
           </p>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Truck, MapPin } from "lucide-react";
 import { getTruckingCategories, getCommunityCategories } from "@/lib/queries";
-import { CategoryIcon } from "@/components/category-icon";
+import { CategoryIcon, isDesiCategory, DesiBadge } from "@/components/category-icon";
 
 export const metadata: Metadata = {
   title: "All Categories",
@@ -38,7 +38,10 @@ export default async function CategoriesPage() {
               href={`/categories/${cat.slug}`}
               className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
             >
-              <CategoryIcon icon={cat.icon} size={28} className="text-[#FACC15]" />
+              <div className="flex items-center justify-between">
+                <CategoryIcon icon={cat.icon} size={28} className="text-[#FACC15]" />
+                {isDesiCategory(cat.slug) && <DesiBadge compact />}
+              </div>
               <p className="mt-2 text-sm font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
             </Link>
           ))}
@@ -57,7 +60,10 @@ export default async function CategoriesPage() {
               href={`/categories/${cat.slug}`}
               className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
             >
-              <CategoryIcon icon={cat.icon} size={28} className="text-green-400" />
+              <div className="flex items-center justify-between">
+                <CategoryIcon icon={cat.icon} size={28} className="text-green-400" />
+                {isDesiCategory(cat.slug) && <DesiBadge compact />}
+              </div>
               <p className="mt-2 text-sm font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
             </Link>
           ))}
