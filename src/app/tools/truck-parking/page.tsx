@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight, MapPin, ParkingCircle, Fuel, Coffee, Wifi, ShowerHead, Star } from "lucide-react";
+import { SearchStops } from "./search-stops";
 
 export const metadata: Metadata = {
   title: "Truck Parking & Rest Stops — Canada & US | DesiRig",
@@ -170,6 +171,9 @@ export default function TruckParkingPage() {
           </div>
         ))}
       </div>
+
+      {/* Searchable database of ALL stops */}
+      <SearchStops />
 
       {/* Tips section */}
       <div className="mt-10 rounded-xl border border-[#333] bg-[#1A1A1A] p-6">
