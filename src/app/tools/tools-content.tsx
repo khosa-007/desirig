@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Calculator, Fuel, Scale, Clock, Gauge, ChevronRight, BookOpen } from "lucide-react";
+import { Calculator, Fuel, Scale, Clock, Gauge, ChevronRight, BookOpen, MapPin } from "lucide-react";
 import { LanguageToggle } from "@/components/language-toggle";
 import { useLanguage } from "@/lib/language-context";
 
@@ -18,7 +18,7 @@ export function ToolsContent() {
       }),
       icon: Fuel,
       color: "text-blue-500",
-      bg: "bg-blue-50",
+      bg: "bg-blue-500/10",
     },
     {
       slug: "weight-limits",
@@ -29,7 +29,7 @@ export function ToolsContent() {
       }),
       icon: Scale,
       color: "text-green-500",
-      bg: "bg-green-50",
+      bg: "bg-green-500/10",
     },
     {
       slug: "hos-calculator",
@@ -40,7 +40,7 @@ export function ToolsContent() {
       }),
       icon: Clock,
       color: "text-orange-500",
-      bg: "bg-orange-50",
+      bg: "bg-orange-500/10",
     },
     {
       slug: "speed-fuel-savings",
@@ -51,7 +51,7 @@ export function ToolsContent() {
       }),
       icon: Gauge,
       color: "text-green-500",
-      bg: "bg-green-50",
+      bg: "bg-green-500/10",
     },
     {
       slug: "license-quiz",
@@ -62,7 +62,18 @@ export function ToolsContent() {
       }),
       icon: BookOpen,
       color: "text-purple-500",
-      bg: "bg-purple-50",
+      bg: "bg-purple-500/10",
+    },
+    {
+      slug: "trip-planner",
+      name: t({ en: "Trip Planner & Weather", pa: "ਟ੍ਰਿਪ ਪਲੈਨਰ ਤੇ ਮੌਸਮ" }),
+      description: t({
+        en: "Plan your route with live weather at every stop. Environment Canada data, free.",
+        pa: "ਹਰ ਸਟਾਪ ਤੇ ਲਾਈਵ ਮੌਸਮ ਨਾਲ ਆਪਣਾ ਰੂਟ ਪਲੈਨ ਕਰੋ। ਮੁਫ਼ਤ।",
+      }),
+      icon: MapPin,
+      color: "text-yellow-500",
+      bg: "bg-yellow-500/10",
     },
   ];
 
@@ -80,8 +91,8 @@ export function ToolsContent() {
       </div>
 
       <div className="mt-4 text-center">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-orange-100">
-          <Calculator className="h-8 w-8 text-orange-600" />
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#FACC15]/10">
+          <Calculator className="h-8 w-8 text-[#FACC15]" />
         </div>
         <h1 className="mt-4 text-3xl font-bold tracking-tight">
           {t({ en: "Free Trucking Tools", pa: "ਮੁਫ਼ਤ ਟਰੱਕਿੰਗ ਟੂਲ" })}
@@ -99,12 +110,12 @@ export function ToolsContent() {
           <Link
             key={tool.slug}
             href={`/tools/${tool.slug}`}
-            className="group rounded-xl border bg-card p-6 transition-all hover:border-orange-200 hover:shadow-md"
+            className="group rounded-xl border bg-[#1A1A1A] p-6 transition-all hover:border-[#FACC15] hover:shadow-md"
           >
             <div className={`flex h-12 w-12 items-center justify-center rounded-lg ${tool.bg}`}>
               <tool.icon className={`h-6 w-6 ${tool.color}`} />
             </div>
-            <h2 className="mt-4 font-semibold group-hover:text-orange-600">
+            <h2 className="mt-4 font-semibold group-hover:text-[#FACC15]">
               {tool.name}
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">

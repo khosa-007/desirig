@@ -3,12 +3,12 @@ import { EmailSignup } from "@/components/email-signup";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-muted/40">
+    <footer className="border-t-[3px] border-[#FACC15] bg-[#111]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-2.5">
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" className="text-[#FF6E40]">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" className="text-[#FACC15]">
                 <rect x="2" y="0" width="2.5" height="10" rx="1.2" />
                 <rect x="27.5" y="0" width="2.5" height="10" rx="1.2" />
                 <rect x="1.5" y="0" width="3.5" height="1.5" rx="0.7" fill="white" opacity="0.5" />
@@ -40,46 +40,48 @@ export function SiteFooter() {
                 <circle cx="9" cy="28" r="1" fill="white" opacity="0.3" />
                 <circle cx="23" cy="28" r="1" fill="white" opacity="0.3" />
               </svg>
-              <span className="text-lg font-bold">
-                Desi<span className="text-[#FF6E40]">Rig</span>
+              <span className="text-lg font-bold text-white">
+                Desi<span className="text-[#FACC15]">Rig</span>
               </span>
             </Link>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <p className="mt-3 text-sm text-gray-400">
               Built by a trucker, for truckers. Your toolkit for
               Desi businesses across Canada.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-3 text-sm font-semibold">For Truckers</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="mb-3 text-sm font-semibold text-white">
+              For Truckers <span className="font-gurmukhi text-xs text-[#FACC15]/70">ਟਰੱਕਰਾਂ ਲਈ</span>
+            </h3>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/brampton-on/trucking-company" className="hover:text-foreground">
+                <Link href="/brampton-on/trucking-company" className="hover:text-[#FACC15]">
                   Trucking Companies
                 </Link>
               </li>
               <li>
-                <Link href="/brampton-on/truck-mechanic" className="hover:text-foreground">
+                <Link href="/brampton-on/truck-mechanic" className="hover:text-[#FACC15]">
                   Truck Mechanics
                 </Link>
               </li>
               <li>
-                <Link href="/brampton-on/driving-school" className="hover:text-foreground">
+                <Link href="/brampton-on/driving-school" className="hover:text-[#FACC15]">
                   Driving Schools
                 </Link>
               </li>
               <li>
-                <Link href="/brampton-on/truck-wash" className="hover:text-foreground">
+                <Link href="/brampton-on/truck-wash" className="hover:text-[#FACC15]">
                   Truck Washes
                 </Link>
               </li>
               <li>
-                <Link href="/safety" className="hover:text-foreground">
+                <Link href="/safety" className="hover:text-[#FACC15]">
                   Safety Lookup
                 </Link>
               </li>
               <li>
-                <Link href="/tools" className="hover:text-foreground">
+                <Link href="/tools" className="hover:text-[#FACC15]">
                   Trucker Tools
                 </Link>
               </li>
@@ -87,25 +89,27 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-3 text-sm font-semibold">Community</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="mb-3 text-sm font-semibold text-white">
+              Community <span className="font-gurmukhi text-xs text-[#FACC15]/70">ਭਾਈਚਾਰਾ</span>
+            </h3>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/brampton-on/indian-grocery" className="hover:text-foreground">
+                <Link href="/brampton-on/indian-grocery" className="hover:text-[#FACC15]">
                   Indian Grocery
                 </Link>
               </li>
               <li>
-                <Link href="/brampton-on/gurdwara" className="hover:text-foreground">
+                <Link href="/brampton-on/gurdwara" className="hover:text-[#FACC15]">
                   Gurdwaras
                 </Link>
               </li>
               <li>
-                <Link href="/brampton-on/dhaba-restaurant" className="hover:text-foreground">
+                <Link href="/brampton-on/dhaba-restaurant" className="hover:text-[#FACC15]">
                   Dhabas & Restaurants
                 </Link>
               </li>
               <li>
-                <Link href="/brampton-on/immigration-consultant" className="hover:text-foreground">
+                <Link href="/brampton-on/immigration-consultant" className="hover:text-[#FACC15]">
                   Immigration
                 </Link>
               </li>
@@ -113,40 +117,42 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="mb-3 text-sm font-semibold">Company</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="mb-3 text-sm font-semibold text-white">
+              Company <span className="font-gurmukhi text-xs text-[#FACC15]/70">ਕੰਪਨੀ</span>
+            </h3>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/news" className="hover:text-foreground">
+                <Link href="/news" className="hover:text-[#FACC15]">
                   News
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-foreground">
+                <Link href="/blog" className="hover:text-[#FACC15]">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-foreground">
+                <Link href="/about" className="hover:text-[#FACC15]">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-foreground">
+                <Link href="/faq" className="hover:text-[#FACC15]">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-foreground">
+                <Link href="/contact" className="hover:text-[#FACC15]">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-foreground">
+                <Link href="/privacy" className="hover:text-[#FACC15]">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-foreground">
+                <Link href="/terms" className="hover:text-[#FACC15]">
                   Terms of Service
                 </Link>
               </li>
@@ -155,10 +161,10 @@ export function SiteFooter() {
         </div>
 
         {/* Email signup */}
-        <div className="mt-8 border-t pt-8">
-          <div className="mx-auto max-w-md text-center">
-            <h3 className="font-semibold">Get trucking news in your inbox</h3>
-            <p className="mt-1 text-sm text-muted-foreground">
+        <div className="mt-8 border-t border-[#333] pt-8">
+          <div className="mx-auto max-w-md rounded-lg border border-[#FACC15]/30 p-6 text-center">
+            <h3 className="font-semibold text-white">Get trucking news in your inbox</h3>
+            <p className="mt-1 text-sm text-gray-400">
               Safety alerts, new tools, industry updates. No spam, just the stuff that matters.
             </p>
             <div className="mt-3">
@@ -167,7 +173,15 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+        {/* Bilingual tagline */}
+        <div className="mt-8 border-t border-[#333] pt-8 text-center">
+          <p className="text-sm text-gray-400">
+            Built by a Trucker, for Truckers ·{" "}
+            <span className="font-gurmukhi text-[#FACC15]/70">ਟਰੱਕਰ ਨੇ ਬਣਾਇਆ, ਟਰੱਕਰਾਂ ਲਈ</span>
+          </p>
+        </div>
+
+        <div className="mt-4 text-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} DesiRig.com. All rights reserved.</p>
         </div>
       </div>

@@ -47,7 +47,7 @@ export function EmailSignup() {
 
   if (done) {
     return (
-      <div className="flex items-center gap-3 rounded-xl bg-green-50 px-4 py-3 text-sm text-green-800">
+      <div className="flex items-center gap-3 rounded-xl bg-green-500/10 px-4 py-3 text-sm text-green-400">
         <CheckCircle className="h-5 w-5 shrink-0 text-green-600" />
         <span>You're in! We'll send you the good stuff.</span>
       </div>
@@ -70,7 +70,7 @@ export function EmailSignup() {
         <Button
           type="submit"
           disabled={submitting}
-          className="bg-[#FF6E40] hover:bg-[#FF5722] shrink-0"
+          className="bg-[#FACC15] hover:bg-[#E5B800] text-black shrink-0"
         >
           {submitting ? "..." : "Join"}
         </Button>
