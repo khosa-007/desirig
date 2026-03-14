@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ChevronRight, MapPin, ParkingCircle, Fuel, Coffee, Wifi, ShowerHead, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Ontario Truck Parking & Rest Stops | DesiRig",
+  title: "Truck Parking & Rest Stops — Canada & US | DesiRig",
   description:
-    "Find truck parking in Ontario: truck stops, rest areas, and service centres along Highway 401, 400, and QEW. Amenities, GPS coordinates, and trucker tips.",
+    "Find truck parking across North America: Ontario 401/400, I-90, I-81, I-75 corridors. Truck stops, rest areas, amenities, GPS links for cross-border truckers.",
   alternates: {
     canonical: "https://desirig.com/tools/truck-parking",
   },
@@ -57,6 +57,10 @@ export default function TruckParkingPage() {
     { name: "Highway 401 Corridor", namePa: "ਹਾਈਵੇ 401", stops: H401_STOPS },
     { name: "Highway 400 / North", namePa: "ਹਾਈਵੇ 400 / ਉੱਤਰ", stops: H400_STOPS },
     { name: "Highway 403 / QEW / GTA", namePa: "ਹਾਈਵੇ 403 / QEW / GTA", stops: GTA_STOPS },
+    { name: "🇺🇸 I-90 (NY Thruway — Buffalo to Albany)", namePa: "I-90 (ਨਿਊਯਾਰਕ)", stops: I90_STOPS },
+    { name: "🇺🇸 I-81 (PA / NY — Syracuse to Harrisburg)", namePa: "I-81 (ਪੈਨਸਿਲਵੇਨੀਆ / ਨਿਊਯਾਰਕ)", stops: I81_STOPS },
+    { name: "🇺🇸 I-75 / I-94 (Michigan — Detroit corridor)", namePa: "I-75 / I-94 (ਮਿਸ਼ੀਗਨ)", stops: MICHIGAN_STOPS },
+    { name: "🇺🇸 I-87 / I-95 (East Coast — NJ to MA)", namePa: "I-87 / I-95 (ਈਸਟ ਕੋਸਟ)", stops: EASTCOAST_STOPS },
   ];
 
   return (
@@ -74,13 +78,13 @@ export default function TruckParkingPage() {
           <ParkingCircle className="h-8 w-8 text-green-500" />
         </div>
         <h1 className="mt-4 text-3xl font-bold tracking-tight">
-          Ontario Truck Parking
+          North America Truck Parking
         </h1>
         <p className="mt-1 font-gurmukhi text-lg text-[#FACC15]">
-          ਓਨਟਾਰੀਓ ਟਰੱਕ ਪਾਰਕਿੰਗ
+          ਉੱਤਰੀ ਅਮਰੀਕਾ ਟਰੱਕ ਪਾਰਕਿੰਗ
         </p>
         <p className="mt-2 text-muted-foreground">
-          Truck stops, rest areas, and service centres with parking. GPS links included.
+          Truck stops along major Canada-US corridors. Ontario 401, I-90, I-81, I-75 and more.
         </p>
       </div>
 
@@ -367,5 +371,205 @@ const GTA_STOPS: TruckStop[] = [
     lng: -79.6307,
     desiOwned: true,
     note: "Multiple Punjabi restaurants and trucking yards in the area. Not an official truck stop but truckers park here.",
+  },
+];
+
+// ── US CORRIDORS ──
+
+const I90_STOPS: TruckStop[] = [
+  {
+    name: "TA — Pembroke (Buffalo area)",
+    highway: "I-90, Exit 49",
+    location: "6895 Alleghany Rd, Pembroke, NY",
+    parking: "~200 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "scales", "laundry"],
+    lat: 43.0301,
+    lng: -78.3564,
+    note: "First major US truck stop after crossing Peace Bridge from Fort Erie.",
+  },
+  {
+    name: "Pilot — Angola",
+    highway: "I-90, Exit 57A",
+    location: "627 N Main St, Angola, NY",
+    parking: "~80 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 42.6340,
+    lng: -79.0294,
+  },
+  {
+    name: "TA — Canastota",
+    highway: "I-90, Exit 34",
+    location: "1410 Route 5 S, Canastota, NY",
+    parking: "~150 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "laundry"],
+    lat: 43.0617,
+    lng: -75.7510,
+  },
+  {
+    name: "Pilot — Syracuse (DeWitt)",
+    highway: "I-90, Exit 35",
+    location: "6229 E Taft Rd, N Syracuse, NY",
+    parking: "~100 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 43.0930,
+    lng: -76.0780,
+  },
+  {
+    name: "Love's — Utica",
+    highway: "I-90, Exit 31",
+    location: "5571 Willow Pl, Utica, NY",
+    parking: "~80 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 43.0875,
+    lng: -75.2697,
+  },
+];
+
+const I81_STOPS: TruckStop[] = [
+  {
+    name: "Pilot — Watertown",
+    highway: "I-81, Exit 45",
+    location: "25369 NY-12, Watertown, NY",
+    parking: "~80 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 43.9415,
+    lng: -75.8754,
+    note: "Key stop on I-81 coming south from Thousand Islands crossing.",
+  },
+  {
+    name: "TA — Syracuse",
+    highway: "I-81, Exit 25",
+    location: "7000 Lakeshore Rd, Cicero, NY",
+    parking: "~180 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "scales", "laundry"],
+    lat: 43.1609,
+    lng: -76.0693,
+  },
+  {
+    name: "Pilot — Binghamton",
+    highway: "I-81, Exit 5",
+    location: "1060 Upper Front St, Binghamton, NY",
+    parking: "~70 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 42.1437,
+    lng: -75.9019,
+  },
+  {
+    name: "Love's — Harrisburg (PA)",
+    highway: "I-81, Exit 77",
+    location: "7944 Linglestown Rd, Harrisburg, PA",
+    parking: "~120 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "scales"],
+    lat: 40.3470,
+    lng: -76.7832,
+  },
+  {
+    name: "Petro — Carlisle (PA)",
+    highway: "I-81, Exit 52",
+    location: "1200 Harrisburg Pike, Carlisle, PA",
+    parking: "~250 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "scales", "laundry"],
+    lat: 40.1810,
+    lng: -77.1708,
+    note: "One of the largest truck stops on I-81. Iron Skillet restaurant.",
+  },
+];
+
+const MICHIGAN_STOPS: TruckStop[] = [
+  {
+    name: "Pilot — Monroe (Detroit S)",
+    highway: "I-75, Exit 15",
+    location: "1340 N Dixie Hwy, Monroe, MI",
+    parking: "~100 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 41.9422,
+    lng: -83.4009,
+    note: "First major stop after crossing Ambassador Bridge from Windsor.",
+  },
+  {
+    name: "Flying J — Woodhaven (Detroit)",
+    highway: "I-75, Exit 32",
+    location: "21400 West Rd, Woodhaven, MI",
+    parking: "~150 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "scales"],
+    lat: 42.1248,
+    lng: -83.2429,
+  },
+  {
+    name: "Love's — Flat Rock",
+    highway: "I-75, Exit 26",
+    location: "26301 Vreeland Rd, Flat Rock, MI",
+    parking: "~80 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 42.0892,
+    lng: -83.3224,
+  },
+  {
+    name: "TA — Ann Arbor",
+    highway: "I-94, Exit 169",
+    location: "3600 Carpenter Rd, Ypsilanti, MI",
+    parking: "~200 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "scales", "laundry"],
+    lat: 42.2133,
+    lng: -83.7137,
+  },
+  {
+    name: "Pilot — Port Huron",
+    highway: "I-94, Exit 271",
+    location: "2801 Dove Rd, Port Huron, MI",
+    parking: "~80 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 42.9752,
+    lng: -82.4714,
+    note: "Near Blue Water Bridge crossing from Point Edward, ON.",
+  },
+];
+
+const EASTCOAST_STOPS: TruckStop[] = [
+  {
+    name: "Pilot — Clifton Park (Albany, NY)",
+    highway: "I-87, Exit 9",
+    location: "1631 US-9, Clifton Park, NY",
+    parking: "~100 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 42.8576,
+    lng: -73.7898,
+  },
+  {
+    name: "TA — Newburgh (NY)",
+    highway: "I-87/I-84",
+    location: "1239 Route 300, Newburgh, NY",
+    parking: "~150 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "scales", "laundry"],
+    lat: 41.5350,
+    lng: -74.0620,
+  },
+  {
+    name: "Petro — Bordentown (NJ)",
+    highway: "NJ Turnpike, Exit 7",
+    location: "3400 Route 206 S, Bordentown, NJ",
+    parking: "~200 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi", "scales", "laundry"],
+    lat: 40.1452,
+    lng: -74.6898,
+    note: "Major hub on the NJ Turnpike. Very busy.",
+  },
+  {
+    name: "Pilot — Milford (CT)",
+    highway: "I-95, Exit 40",
+    location: "1340 Boston Post Rd, Milford, CT",
+    parking: "~60 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 41.2185,
+    lng: -73.0557,
+  },
+  {
+    name: "Love's — Sturbridge (MA)",
+    highway: "I-84, Exit 3",
+    location: "400 Haynes St, Sturbridge, MA",
+    parking: "~80 truck spaces",
+    amenities: ["fuel", "food", "showers", "wifi"],
+    lat: 42.1073,
+    lng: -72.0698,
   },
 ];
