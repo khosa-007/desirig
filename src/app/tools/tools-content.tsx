@@ -72,6 +72,28 @@ export function ToolsContent() {
           color: "text-yellow-500",
           bg: "bg-yellow-500/10",
         },
+        {
+          slug: "border-times",
+          name: t({ en: "Border Wait Times", pa: "ਬਾਰਡਰ ਉਡੀਕ ਸਮਾਂ" }),
+          description: t({
+            en: "Live CBSA wait times at Canada-US border crossings. Commercial and traveller delays, updated every 5 minutes.",
+            pa: "ਕੈਨੇਡਾ-ਅਮਰੀਕਾ ਬਾਰਡਰ ਤੇ ਲਾਈਵ CBSA ਉਡੀਕ ਸਮਾਂ। ਹਰ 5 ਮਿੰਟਾਂ ਬਾਅਦ ਅੱਪਡੇਟ।",
+          }),
+          icon: Clock,
+          color: "text-cyan-500",
+          bg: "bg-cyan-500/10",
+        },
+        {
+          slug: "weigh-scales",
+          name: t({ en: "Ontario Weigh Scales", pa: "ਓਨਟਾਰੀਓ ਵੇਅ ਸਕੇਲ" }),
+          description: t({
+            en: "All 30 MTO truck inspection stations. Locations, highways, phone numbers, Google Maps links.",
+            pa: "ਸਾਰੇ 30 MTO ਟਰੱਕ ਇੰਸਪੈਕਸ਼ਨ ਸਟੇਸ਼ਨ। ਟਿਕਾਣੇ, ਹਾਈਵੇ, ਫ਼ੋਨ ਨੰਬਰ।",
+          }),
+          icon: Scale,
+          color: "text-yellow-500",
+          bg: "bg-yellow-500/10",
+        },
       ],
     },
     {

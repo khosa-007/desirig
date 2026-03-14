@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, MapPin, Shield, Star, ArrowRight, Gauge, BookOpen, Newspaper } from "lucide-react";
+import { Search, MapPin, Shield, Star, ArrowRight, Gauge, BookOpen, Newspaper, Clock } from "lucide-react";
 import { SemiTruckIcon } from "@/components/layout/site-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -135,6 +135,7 @@ export default async function HomePage() {
               { label: "Truck Mechanics", href: "/brampton-on/truck-mechanic" },
               { label: "License Quiz", href: "/tools/license-quiz" },
               { label: "Weight Limits", href: "/tools/weight-limits" },
+              { label: "Border Times", href: "/tools/border-times" },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -207,6 +208,22 @@ export default async function HomePage() {
                 <MapPin className="h-6 w-6 text-yellow-400" />
                 <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Trip Planner</h3>
                 <p className="mt-1 text-sm text-gray-400">Plan routes with live weather along the way</p>
+              </Link>
+              <Link
+                href="/tools/border-times"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <Clock className="h-6 w-6 text-cyan-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Border Wait Times</h3>
+                <p className="mt-1 text-sm text-gray-400">Live CBSA wait times at Canada-US crossings</p>
+              </Link>
+              <Link
+                href="/tools/weigh-scales"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <Star className="h-6 w-6 text-yellow-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Weigh Scales</h3>
+                <p className="mt-1 text-sm text-gray-400">All 30 Ontario MTO inspection stations</p>
               </Link>
             </div>
           </div>
