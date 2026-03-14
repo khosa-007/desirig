@@ -218,6 +218,14 @@ export default async function HomePage() {
                 <p className="mt-1 text-sm text-gray-400">Live CBSA wait times at Canada-US crossings</p>
               </Link>
               <Link
+                href="/tools/truck-parking"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <MapPin className="h-6 w-6 text-green-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Truck Parking</h3>
+                <p className="mt-1 text-sm text-gray-400">Rest stops &amp; parking along Ontario highways</p>
+              </Link>
+              <Link
                 href="/tools/weigh-scales"
                 className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
               >

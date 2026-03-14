@@ -84,6 +84,17 @@ export function ToolsContent() {
           bg: "bg-cyan-500/10",
         },
         {
+          slug: "truck-parking",
+          name: t({ en: "Truck Parking & Rest Stops", pa: "ਟਰੱਕ ਪਾਰਕਿੰਗ ਤੇ ਆਰਾਮ ਸਟਾਪ" }),
+          description: t({
+            en: "Find truck parking along Ontario highways. Truck stops, rest areas, amenities, GPS links.",
+            pa: "ਓਨਟਾਰੀਓ ਹਾਈਵੇ ਤੇ ਟਰੱਕ ਪਾਰਕਿੰਗ ਲੱਭੋ। ਟਰੱਕ ਸਟਾਪ, ਸਹੂਲਤਾਂ, GPS ਲਿੰਕ।",
+          }),
+          icon: MapPin,
+          color: "text-green-500",
+          bg: "bg-green-500/10",
+        },
+        {
           slug: "weigh-scales",
           name: t({ en: "Ontario Weigh Scales", pa: "ਓਨਟਾਰੀਓ ਵੇਅ ਸਕੇਲ" }),
           description: t({
