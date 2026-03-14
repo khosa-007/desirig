@@ -101,6 +101,17 @@ export function ToolsContent() {
       titlePa: "ਓਨਰ-ਆਪਰੇਟਰ ਲਈ",
       tools: [
         {
+          slug: "fuel-prices",
+          name: t({ en: "Diesel Prices by Province", pa: "ਪ੍ਰਾਂਤ ਅਨੁਸਾਰ ਡੀਜ਼ਲ ਕੀਮਤਾਂ" }),
+          description: t({
+            en: "Weekly average diesel prices across all Canadian provinces. Plan your fuel stops where it's cheapest.",
+            pa: "ਸਾਰੇ ਕੈਨੇਡੀਅਨ ਪ੍ਰਾਂਤਾਂ ਵਿੱਚ ਹਫ਼ਤਾਵਾਰੀ ਔਸਤ ਡੀਜ਼ਲ ਕੀਮਤਾਂ।",
+          }),
+          icon: Fuel,
+          color: "text-blue-500",
+          bg: "bg-blue-500/10",
+        },
+        {
           slug: "fuel-cost-calculator",
           name: t({ en: "Fuel Cost Calculator", pa: "ਬਾਲਣ ਖ਼ਰਚਾ ਕੈਲਕੁਲੇਟਰ" }),
           description: t({

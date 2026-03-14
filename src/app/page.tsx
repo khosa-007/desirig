@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, MapPin, Shield, Star, ArrowRight, Gauge, BookOpen, Newspaper, Clock } from "lucide-react";
+import { Search, MapPin, Shield, Star, ArrowRight, Gauge, BookOpen, Newspaper, Clock, Fuel } from "lucide-react";
 import { SemiTruckIcon } from "@/components/layout/site-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -235,6 +235,14 @@ export default async function HomePage() {
               <p className="font-gurmukhi text-sm text-[#FACC15]">ਓਨਰ-ਆਪਰੇਟਰ ਲਈ</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <Link
+                href="/tools/fuel-prices"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
+              >
+                <Fuel className="h-6 w-6 text-blue-400" />
+                <h3 className="mt-3 font-semibold text-white group-hover:text-[#FACC15]">Diesel Prices</h3>
+                <p className="mt-1 text-sm text-gray-400">Current diesel prices by province</p>
+              </Link>
               <Link
                 href="/tools/fuel-cost-calculator"
                 className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-5 transition-all hover:border-[#FACC15]"
