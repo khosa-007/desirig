@@ -68,7 +68,7 @@ export default function OGImage() {
             gap: "24px",
           }}
         >
-          <span>38,000+ Businesses</span>
+          <span>35,000+ Businesses</span>
           <span>•</span>
           <span>244 Cities</span>
           <span>•</span>
