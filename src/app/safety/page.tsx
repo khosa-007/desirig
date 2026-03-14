@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { createClient } from "@/lib/supabase/server";
 import { fetchFmcsaLive } from "@/lib/fmcsa";
+import { SikhTruckerAvatar } from "@/components/characters";
 
 export const metadata: Metadata = {
   title: "Carrier Safety Lookup | Check Any Trucking Company",
@@ -124,8 +125,11 @@ export default async function SafetyPage({ searchParams }: PageProps) {
       />
       <div className="mx-auto max-w-3xl">
         <div className="text-center">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-            <Shield className="h-8 w-8 text-green-600" />
+          <div className="mx-auto flex items-center justify-center gap-3">
+            <SikhTruckerAvatar size={48} />
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+              <Shield className="h-8 w-8 text-green-600" />
+            </div>
           </div>
           <h1 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl">
             Carrier Safety Lookup

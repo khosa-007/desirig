@@ -3,3 +3,4 @@ export { PunjabiAunty, PunjabiAuntyAvatar } from "./punjabi-aunty";
 export { YoungMechanic, YoungMechanicAvatar } from "./young-mechanic";
 export { Student, StudentAvatar } from "./student";
 export { CompanyOwner, CompanyOwnerAvatar } from "./company-owner";
+export { CategoryCharacter } from "./category-character";

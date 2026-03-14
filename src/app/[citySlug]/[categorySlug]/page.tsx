@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { BusinessCard } from "@/components/business/business-card";
+import { CategoryCharacter } from "@/components/characters";
 import {
   getCityBySlug,
   getCategoryBySlug,
@@ -131,13 +132,16 @@ export default async function ListingPage({ params, searchParams }: PageProps) {
       </nav>
 
       {/* Page header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
-          {category.name} in {city.name}, {city.province}
-        </h1>
-        <p className="mt-1 text-muted-foreground">
-          {total} {total === 1 ? "listing" : "listings"} found
-        </p>
+      <div className="mb-8 flex items-center gap-4">
+        <CategoryCharacter categorySlug={category.slug} isTrucking={category.is_trucking} size={48} />
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
+            {category.name} in {city.name}, {city.province}
+          </h1>
+          <p className="mt-1 text-muted-foreground">
+            {total} {total === 1 ? "listing" : "listings"} found
+          </p>
+        </div>
       </div>
 
       {/* Results */}

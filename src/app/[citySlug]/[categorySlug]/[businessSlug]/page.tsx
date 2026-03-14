@@ -17,6 +17,7 @@ import { getBusinessBySlug, getCityBySlug } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
 import { NearbyBusinesses } from "./nearby";
 import { BusinessReviews } from "@/components/reviews/business-reviews";
+import { CategoryCharacter } from "@/components/characters";
 
 export const revalidate = 3600; // revalidate every hour so new reviews show up
 
@@ -153,15 +154,20 @@ export default async function BusinessDetailPage({ params }: PageProps) {
         <div className="lg:col-span-2">
           <div className="rounded-xl border bg-card p-6">
             <div className="flex items-start justify-between gap-4">
-              <div>
-                <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
-                  {business.name}
-                </h1>
+              <div className="flex items-start gap-3">
                 {category && (
-                  <span className="mt-2 inline-block rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
-                    {category.name}
-                  </span>
+                  <CategoryCharacter categorySlug={category.slug} size={44} className="mt-1 shrink-0" />
                 )}
+                <div>
+                  <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
+                    {business.name}
+                  </h1>
+                  {category && (
+                    <span className="mt-2 inline-block rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
+                      {category.name}
+                    </span>
+                  )}
+                </div>
               </div>
 
               {business.google_rating && business.google_rating > 0 && (

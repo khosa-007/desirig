@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Truck, MapPin } from "lucide-react";
 import { getTruckingCategories, getCommunityCategories } from "@/lib/queries";
+import { CategoryCharacter } from "@/components/characters";
 
 export const metadata: Metadata = {
   title: "All Categories",
@@ -27,7 +28,7 @@ export default async function CategoriesPage() {
 
       <div className="mt-8">
         <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold">
-          <Truck className="h-5 w-5 text-orange-500" />
+          <Truck className="h-5 w-5 text-[#FACC15]" />
           Trucking ({truckingCats.length})
         </h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -35,12 +36,10 @@ export default async function CategoriesPage() {
             <Link
               key={cat.id}
               href={`/categories/${cat.slug}`}
-              className="group rounded-xl border bg-card p-4 transition-all hover:border-orange-200 hover:shadow-sm"
+              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600 transition-colors group-hover:bg-orange-100">
-                <Truck className="h-5 w-5" />
-              </div>
-              <p className="mt-2 text-sm font-medium">{cat.name}</p>
+              <CategoryCharacter categorySlug={cat.slug} isTrucking={true} size={40} />
+              <p className="mt-2 text-sm font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
             </Link>
           ))}
         </div>
@@ -48,7 +47,7 @@ export default async function CategoriesPage() {
 
       <div className="mt-12">
         <h2 className="mb-4 flex items-center gap-2 text-xl font-semibold">
-          <MapPin className="h-5 w-5 text-green-500" />
+          <MapPin className="h-5 w-5 text-green-400" />
           Community & Services ({communityCats.length})
         </h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -56,12 +55,10 @@ export default async function CategoriesPage() {
             <Link
               key={cat.id}
               href={`/categories/${cat.slug}`}
-              className="group rounded-xl border bg-card p-4 transition-all hover:border-orange-200 hover:shadow-sm"
+              className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-50 text-green-600 transition-colors group-hover:bg-green-100">
-                <MapPin className="h-5 w-5" />
-              </div>
-              <p className="mt-2 text-sm font-medium">{cat.name}</p>
+              <CategoryCharacter categorySlug={cat.slug} isTrucking={false} size={40} />
+              <p className="mt-2 text-sm font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
             </Link>
           ))}
         </div>

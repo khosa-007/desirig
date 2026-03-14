@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronRight, MapPin } from "lucide-react";
 import { getCategoryBySlug } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
+import { CategoryCharacter } from "@/components/characters";
 
 export const revalidate = 86400;
 
@@ -64,12 +65,17 @@ export default async function CategoryDetailPage({ params }: PageProps) {
         <span className="text-foreground">{category.name}</span>
       </nav>
 
-      <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
-        {category.name}
-      </h1>
-      <p className="mt-1 text-muted-foreground">
-        {cities.reduce((s, c) => s + c.count, 0)} listings across {cities.length} cities
-      </p>
+      <div className="flex items-center gap-4">
+        <CategoryCharacter categorySlug={category.slug} isTrucking={category.is_trucking} size={48} />
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
+            {category.name}
+          </h1>
+          <p className="mt-1 text-muted-foreground">
+            {cities.reduce((s, c) => s + c.count, 0)} listings across {cities.length} cities
+          </p>
+        </div>
+      </div>
 
       {/* Group by province */}
       {(() => {

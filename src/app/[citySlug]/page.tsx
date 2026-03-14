@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronRight, MapPin, Truck } from "lucide-react";
 import { getCityBySlug, getCategories, getFeaturedCities } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
+import { CategoryCharacter } from "@/components/characters";
 
 export const revalidate = 86400;
 
@@ -81,12 +82,17 @@ export default async function CityPage({ params }: PageProps) {
               <Link
                 key={cat.id}
                 href={`/${city.slug}/${cat.slug}`}
-                className="group rounded-xl border bg-card p-4 transition-all hover:border-orange-200 hover:shadow-sm"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
               >
-                <p className="font-medium group-hover:text-orange-600">{cat.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {cat.count} {cat.count === 1 ? "listing" : "listings"}
-                </p>
+                <div className="flex items-center gap-3">
+                  <CategoryCharacter categorySlug={cat.slug} isTrucking={true} size={32} />
+                  <div>
+                    <p className="font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
+                    <p className="text-sm text-gray-500">
+                      {cat.count} {cat.count === 1 ? "listing" : "listings"}
+                    </p>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
@@ -104,12 +110,17 @@ export default async function CityPage({ params }: PageProps) {
               <Link
                 key={cat.id}
                 href={`/${city.slug}/${cat.slug}`}
-                className="group rounded-xl border bg-card p-4 transition-all hover:border-orange-200 hover:shadow-sm"
+                className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
               >
-                <p className="font-medium group-hover:text-orange-600">{cat.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {cat.count} {cat.count === 1 ? "listing" : "listings"}
-                </p>
+                <div className="flex items-center gap-3">
+                  <CategoryCharacter categorySlug={cat.slug} isTrucking={false} size={32} />
+                  <div>
+                    <p className="font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
+                    <p className="text-sm text-gray-500">
+                      {cat.count} {cat.count === 1 ? "listing" : "listings"}
+                    </p>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
