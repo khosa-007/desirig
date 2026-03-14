@@ -5,7 +5,7 @@ import { CategoryIcon, isDesiCategory, DesiBadge } from "@/components/category-i
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { NearMe } from "@/components/near-me";
-import { SikhTrucker, YoungMechanic, CompanyOwner } from "@/components/characters";
+import Image from "next/image";
 import { LiveNewsTicker } from "@/components/live-news-ticker";
 import { getTruckingNews, timeAgo } from "@/lib/news";
 import {
@@ -64,41 +64,21 @@ export default async function HomePage() {
       />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-[#111] text-white">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
-        <div className="container relative mx-auto px-4 py-16 md:py-24">
-          {/* Characters row with labels */}
-          <div className="flex items-end justify-center gap-4 md:gap-8">
-            <div className="flex flex-col items-center">
-              <div className="w-[120px] md:w-[200px]">
-                <SikhTrucker />
-              </div>
-              <div className="mt-2 text-center">
-                <p className="text-sm font-bold text-white">Driver</p>
-                <p className="font-gurmukhi text-xs text-[#FACC15]">ਡਰਾਈਵਰ</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-[120px] md:w-[200px]">
-                <YoungMechanic />
-              </div>
-              <div className="mt-2 text-center">
-                <p className="text-sm font-bold text-white">Mechanic</p>
-                <p className="font-gurmukhi text-xs text-[#FACC15]">ਮਕੈਨਿਕ</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-[120px] md:w-[200px]">
-                <CompanyOwner />
-              </div>
-              <div className="mt-2 text-center">
-                <p className="text-sm font-bold text-white">Owner</p>
-                <p className="font-gurmukhi text-xs text-[#FACC15]">ਮਾਲਕ</p>
-              </div>
-            </div>
-          </div>
-
+        {/* Background: real trucker photo with dark overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/heroes/sikh-trucker-4.jpeg"
+            alt="Sikh truck driver standing in front of semi truck"
+            fill
+            className="object-cover object-top"
+            priority
+            quality={80}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#111]" />
+        </div>
+        <div className="container relative mx-auto px-4 py-20 md:py-28">
           {/* Title */}
-          <div className="mt-8 text-center">
+          <div className="text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-[#FACC15]/20 px-3 py-1 text-sm font-medium text-[#FACC15]">
               <SemiTruckIcon className="h-4 w-4" />
               Desi Trucker&apos;s Co-Pilot
@@ -140,17 +120,17 @@ export default async function HomePage() {
 
           {/* Stats */}
           <div className="mx-auto mt-10 flex max-w-lg justify-center gap-4 text-center">
-            <div className="rounded-xl border border-[#FACC15]/20 bg-[#FACC15]/10 px-5 py-3">
+            <div className="rounded-xl border border-[#FACC15]/20 bg-black/40 backdrop-blur-sm px-5 py-3">
               <div className="text-2xl font-bold text-[#FACC15]">
                 {businessCount.toLocaleString()}
               </div>
               <div className="text-sm text-gray-400">Businesses</div>
             </div>
-            <div className="rounded-xl border border-[#FACC15]/20 bg-[#FACC15]/10 px-5 py-3">
+            <div className="rounded-xl border border-[#FACC15]/20 bg-black/40 backdrop-blur-sm px-5 py-3">
               <div className="text-2xl font-bold text-[#FACC15]">{cityCount}</div>
               <div className="text-sm text-gray-400">Cities</div>
             </div>
-            <div className="rounded-xl border border-[#FACC15]/20 bg-[#FACC15]/10 px-5 py-3">
+            <div className="rounded-xl border border-[#FACC15]/20 bg-black/40 backdrop-blur-sm px-5 py-3">
               <div className="text-2xl font-bold text-[#FACC15]">84</div>
               <div className="text-sm text-gray-400">Categories</div>
             </div>
