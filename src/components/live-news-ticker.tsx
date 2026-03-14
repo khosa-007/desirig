@@ -57,12 +57,14 @@ export function LiveNewsTicker({ initialNews }: { initialNews: NewsItem[] }) {
                 rel="noopener noreferrer"
                 className="inline-flex shrink-0 items-center gap-2 text-sm text-gray-300 transition-colors hover:text-[#FACC15]"
               >
-                <span className={`rounded px-1.5 py-0.5 text-[10px] font-bold uppercase ${
-                  item.lang === "pa"
-                    ? "bg-[#FACC15]/20 text-[#FACC15]"
-                    : "bg-blue-500/20 text-blue-400"
+                <span className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
+                  item.region === "CA"
+                    ? "bg-red-500/20 text-red-400"
+                    : item.region === "US"
+                      ? "bg-blue-500/20 text-blue-400"
+                      : "bg-[#FACC15]/20 text-[#FACC15]"
                 }`}>
-                  {item.lang === "pa" ? "PA" : "EN"}
+                  {item.region === "CA" ? "🇨🇦" : item.region === "US" ? "🇺🇸" : "ਪੰਜਾਬੀ"}
                 </span>
                 <span className="max-w-[300px] truncate sm:max-w-none">
                   {item.title}

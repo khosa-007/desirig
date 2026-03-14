@@ -6,12 +6,16 @@ import { ChevronRight, ExternalLink, Newspaper, Clock } from "lucide-react";
 import type { NewsItem } from "@/lib/news";
 import { timeAgo } from "@/lib/news";
 
-type LangFilter = "all" | "en" | "pa";
+type Filter = "all" | "CA" | "US" | "pa";
 
 export function NewsContent({ news }: { news: NewsItem[] }) {
-  const [filter, setFilter] = useState<LangFilter>("all");
+  const [filter, setFilter] = useState<Filter>("all");
 
-  const filtered = filter === "all" ? news : news.filter((item) => item.lang === filter);
+  const filtered = filter === "all"
+    ? news
+    : filter === "pa"
+      ? news.filter((item) => item.lang === "pa")
+      : news.filter((item) => item.region === filter);
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
@@ -30,17 +34,18 @@ export function NewsContent({ news }: { news: NewsItem[] }) {
             Trucking News
           </h1>
           <p className="text-sm text-muted-foreground">
-            Live updates from Canadian trucking and Punjabi media. Refreshes every 30 minutes.
+            Live from Canada, USA, and Punjab. FMCSA, freight rates, regulations, and Punjabi community news.
           </p>
         </div>
       </div>
 
-      {/* Language filter tabs */}
-      <div className="mt-6 flex gap-2">
+      {/* Region + language filter tabs */}
+      <div className="mt-6 flex flex-wrap gap-2">
         {([
-          { value: "all" as const, label: "All" },
-          { value: "en" as const, label: "English" },
-          { value: "pa" as const, label: "ਪੰਜਾਬੀ" },
+          { value: "all" as const, label: "All", emoji: "" },
+          { value: "CA" as const, label: "Canada", emoji: "🇨🇦" },
+          { value: "US" as const, label: "USA", emoji: "🇺🇸" },
+          { value: "pa" as const, label: "ਪੰਜਾਬੀ", emoji: "" },
         ]).map((tab) => (
           <button
             key={tab.value}
@@ -51,6 +56,7 @@ export function NewsContent({ news }: { news: NewsItem[] }) {
                 : "bg-[#1A1A1A] text-gray-400 hover:bg-[#333] hover:text-white"
             }`}
           >
+            {tab.emoji && <span className="mr-1">{tab.emoji}</span>}
             {tab.label}
           </button>
         ))}
@@ -78,11 +84,13 @@ export function NewsContent({ news }: { news: NewsItem[] }) {
                   )}
                   <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
                     <span className={`rounded-full px-2 py-0.5 font-medium ${
-                      item.lang === "pa"
-                        ? "bg-[#FACC15]/20 text-[#FACC15]"
-                        : "bg-blue-500/20 text-blue-400"
+                      item.region === "CA"
+                        ? "bg-red-500/20 text-red-400"
+                        : item.region === "US"
+                          ? "bg-blue-500/20 text-blue-400"
+                          : "bg-[#FACC15]/20 text-[#FACC15]"
                     }`}>
-                      {item.lang === "pa" ? "ਪੰਜਾਬੀ" : "English"}
+                      {item.region === "CA" ? "🇨🇦 Canada" : item.region === "US" ? "🇺🇸 USA" : "ਪੰਜਾਬੀ"}
                     </span>
                     <span className="rounded-full bg-muted px-2 py-0.5 font-medium">
                       {item.source}

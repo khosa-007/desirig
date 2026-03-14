@@ -7,21 +7,26 @@ export interface NewsItem {
   source: string;
   description: string;
   lang: "en" | "pa";
+  region: "CA" | "US" | "PB";  // Canada, US, Punjab
 }
 
-const RSS_FEEDS: { url: string; source: string; lang: "en" | "pa" }[] = [
-  { url: "https://www.trucknews.com/feed/", source: "Truck News", lang: "en" },
-  { url: "https://www.todaystrucking.com/feed/", source: "Today's Trucking", lang: "en" },
-  { url: "https://5abinews.com/feed/", source: "5abi News", lang: "pa" },
-  { url: "https://ptcnews.tv/feed/", source: "PTC News", lang: "pa" },
-  { url: "https://rozanaspokesman.com/feed/", source: "Rozana Spokesman", lang: "pa" },
+const RSS_FEEDS: { url: string; source: string; lang: "en" | "pa"; region: "CA" | "US" | "PB" }[] = [
+  // Canada trucking
+  { url: "https://www.trucknews.com/feed/", source: "Truck News", lang: "en", region: "CA" },
+  { url: "https://www.todaystrucking.com/feed/", source: "Today's Trucking", lang: "en", region: "CA" },
+  // US trucking
+  { url: "https://www.freightwaves.com/feed", source: "FreightWaves", lang: "en", region: "US" },
+  { url: "https://www.ttnews.com/rss.xml", source: "Transport Topics", lang: "en", region: "US" },
+  { url: "http://cdllife.com/feed/", source: "CDL Life", lang: "en", region: "US" },
+  // Punjabi news
+  { url: "https://globalpunjab.com/feed/", source: "Global Punjab", lang: "pa", region: "PB" },
 ];
 
 function extractCDATA(text: string): string {
   return text.replace(new RegExp("<!\\[CDATA\\[(.*?)\\]\\]>", "gs"), "$1").replace(/<[^>]+>/g, "").trim();
 }
 
-async function fetchRSS(feedUrl: string, source: string, lang: "en" | "pa"): Promise<NewsItem[]> {
+async function fetchRSS(feedUrl: string, source: string, lang: "en" | "pa", region: "CA" | "US" | "PB"): Promise<NewsItem[]> {
   try {
     const res = await fetch(feedUrl, { next: { revalidate: 1800 } }); // cache 30 min
     if (!res.ok) return [];
@@ -39,7 +44,7 @@ async function fetchRSS(feedUrl: string, source: string, lang: "en" | "pa"): Pro
       ).slice(0, 200);
 
       if (title && link) {
-        items.push({ title, link, pubDate, source, description: desc, lang });
+        items.push({ title, link, pubDate, source, description: desc, lang, region });
       }
     }
     return items;
@@ -50,7 +55,7 @@ async function fetchRSS(feedUrl: string, source: string, lang: "en" | "pa"): Pro
 
 export async function getTruckingNews(limit = 15): Promise<NewsItem[]> {
   const feeds = await Promise.all(
-    RSS_FEEDS.map((f) => fetchRSS(f.url, f.source, f.lang))
+    RSS_FEEDS.map((f) => fetchRSS(f.url, f.source, f.lang, f.region))
   );
 
   const all = feeds.flat();
