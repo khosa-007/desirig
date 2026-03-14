@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input";
 import { NearMe } from "@/components/near-me";
 import Image from "next/image";
 import { LiveNewsTicker } from "@/components/live-news-ticker";
-import { getTruckingNews, timeAgo } from "@/lib/news";
+import { headers } from "next/headers";
+import { getTruckingNewsByRegion, timeAgo } from "@/lib/news";
 import {
   getTruckingCategories,
   getCommunityCategories,
@@ -28,6 +29,9 @@ export async function generateMetadata() {
 }
 
 export default async function HomePage() {
+  const hdrs = await headers();
+  const country = hdrs.get("x-vercel-ip-country") ?? "CA";
+
   const [truckingCats, communityCats, featuredCities, businessCount, cityCount, latestNews] =
     await Promise.all([
       getTruckingCategories(),
@@ -35,7 +39,7 @@ export default async function HomePage() {
       getFeaturedCities(),
       getBusinessCount(),
       getCityCount(),
-      getTruckingNews(5),
+      getTruckingNewsByRegion(country, 5),
     ]);
 
   return (

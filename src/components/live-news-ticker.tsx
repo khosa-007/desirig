@@ -8,7 +8,7 @@ export function LiveNewsTicker({ initialNews }: { initialNews: NewsItem[] }) {
   const tickerRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
 
-  // Refresh news every 5 minutes
+  // Refresh news every 5 minutes (server detects country from Vercel geo headers)
   useEffect(() => {
     const interval = setInterval(async () => {
       try {

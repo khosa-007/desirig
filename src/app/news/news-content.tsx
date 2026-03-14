@@ -6,16 +6,16 @@ import { ChevronRight, ExternalLink, Newspaper, Clock } from "lucide-react";
 import type { NewsItem } from "@/lib/news";
 import { timeAgo } from "@/lib/news";
 
-type Filter = "all" | "CA" | "US" | "pa";
+type Filter = "all" | "local" | "pa";
 
-export function NewsContent({ news }: { news: NewsItem[] }) {
+export function NewsContent({ news, country = "CA" }: { news: NewsItem[]; country?: string }) {
   const [filter, setFilter] = useState<Filter>("all");
 
   const filtered = filter === "all"
     ? news
     : filter === "pa"
       ? news.filter((item) => item.lang === "pa")
-      : news.filter((item) => item.region === filter);
+      : news.filter((item) => item.region === country);
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-12">
@@ -34,7 +34,7 @@ export function NewsContent({ news }: { news: NewsItem[] }) {
             Trucking News
           </h1>
           <p className="text-sm text-muted-foreground">
-            Live from Canada, USA, and Punjab. FMCSA, freight rates, regulations, and Punjabi community news.
+            {country === "US" ? "Live from the US" : "Live from Canada"} and Punjab. Regulations, freight rates, safety updates, and Punjabi community news.
           </p>
         </div>
       </div>
@@ -43,8 +43,7 @@ export function NewsContent({ news }: { news: NewsItem[] }) {
       <div className="mt-6 flex flex-wrap gap-2">
         {([
           { value: "all" as const, label: "All", emoji: "" },
-          { value: "CA" as const, label: "Canada", emoji: "🇨🇦" },
-          { value: "US" as const, label: "USA", emoji: "🇺🇸" },
+          { value: "local" as const, label: country === "US" ? "USA" : "Canada", emoji: country === "US" ? "🇺🇸" : "🇨🇦" },
           { value: "pa" as const, label: "ਪੰਜਾਬੀ", emoji: "" },
         ]).map((tab) => (
           <button

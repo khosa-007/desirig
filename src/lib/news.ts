@@ -14,11 +14,12 @@ const RSS_FEEDS: { url: string; source: string; lang: "en" | "pa"; region: "CA" 
   // Canada trucking
   { url: "https://www.trucknews.com/feed/", source: "Truck News", lang: "en", region: "CA" },
   { url: "https://www.todaystrucking.com/feed/", source: "Today's Trucking", lang: "en", region: "CA" },
+  { url: "https://cantruck.ca/feed/", source: "CTA", lang: "en", region: "CA" },
   // US trucking
   { url: "https://www.freightwaves.com/feed", source: "FreightWaves", lang: "en", region: "US" },
   { url: "https://www.ttnews.com/rss.xml", source: "Transport Topics", lang: "en", region: "US" },
   { url: "http://cdllife.com/feed/", source: "CDL Life", lang: "en", region: "US" },
-  // Punjabi news
+  // Punjabi community news
   { url: "https://globalpunjab.com/feed/", source: "Global Punjab", lang: "pa", region: "PB" },
 ];
 
@@ -69,6 +70,16 @@ export async function getTruckingNews(limit = 15): Promise<NewsItem[]> {
 export async function getTruckingNewsByLang(lang: "en" | "pa", limit = 15): Promise<NewsItem[]> {
   const all = await getTruckingNews(50);
   return all.filter((item) => item.lang === lang).slice(0, limit);
+}
+
+/** Get news localized by country — CA users see CA news, US users see US news, both get Punjabi */
+export async function getTruckingNewsByRegion(country: "CA" | "US" | string, limit = 15): Promise<NewsItem[]> {
+  const all = await getTruckingNews(50);
+  // Punjabi news shows for everyone; English news filtered by region
+  const local = all.filter(
+    (item) => item.lang === "pa" || item.region === "PB" || item.region === country
+  );
+  return local.slice(0, limit);
 }
 
 export function timeAgo(dateStr: string): string {
