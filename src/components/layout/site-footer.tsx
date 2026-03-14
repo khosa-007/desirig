@@ -142,6 +142,11 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/submit" className="hover:text-[#FACC15]">
+                  Submit a Desi Stop
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-[#FACC15]">
                   Contact
                 </Link>
