@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Truck, MapPin } from "lucide-react";
 import { getTruckingCategories, getCommunityCategories } from "@/lib/queries";
-import { CategoryCharacter } from "@/components/characters";
+import { CategoryIcon } from "@/components/category-icon";
 
 export const metadata: Metadata = {
   title: "All Categories",
@@ -38,7 +38,7 @@ export default async function CategoriesPage() {
               href={`/categories/${cat.slug}`}
               className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
             >
-              <CategoryCharacter categorySlug={cat.slug} isTrucking={true} size={40} />
+              <CategoryIcon icon={cat.icon} size={28} className="text-[#FACC15]" />
               <p className="mt-2 text-sm font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
             </Link>
           ))}
@@ -57,7 +57,7 @@ export default async function CategoriesPage() {
               href={`/categories/${cat.slug}`}
               className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
             >
-              <CategoryCharacter categorySlug={cat.slug} isTrucking={false} size={40} />
+              <CategoryIcon icon={cat.icon} size={28} className="text-green-400" />
               <p className="mt-2 text-sm font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
             </Link>
           ))}

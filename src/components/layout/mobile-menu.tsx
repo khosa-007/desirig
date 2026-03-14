@@ -46,7 +46,7 @@ export function MobileMenu() {
 
       <MenuPortal open={open} onClose={() => setOpen(false)}>
         <div className="flex items-center justify-between border-b-[3px] border-[#FACC15] p-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <SemiTruckIcon className="text-[#FACC15]" />
             <span className="text-lg font-extrabold text-white">
               Desi<span className="text-[#FACC15]">Rig</span>

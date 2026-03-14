@@ -17,7 +17,7 @@ import { getBusinessBySlug, getCityBySlug } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
 import { NearbyBusinesses } from "./nearby";
 import { BusinessReviews } from "@/components/reviews/business-reviews";
-import { CategoryCharacter } from "@/components/characters";
+import { CategoryIcon } from "@/components/category-icon";
 
 export const revalidate = 3600; // revalidate every hour so new reviews show up
 
@@ -156,7 +156,9 @@ export default async function BusinessDetailPage({ params }: PageProps) {
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-3">
                 {category && (
-                  <CategoryCharacter categorySlug={category.slug} size={44} className="mt-1 shrink-0" />
+                  <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FACC15]/10">
+                    <CategoryIcon icon={category.icon} size={24} className="text-[#FACC15]" />
+                  </div>
                 )}
                 <div>
                   <h1 className="text-2xl font-bold tracking-tight md:text-3xl">

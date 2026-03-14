@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { BusinessCard } from "@/components/business/business-card";
-import { CategoryCharacter } from "@/components/characters";
+import { CategoryIcon } from "@/components/category-icon";
 import {
   getCityBySlug,
   getCategoryBySlug,
@@ -133,7 +133,9 @@ export default async function ListingPage({ params, searchParams }: PageProps) {
 
       {/* Page header */}
       <div className="mb-8 flex items-center gap-4">
-        <CategoryCharacter categorySlug={category.slug} isTrucking={category.is_trucking} size={48} />
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FACC15]/10">
+          <CategoryIcon icon={category.icon} size={28} className="text-[#FACC15]" />
+        </div>
         <div>
           <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
             {category.name} in {city.name}, {city.province}

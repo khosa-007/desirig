@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ChevronRight, MapPin, Truck } from "lucide-react";
 import { getCityBySlug, getCategories, getFeaturedCities } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
-import { CategoryCharacter } from "@/components/characters";
+import { CategoryIcon } from "@/components/category-icon";
 
 export const revalidate = 86400;
 
@@ -85,7 +85,7 @@ export default async function CityPage({ params }: PageProps) {
                 className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
               >
                 <div className="flex items-center gap-3">
-                  <CategoryCharacter categorySlug={cat.slug} isTrucking={true} size={32} />
+                  <CategoryIcon icon={cat.icon} size={24} className="text-[#FACC15]" />
                   <div>
                     <p className="font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
                     <p className="text-sm text-gray-500">
@@ -113,7 +113,7 @@ export default async function CityPage({ params }: PageProps) {
                 className="group rounded-xl border border-[#333] bg-[#1A1A1A] p-4 transition-all hover:border-[#FACC15]"
               >
                 <div className="flex items-center gap-3">
-                  <CategoryCharacter categorySlug={cat.slug} isTrucking={false} size={32} />
+                  <CategoryIcon icon={cat.icon} size={24} className="text-green-400" />
                   <div>
                     <p className="font-medium text-gray-200 group-hover:text-[#FACC15]">{cat.name}</p>
                     <p className="text-sm text-gray-500">

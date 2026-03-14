@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ChevronRight, MapPin } from "lucide-react";
 import { getCategoryBySlug } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
-import { CategoryCharacter } from "@/components/characters";
+import { CategoryIcon } from "@/components/category-icon";
 
 export const revalidate = 86400;
 
@@ -66,7 +66,9 @@ export default async function CategoryDetailPage({ params }: PageProps) {
       </nav>
 
       <div className="flex items-center gap-4">
-        <CategoryCharacter categorySlug={category.slug} isTrucking={category.is_trucking} size={48} />
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FACC15]/10">
+          <CategoryIcon icon={category.icon} size={28} className="text-[#FACC15]" />
+        </div>
         <div>
           <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
             {category.name}
