@@ -51,18 +51,76 @@ export function SemiTruckIcon({ className = "" }: { className?: string }) {
   );
 }
 
-function TurbanIcon() {
+/* MrBobtail-style integrated logo: truck cab + "DesiRig" as trailer */
+function DesiRigLogo() {
   return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <ellipse cx="16" cy="13" rx="12" ry="11" fill="#FACC15" />
-      <path d="M5 14c0-6 5-11 11-11s11 5 11 11" fill="#E5B800" />
-      <circle cx="16" cy="10" r="2.5" fill="#FACC15" />
-      <circle cx="16" cy="10" r="1.2" fill="#FDE68A" />
-      <ellipse cx="16" cy="20" rx="9" ry="8" fill="#C68642" />
-      <circle cx="13" cy="19" r="1.2" fill="#1a1a1a" />
-      <circle cx="19" cy="19" r="1.2" fill="#1a1a1a" />
-      <path d="M13 23c1.5 2 3.5 2.5 5 1.5" stroke="#1a1a1a" strokeWidth="1" strokeLinecap="round" />
-      <path d="M8 22c0 5 3.5 7 8 7s8-2 8-7" fill="#333" opacity="0.6" />
+    <svg width="140" height="36" viewBox="0 0 280 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* === TRUCK CAB (left side) — Peterbilt sleeper profile === */}
+      {/* Exhaust stacks */}
+      <rect x="52" y="2" width="3" height="16" rx="1.5" fill="#FACC15" />
+      <rect x="57" y="5" width="3" height="13" rx="1.5" fill="#FACC15" />
+      {/* Stack caps */}
+      <rect x="50.5" y="0" width="6" height="3" rx="1" fill="#FACC15" />
+      <rect x="55.5" y="3" width="6" height="3" rx="1" fill="#FACC15" />
+
+      {/* Sleeper cab body */}
+      <path d="M30 14 L30 50 L60 50 L60 14 Q60 10 56 10 L34 10 Q30 10 30 14Z" fill="#FACC15" />
+      {/* Sleeper window */}
+      <rect x="34" y="15" width="12" height="8" rx="2" fill="#111" opacity="0.7" />
+
+      {/* Windshield */}
+      <path d="M60 12 L68 18 L68 38 L60 38 Z" fill="#111" opacity="0.5" />
+      <path d="M61 14 L67 19 L67 36 L61 36 Z" fill="white" opacity="0.15" />
+
+      {/* Hood — long nose Peterbilt */}
+      <path d="M68 18 L68 50 L100 50 L104 46 L104 22 L100 18 Z" fill="#FACC15" />
+      {/* Hood detail lines */}
+      <line x1="72" y1="22" x2="72" y2="46" stroke="#111" strokeWidth="1" opacity="0.15" />
+      <line x1="78" y1="20" x2="78" y2="48" stroke="#111" strokeWidth="1" opacity="0.1" />
+
+      {/* Front bumper */}
+      <rect x="103" y="44" width="5" height="6" rx="1" fill="#FACC15" opacity="0.8" />
+      {/* Headlight */}
+      <rect x="104" y="28" width="4" height="6" rx="1.5" fill="#FDE68A" />
+      <rect x="104" y="36" width="4" height="5" rx="1.5" fill="#EF4444" opacity="0.7" />
+
+      {/* Front grille */}
+      <rect x="102" y="22" width="3" height="28" rx="1" fill="#FACC15" opacity="0.6" />
+
+      {/* Fuel tank */}
+      <rect x="40" y="42" width="10" height="6" rx="2" fill="#FACC15" opacity="0.5" />
+
+      {/* Front wheel */}
+      <circle cx="92" cy="56" r="9" fill="#FACC15" />
+      <circle cx="92" cy="56" r="5" fill="#111" />
+      <circle cx="92" cy="56" r="2.5" fill="#FACC15" opacity="0.4" />
+
+      {/* Drive wheels */}
+      <circle cx="44" cy="56" r="9" fill="#FACC15" />
+      <circle cx="44" cy="56" r="5" fill="#111" />
+      <circle cx="44" cy="56" r="2.5" fill="#FACC15" opacity="0.4" />
+
+      {/* === TEXT "DesiRig" as trailer body === */}
+      {/* Frame rail / underline connecting truck to text */}
+      <rect x="5" y="48" width="30" height="3" rx="1" fill="#FACC15" opacity="0.4" />
+
+      {/* "Desi" in white */}
+      <text x="115" y="44" fontFamily="system-ui, -apple-system, sans-serif" fontSize="36" fontWeight="800" fill="white" letterSpacing="-1">
+        Desi
+      </text>
+      {/* "Rig" in yellow */}
+      <text x="190" y="44" fontFamily="system-ui, -apple-system, sans-serif" fontSize="36" fontWeight="800" fill="#FACC15" letterSpacing="-1">
+        Rig
+      </text>
+
+      {/* Speed lines behind — trailing from text */}
+      <rect x="218" y="48" width="50" height="2.5" rx="1" fill="white" opacity="0.6" />
+      <rect x="230" y="53" width="38" height="2.5" rx="1" fill="white" opacity="0.4" />
+
+      {/* Trailer wheel at end of text */}
+      <circle cx="260" cy="56" r="7" fill="#FACC15" />
+      <circle cx="260" cy="56" r="4" fill="#111" />
+      <circle cx="260" cy="56" r="2" fill="#FACC15" opacity="0.4" />
     </svg>
   );
 }
@@ -71,11 +129,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b-[3px] border-[#FACC15] bg-[#111]">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-1">
-          <SemiTruckIcon className="text-[#FACC15]" />
-          <span className="text-xl font-extrabold tracking-tight text-white">
-            Desi<span className="text-[#FACC15]">Rig</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <DesiRigLogo />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
