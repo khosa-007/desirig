@@ -31,8 +31,12 @@ interface Question {
   explanation: Bilingual;
 }
 
+import { g1Ontario, g1BC, g1AB, roadSignsQuestions } from "./car-questions";
+import type { Question as CarQuestion } from "./car-questions";
+
+type LicenseType = "truck" | "car" | null;
 type ProvinceKey = "ON" | "BC" | "AB" | "SK" | "MB" | "QC";
-type CategoryKey = "general" | "airbrakes" | "hos";
+type CategoryKey = "general" | "airbrakes" | "hos" | "g1" | "roadsigns";
 
 interface Province {
   key: ProvinceKey;
@@ -48,7 +52,7 @@ interface Category {
 }
 
 /* ───────── Provinces ───────── */
-const provinces: Province[] = [
+const truckProvinces: Province[] = [
   { key: "ON", name: { en: "Ontario", pa: "ਓਨਟਾਰੀਓ" } },
   { key: "BC", name: { en: "British Columbia", pa: "ਬ੍ਰਿਟਿਸ਼ ਕੋਲੰਬੀਆ" } },
   { key: "AB", name: { en: "Alberta", pa: "ਅਲਬਰਟਾ" } },
@@ -57,7 +61,13 @@ const provinces: Province[] = [
   { key: "QC", name: { en: "Quebec", pa: "ਕਿਊਬੈੱਕ" } },
 ];
 
-const categories: Category[] = [
+const carProvinces: Province[] = [
+  { key: "ON", name: { en: "Ontario (G1)", pa: "ਓਨਟਾਰੀਓ (G1)" } },
+  { key: "BC", name: { en: "British Columbia (L)", pa: "ਬ੍ਰਿਟਿਸ਼ ਕੋਲੰਬੀਆ (L)" } },
+  { key: "AB", name: { en: "Alberta (Class 7)", pa: "ਅਲਬਰਟਾ (Class 7)" } },
+];
+
+const truckCategories: Category[] = [
   {
     key: "general",
     name: { en: "General Knowledge", pa: "ਆਮ ਗਿਆਨ" },
@@ -86,6 +96,29 @@ const categories: Category[] = [
     desc: {
       en: "HOS rules, ELD, cycle limits & rest requirements",
       pa: "HOS ਨਿਯਮ, ELD, ਸਾਈਕਲ ਹੱਦਾਂ ਤੇ ਆਰਾਮ ਲੋੜਾਂ",
+    },
+  },
+];
+
+const carCategories: Category[] = [
+  {
+    key: "g1",
+    name: { en: "Knowledge Test", pa: "ਨੌਲਿਜ ਟੈਸਟ" },
+    icon: "general" as CategoryKey,
+    count: 91,
+    desc: {
+      en: "Road rules, signs, safety & province-specific driving laws",
+      pa: "ਸੜਕ ਨਿਯਮ, ਸਾਈਨ, ਸੇਫਟੀ ਤੇ ਸੂਬਾ-ਵਿਸ਼ੇਸ਼ ਡਰਾਈਵਿੰਗ ਕਾਨੂੰਨ",
+    },
+  },
+  {
+    key: "roadsigns",
+    name: { en: "Road Signs", pa: "ਸੜਕ ਚਿੰਨ੍ਹ" },
+    icon: "general" as CategoryKey,
+    count: 54,
+    desc: {
+      en: "Learn all Canadian road signs — shapes, colours & meanings",
+      pa: "ਸਾਰੇ ਕੈਨੇਡੀਅਨ ਸੜਕ ਚਿੰਨ੍ਹ ਸਿੱਖੋ — ਆਕਾਰ, ਰੰਗ ਤੇ ਅਰਥ",
     },
   },
 ];
@@ -947,6 +980,12 @@ const hosQuestions: Question[] = [
 function getQuestions(province: ProvinceKey, category: CategoryKey): Question[] {
   if (category === "airbrakes") return airBrakesQuestions;
   if (category === "hos") return hosQuestions;
+  if (category === "roadsigns") return roadSignsQuestions as Question[];
+  if (category === "g1") {
+    if (province === "BC") return g1BC as Question[];
+    if (province === "AB") return g1AB as Question[];
+    return g1Ontario as Question[]; // ON default + fallback
+  }
   return makeGeneralQuestions(province);
 }
 
@@ -955,8 +994,12 @@ export function LicenseQuizContent() {
   const { t } = useLanguage();
 
   /* Navigation state */
+  const [licenseType, setLicenseType] = useState<LicenseType>(null);
   const [selectedProvince, setSelectedProvince] = useState<ProvinceKey | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<CategoryKey | null>(null);
+
+  const provinces = licenseType === "car" ? carProvinces : truckProvinces;
+  const categories = licenseType === "car" ? carCategories : truckCategories;
 
   /* Quiz state */
   const [currentQ, setCurrentQ] = useState(0);
@@ -1024,6 +1067,8 @@ export function LicenseQuizContent() {
       setQuizDone(false);
     } else if (selectedProvince) {
       setSelectedProvince(null);
+    } else if (licenseType) {
+      setLicenseType(null);
     }
   }
 
@@ -1091,15 +1136,66 @@ export function LicenseQuizContent() {
         </div>
       )}
 
-      {/* ═══ STEP 1: Province Selection ═══ */}
-      {!selectedProvince && (
+      {/* ═══ STEP 0: License Type Selection ═══ */}
+      {!licenseType && (
         <>
           <div className="mt-4 text-center">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-orange-100">
               <BookOpen className="h-8 w-8 text-[#FF6E40]" />
             </div>
             <h1 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl">
-              {t({ en: "Truck License Exam Practice", pa: "ਟਰੱਕ ਲਾਇਸੈਂਸ ਪ੍ਰੀਖਿਆ ਅਭਿਆਸ" })}
+              {t({ en: "License Exam Practice", pa: "ਲਾਇਸੈਂਸ ਪ੍ਰੀਖਿਆ ਅਭਿਆਸ" })}
+            </h1>
+            <p className="mt-2 text-muted-foreground">
+              {t({
+                en: "300+ practice questions in English and ਪੰਜਾਬੀ. Choose your license type.",
+                pa: "300+ ਅਭਿਆਸ ਸਵਾਲ English ਤੇ ਪੰਜਾਬੀ ਵਿੱਚ। ਆਪਣਾ ਲਾਇਸੈਂਸ ਟਾਈਪ ਚੁਣੋ।",
+              })}
+            </p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <button
+              onClick={() => setLicenseType("truck")}
+              className="group flex flex-col items-center gap-3 rounded-xl border-2 border-transparent bg-card p-8 transition-all hover:border-[#FF6E40] hover:shadow-lg"
+            >
+              <div className="text-5xl">🚛</div>
+              <span className="text-xl font-bold group-hover:text-[#FF6E40]">
+                {t({ en: "Truck License (AZ/DZ)", pa: "ਟਰੱਕ ਲਾਇਸੈਂਸ (AZ/DZ)" })}
+              </span>
+              <span className="text-sm text-muted-foreground text-center">
+                {t({ en: "General knowledge, air brakes, hours of service — 6 provinces", pa: "ਆਮ ਗਿਆਨ, ਏਅਰ ਬ੍ਰੇਕ, ਸੇਵਾ ਦੇ ਘੰਟੇ — 6 ਸੂਬੇ" })}
+              </span>
+              <span className="rounded-full bg-[#FF6E40]/10 px-3 py-1 text-xs font-bold text-[#FF6E40]">71 {t({ en: "questions", pa: "ਸਵਾਲ" })}</span>
+            </button>
+            <button
+              onClick={() => setLicenseType("car")}
+              className="group flex flex-col items-center gap-3 rounded-xl border-2 border-transparent bg-card p-8 transition-all hover:border-[#FACC15] hover:shadow-lg"
+            >
+              <div className="text-5xl">🚗</div>
+              <span className="text-xl font-bold group-hover:text-[#FACC15]">
+                {t({ en: "Car License (G1/L/Class 7)", pa: "ਕਾਰ ਲਾਇਸੈਂਸ (G1/L/Class 7)" })}
+              </span>
+              <span className="text-sm text-muted-foreground text-center">
+                {t({ en: "Knowledge test + road signs — Ontario, BC, Alberta", pa: "ਨੌਲਿਜ ਟੈਸਟ + ਸੜਕ ਚਿੰਨ੍ਹ — ਓਨਟਾਰੀਓ, BC, ਅਲਬਰਟਾ" })}
+              </span>
+              <span className="rounded-full bg-[#FACC15]/10 px-3 py-1 text-xs font-bold text-[#FACC15]">233 {t({ en: "questions", pa: "ਸਵਾਲ" })}</span>
+            </button>
+          </div>
+        </>
+      )}
+
+      {/* ═══ STEP 1: Province Selection ═══ */}
+      {licenseType && !selectedProvince && (
+        <>
+          <div className="mt-4 text-center">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-orange-100">
+              {licenseType === "truck" ? <span className="text-3xl">🚛</span> : <span className="text-3xl">🚗</span>}
+            </div>
+            <h1 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl">
+              {licenseType === "truck"
+                ? t({ en: "Truck License Exam Practice", pa: "ਟਰੱਕ ਲਾਇਸੈਂਸ ਪ੍ਰੀਖਿਆ ਅਭਿਆਸ" })
+                : t({ en: "Car License Exam Practice", pa: "ਕਾਰ ਲਾਇਸੈਂਸ ਪ੍ਰੀਖਿਆ ਅਭਿਆਸ" })}
             </h1>
             <p className="mt-2 text-muted-foreground">
               {t({

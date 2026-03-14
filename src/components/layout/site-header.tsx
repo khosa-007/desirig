@@ -5,38 +5,48 @@ import { MobileMenu } from "./mobile-menu";
 
 export function SemiTruckIcon({ className = "" }: { className?: string }) {
   return (
-    <svg width="26" height="26" viewBox="0 0 32 32" fill="currentColor" className={className}>
-      {/* Peterbilt-style front-facing semi */}
-      <rect x="2" y="0" width="2.5" height="10" rx="1.2" />
-      <rect x="27.5" y="0" width="2.5" height="10" rx="1.2" />
-      <rect x="1.5" y="0" width="3.5" height="1.5" rx="0.7" fill="white" opacity="0.5" />
-      <rect x="27" y="0" width="3.5" height="1.5" rx="0.7" fill="white" opacity="0.5" />
-      <rect x="7" y="3" width="18" height="4" rx="1" fill="white" opacity="0.9" />
-      <text x="16" y="6.2" textAnchor="middle" fontSize="3.8" fontWeight="bold" fill="currentColor" fontFamily="sans-serif">DESIRIG</text>
-      <rect x="6" y="7" width="20" height="10" rx="2" />
-      <rect x="8.5" y="8" width="15" height="6" rx="1" fill="white" opacity="0.85" />
-      <line x1="16" y1="8" x2="16" y2="14" stroke="currentColor" strokeWidth="0.8" />
-      <rect x="5" y="17" width="22" height="6" rx="1.5" />
-      <line x1="16" y1="17" x2="16" y2="23" stroke="white" strokeWidth="0.6" opacity="0.3" />
-      <rect x="8" y="18" width="16" height="4" rx="0.8" fill="white" opacity="0.2" />
-      <line x1="10" y1="18" x2="10" y2="22" stroke="white" strokeWidth="0.5" opacity="0.4" />
-      <line x1="12.5" y1="18" x2="12.5" y2="22" stroke="white" strokeWidth="0.5" opacity="0.4" />
-      <line x1="15" y1="18" x2="15" y2="22" stroke="white" strokeWidth="0.5" opacity="0.4" />
-      <line x1="17" y1="18" x2="17" y2="22" stroke="white" strokeWidth="0.5" opacity="0.4" />
-      <line x1="19.5" y1="18" x2="19.5" y2="22" stroke="white" strokeWidth="0.5" opacity="0.4" />
-      <line x1="22" y1="18" x2="22" y2="22" stroke="white" strokeWidth="0.5" opacity="0.4" />
-      <circle cx="6.5" cy="19.5" r="2" fill="#FCD34D" />
-      <circle cx="25.5" cy="19.5" r="2" fill="#FCD34D" />
-      <circle cx="6.5" cy="19.5" r="1" fill="white" opacity="0.5" />
-      <circle cx="25.5" cy="19.5" r="1" fill="white" opacity="0.5" />
-      <rect x="4" y="23" width="24" height="2.5" rx="1" fill="white" opacity="0.3" />
-      <rect x="4" y="23" width="24" height="2.5" rx="1" />
-      <rect x="1" y="9" width="4" height="3" rx="1" />
-      <rect x="27" y="9" width="4" height="3" rx="1" />
-      <circle cx="9" cy="28" r="2.5" />
-      <circle cx="23" cy="28" r="2.5" />
-      <circle cx="9" cy="28" r="1" fill="white" opacity="0.3" />
-      <circle cx="23" cy="28" r="1" fill="white" opacity="0.3" />
+    <svg width="30" height="22" viewBox="0 0 48 28" fill="currentColor" className={className}>
+      {/* Peterbilt 389 side profile — long hood, stacks, sleeper */}
+      {/* Exhaust stacks */}
+      <rect x="27" y="1" width="1.5" height="8" rx="0.75" />
+      <rect x="29.5" y="2" width="1.5" height="7" rx="0.75" />
+      {/* Stack caps */}
+      <rect x="26.5" y="0" width="2.5" height="1.5" rx="0.5" />
+      <rect x="29" y="1" width="2.5" height="1.5" rx="0.5" />
+      {/* Sleeper cab */}
+      <rect x="18" y="5" width="10" height="14" rx="1.5" />
+      {/* Sleeper window */}
+      <rect x="20" y="7" width="6" height="4" rx="0.8" fill="white" opacity="0.7" />
+      {/* Hood — long Peterbilt style */}
+      <rect x="28" y="9" width="14" height="10" rx="1.5" />
+      {/* Hood slope */}
+      <path d="M42 9 L46 12 L46 19 L42 19 Z" />
+      {/* Windshield */}
+      <rect x="26.5" y="6" width="3" height="8" rx="0.8" fill="white" opacity="0.8" />
+      {/* Headlight */}
+      <rect x="45" y="13" width="2" height="3" rx="0.8" fill="#FDE68A" opacity="0.9" />
+      {/* Bumper */}
+      <rect x="45.5" y="17" width="2.5" height="2" rx="0.5" opacity="0.6" />
+      {/* Fuel tank */}
+      <rect x="22" y="17" width="5" height="3" rx="1" opacity="0.5" />
+      {/* Frame rail */}
+      <rect x="0" y="19" width="46" height="1.5" rx="0.5" opacity="0.4" />
+      {/* Trailer (partial) */}
+      <rect x="0" y="5" width="18" height="14" rx="1" opacity="0.6" />
+      <rect x="1" y="6" width="16" height="12" rx="0.5" opacity="0.3" />
+      {/* Fifth wheel connection */}
+      <rect x="16" y="17" width="4" height="2" rx="0.5" opacity="0.5" />
+      {/* Drive wheels (dual) */}
+      <circle cx="22" cy="24" r="3.5" />
+      <circle cx="22" cy="24" r="1.5" fill="white" opacity="0.2" />
+      <circle cx="28" cy="24" r="3.5" />
+      <circle cx="28" cy="24" r="1.5" fill="white" opacity="0.2" />
+      {/* Steer wheel */}
+      <circle cx="42" cy="24" r="3.5" />
+      <circle cx="42" cy="24" r="1.5" fill="white" opacity="0.2" />
+      {/* Trailer wheel */}
+      <circle cx="8" cy="24" r="3.5" />
+      <circle cx="8" cy="24" r="1.5" fill="white" opacity="0.2" />
     </svg>
   );
 }
@@ -61,7 +71,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b-[3px] border-[#FACC15] bg-[#111]">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-1">
           <SemiTruckIcon className="text-[#FACC15]" />
           <span className="text-xl font-extrabold tracking-tight text-white">
             Desi<span className="text-[#FACC15]">Rig</span>

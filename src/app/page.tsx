@@ -130,7 +130,7 @@ export default async function HomePage() {
               <Input
                 name="q"
                 placeholder="Find trucking companies, mechanics, dhabas..."
-                className="border-0 bg-transparent text-foreground placeholder:text-muted-foreground focus-visible:ring-0"
+                className="border-0 bg-transparent text-gray-900 placeholder:text-gray-400 focus-visible:ring-0"
               />
             </div>
             <Button type="submit" className="bg-[#FACC15] text-black hover:bg-[#E5B800]">
