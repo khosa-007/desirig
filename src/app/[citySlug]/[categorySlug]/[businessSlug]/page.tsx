@@ -82,6 +82,7 @@ export default async function BusinessDetailPage({ params }: PageProps) {
     .from("reviews")
     .select("*")
     .eq("business_id", business.id)
+    .eq("status", "verified")
     .order("created_at", { ascending: false })
     .limit(20);
 

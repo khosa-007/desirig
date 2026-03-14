@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Star, Send, Truck } from "lucide-react";
+import { useState, useRef } from "react";
+import { Star, Send, Truck, Mail, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { createClient } from "@/lib/supabase/client";
 
 interface ReviewFormProps {
   businessId: string;
@@ -14,57 +13,82 @@ interface ReviewFormProps {
 
 export function ReviewForm({ businessId, businessName, onReviewAdded }: ReviewFormProps) {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [comment, setComment] = useState("");
   const [isDriver, setIsDriver] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [needsVerification, setNeedsVerification] = useState(false);
   const [error, setError] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const loadTime = useRef(Date.now());
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Bot checks: honeypot filled or submitted too fast (< 3 seconds)
     if (honeypot) return;
-    if (Date.now() - loadTime.current < 3000) { setError("Too fast. Try again."); return; }
 
     if (!name.trim()) { setError("What's your name?"); return; }
+    if (!email.trim()) { setError("Email is required to prevent spam."); return; }
     if (rating === 0) { setError("Tap a star to rate"); return; }
 
     setSubmitting(true);
     setError("");
 
-    const supabase = createClient();
-    const { error: dbError } = await supabase.from("reviews").insert({
-      business_id: businessId,
-      reviewer_name: name.trim(),
-      rating,
-      comment: comment.trim() || null,
-      is_driver: isDriver,
-    });
+    try {
+      const res = await fetch("/api/reviews", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          business_id: businessId,
+          reviewer_name: name.trim(),
+          email: email.trim(),
+          rating,
+          comment: comment.trim(),
+          is_driver: isDriver,
+          honeypot,
+          load_time: loadTime.current,
+        }),
+      });
 
-    setSubmitting(false);
+      const data = await res.json();
 
-    if (dbError) {
-      setError("Something went wrong. Try again.");
-      return;
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Try again.");
+        setSubmitting(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setNeedsVerification(data.needsVerification || false);
+      if (!data.needsVerification) {
+        onReviewAdded?.();
+      }
+    } catch {
+      setError("Network error. Try again.");
     }
 
-    setSubmitted(true);
-    onReviewAdded?.();
+    setSubmitting(false);
   }
 
   if (submitted) {
     return (
       <div className="rounded-xl border border-green-200 bg-green-50 p-6 text-center">
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-          <Star className="h-6 w-6 fill-green-600 text-green-600" />
+          {needsVerification ? (
+            <Mail className="h-6 w-6 text-green-600" />
+          ) : (
+            <Star className="h-6 w-6 fill-green-600 text-green-600" />
+          )}
         </div>
-        <h3 className="mt-3 font-semibold text-green-900">Thanks for your review!</h3>
+        <h3 className="mt-3 font-semibold text-green-900">
+          {needsVerification ? "Check your email!" : "Thanks for your review!"}
+        </h3>
         <p className="mt-1 text-sm text-green-700">
-          Your feedback helps other drivers make better decisions.
+          {needsVerification
+            ? "We sent a verification link to your email. Click it to publish your review."
+            : "Your feedback helps other drivers make better decisions."}
         </p>
       </div>
     );
@@ -116,6 +140,21 @@ export function ReviewForm({ businessId, businessName, onReviewAdded }: ReviewFo
         />
       </div>
 
+      {/* Email */}
+      <div className="mt-3">
+        <Input
+          type="email"
+          placeholder="Your email (won't be shown publicly)"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          maxLength={100}
+        />
+        <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
+          <ShieldCheck className="h-3 w-3" />
+          Your email is private — only used to verify your review.
+        </p>
+      </div>
+
       {/* Comment */}
       <div className="mt-3">
         <textarea
@@ -137,7 +176,7 @@ export function ReviewForm({ businessId, businessName, onReviewAdded }: ReviewFo
           className="h-4 w-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500"
         />
         <Truck className="h-4 w-4 text-orange-500" />
-        <span className="text-sm">I'm a truck driver</span>
+        <span className="text-sm">I&apos;m a truck driver</span>
       </label>
 
       {/* Honeypot: invisible to humans, bots fill it */}

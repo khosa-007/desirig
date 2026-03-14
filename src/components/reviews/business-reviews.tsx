@@ -39,6 +39,7 @@ export function BusinessReviews({
       .from("reviews")
       .select("*")
       .eq("business_id", businessId)
+      .eq("status", "verified")
       .order("created_at", { ascending: false })
       .limit(20);
 
