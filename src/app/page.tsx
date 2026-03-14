@@ -67,14 +67,14 @@ export default async function HomePage() {
         {/* Background: real trucker photo with dark overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/images/heroes/sikh-trucker-4.jpeg"
-            alt="Sikh truck driver standing in front of semi truck"
+            src="/images/heroes/sikh-trucker-1.jpeg"
+            alt="Sikh truck driver behind the wheel"
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
             priority
-            quality={80}
+            quality={85}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#111]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-[#111]" />
         </div>
         <div className="container relative mx-auto px-4 py-20 md:py-28">
           {/* Title */}
